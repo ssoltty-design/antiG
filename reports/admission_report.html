@@ -3,583 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2027학년도 수시 논술 6카드 맞춤 전략 및 플랜A·B·C 입시 분석 보고서</title>
+    <title>2027학년도 수시 논술 6카드 맞춤 전략 및 종합 입시 분석 보고서 - 박정윤 학생</title>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8fafc;
+            --bg: #f8fafc;
             --card-bg: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --title-color: #1e3a8a;
-            --accent-color: #2563eb;
-            --border-color: #e2e8f0;
-            --sidebar-bg: #ffffff;
-            --badge-teal: #0d9488;
-            --badge-teal-bg: #ccfbf1;
-            --badge-orange: #d97706;
-            --badge-orange-bg: #fef3c7;
-            --badge-purple: #7c3aed;
-            --badge-purple-bg: #f3e8ff;
-            --badge-green: #15803d;
-            --badge-green-bg: #dcfce7;
-            --badge-red: #dc2626;
-            --badge-red-bg: #fee2e2;
+            --card-border: #e2e8f0;
+            --primary: #1e3a8a;
+            --accent: #2563eb;
+            --teal: #0d9488;
+            --text: #0f172a;
+            --muted: #64748b;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Pretendard', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; }
-
-        /* Layout */
-        .layout-wrapper { display: flex; min-height: 100vh; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; }
         
-        /* Sidebar Navigation */
-        .sidebar {
-            width: 280px;
-            background: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
-            padding: 1.75rem 1rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-            flex-shrink: 0;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.02);
-        }
-        .sidebar-header { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid #eff6ff; }
-        .sidebar-title { font-size: 1.15rem; font-weight: 800; color: var(--title-color); display: flex; align-items: center; gap: 0.5rem; }
-        .sidebar-subtitle { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.3rem; }
-        .toc-list { list-style: none; padding: 0; margin: 0; }
-        .toc-item { margin-bottom: 0.4rem; }
-        .toc-link {
-            display: flex;
-            align-items: center;
-            padding: 0.6rem 0.8rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-        .toc-link:hover { background: #eff6ff; color: var(--accent-color); }
-        .toc-icon { margin-right: 0.5rem; font-size: 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .header { text-align: center; margin-bottom: 2rem; background: #ffffff; border: 1px solid var(--card-border); padding: 2.5rem 1.5rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04); }
+        .header h1 { font-size: 2.2rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .header p { color: var(--muted); margin-top: 0.5rem; font-size: 1.05rem; }
+        
+        .badge { display: inline-block; background: #ccfbf1; color: #0f766e; padding: 4px 12px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; }
+        .badge.blue { background: #dbeafe; color: #1e40af; }
+        .badge.orange { background: #fef3c7; color: #b45309; }
+        .badge.purple { background: #f3e8ff; color: #6b21a8; }
+        .badge.red { background: #fee2e2; color: #991b1b; }
+        .badge.green { background: #dcfce7; color: #15803d; }
 
-        /* Main Content */
-        .main-content { flex-grow: 1; padding: 2rem; max-width: 1100px; }
-        header.header {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
-        }
-        .header h1 { color: var(--title-color); font-size: 1.9rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .header p { color: var(--text-secondary); font-size: 1rem; }
-        .meta-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
-        .tag { background: #f1f5f9; color: #334155; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; }
+        .tag-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag-item { background: #f1f5f9; color: #334155; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; }
 
-        /* Cards & Section Elements */
-        .card-container { display: flex; flex-direction: column; gap: 1.5rem; }
-        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eff6ff; padding-bottom: 0.75rem; margin-bottom: 1rem; }
-        .card-header h2 { color: var(--title-color); font-size: 1.3rem; font-weight: 700; }
-        .badge { background: var(--badge-teal-bg); color: var(--badge-teal); font-weight: 700; font-size: 0.8rem; padding: 0.3rem 0.6rem; border-radius: 6px; }
-        .badge.orange { background: var(--badge-orange-bg); color: var(--badge-orange); }
-        .badge.purple { background: var(--badge-purple-bg); color: var(--badge-purple); }
-        .badge.green { background: var(--badge-green-bg); color: var(--badge-green); }
-        .badge.red { background: var(--badge-red-bg); color: var(--badge-red); }
-
-        /* Grid & Tables */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
-        .stat-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .grid-full { margin-bottom: 1.5rem; }
+        
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03); }
+        .card-title { font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 1.2rem; border-bottom: 2px solid #eff6ff; padding-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: center; }
+        
+        .stat-box { display: flex; gap: 1rem; margin-bottom: 1.2rem; }
+        .stat-item { flex:1; background: #f8fafc; border: 1px solid var(--card-border); padding: 1rem; border-radius: 12px; text-align: center; }
         .stat-item.highlight { background: #eff6ff; border-color: #bfdbfe; }
-        .stat-num { font-size: 1.4rem; font-weight: 800; color: var(--accent-color); }
-        .stat-label { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem; }
-        .table-container { width: 100%; overflow-x: auto; margin-top: 0.5rem; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.875rem; text-align: left; }
-        th { background: #f1f5f9; color: #1e293b; font-weight: 700; padding: 0.65rem 0.75rem; border-bottom: 2px solid #cbd5e1; }
-        td { padding: 0.65rem 0.75rem; border-bottom: 1px solid #e2e8f0; color: #334155; }
-        .highlight-text { color: var(--accent-color); font-weight: 700; }
-        .highlight-box { background: #eff6ff; border-left: 4px solid var(--accent-color); padding: 1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; font-size: 0.9rem; }
-        .warning-box { background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; font-size: 0.9rem; color: #991b1b; }
+        .stat-val { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+        .stat-lbl { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
 
-        /* Plan Tabs / Comparison Blocks */
-        .plan-header { background: #f1f5f9; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; }
-        .plan-title { font-size: 1.15rem; font-weight: 800; color: var(--title-color); display: flex; justify-content: space-between; align-items: center; }
-        .plan-procons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem; }
-        .pro-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 0.8rem; border-radius: 8px; font-size: 0.85rem; }
-        .con-box { background: #fff1f2; border: 1px solid #fecdd3; padding: 0.8rem; border-radius: 8px; font-size: 0.85rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.88rem; }
+        th { background: #f8fafc; color: var(--primary); padding: 10px 8px; border-bottom: 2px solid var(--card-border); text-align: center; font-weight: 700; }
+        td { padding: 10px 8px; border-bottom: 1px solid var(--card-border); text-align: center; color: var(--text); }
+        tr:hover { background-color: #f8fafc; }
+        
+        .file-link { color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+        .file-link:hover { text-decoration: underline; }
 
-        .univ-list { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.8rem; }
-        .univ-box { border: 1px solid var(--border-color); border-radius: 12px; padding: 0.9rem 1.1rem; background: #ffffff; }
-        .univ-title { font-size: 0.98rem; font-weight: 700; color: var(--title-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem; }
-        .univ-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+        .info-box { background: #eff6ff; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #1e3a8a; }
+        .warning-box { background: #fff1f2; border-left: 4px solid #f43f5e; padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #9f1239; }
+        .success-box { background: #f0fdf4; border-left: 4px solid #10b981; padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #065f46; }
 
-        .roadmap-list { display: flex; flex-direction: column; gap: 0.75rem; }
-        .roadmap-step { display: flex; align-items: flex-start; gap: 1rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.8rem; border-radius: 10px; }
-        .step-badge { background: var(--accent-color); color: #fff; font-weight: 800; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.8rem; flex-shrink: 0; }
-        .step-info h4 { font-size: 0.95rem; font-weight: 700; color: var(--title-color); margin-bottom: 0.2rem; }
-        .step-info p { font-size: 0.85rem; color: var(--text-secondary); }
+        .plan-card { border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; background: #ffffff; }
+        .plan-card.plan-a { border-top: 4px solid #f59e0b; }
+        .plan-card.plan-b { border-top: 4px solid #2563eb; background: #fafafa; }
+        .plan-card.plan-c { border-top: 4px solid #0d9488; }
+        .plan-header-title { font-size: 1.1rem; font-weight: 800; color: var(--primary); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
 
-        /* Responsive Layout Breakpoint */
-        @media (max-width: 991px) {
-            .layout-wrapper { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border-color); }
-            .main-content { padding: 1rem; }
-            .plan-procons { grid-template-columns: 1fr; }
+        .pro-con-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+        .pro-item { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; color: #166534; }
+        .con-item { background: #fff1f2; border: 1px solid #fecdd3; padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; color: #9f1239; }
+
+        .univ-mini-table td { text-align: left; padding: 8px 10px; }
+
+        .timeline-step { display: flex; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px dashed var(--card-border); }
+        .timeline-step:last-child { border-bottom: none; }
+        .time-badge { background: var(--primary); color: #ffffff; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; height: fit-content; flex-shrink: 0; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .pro-con-grid { grid-template-columns: 1fr; }
+            .stat-box { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-<div class="layout-wrapper">
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <div class="sidebar-title">📊 2027 입시 목차</div>
-            <div class="sidebar-subtitle">박정윤 학생 6카드 & 플랜A·B·C</div>
-        </div>
-        <ul class="toc-list">
-            <li class="toc-item"><a href="#sec0" class="toc-link"><span class="toc-icon">📁</span>0. 마스터 참고자료 DB</a></li>
-            <li class="toc-item"><a href="#sec1" class="toc-link"><span class="toc-icon">📈</span>1. 모의고사 성적 & 진단</a></li>
-            <li class="toc-item"><a href="#sec2" class="toc-link"><span class="toc-icon">🏛️</span>2. 2027 대학별 수능최저</a></li>
-            <li class="toc-item"><a href="#sec3" class="toc-link"><span class="toc-icon">🎯</span>3. 건국대 논술 정밀분석</a></li>
-            <li class="toc-item"><a href="#sec4" class="toc-link"><span class="toc-icon">📋</span>4. 수시 6카드 (플랜A·B·C)</a></li>
-            <li class="toc-item"><a href="#sec5" class="toc-link"><span class="toc-icon">📅</span>5. 고사 및 원서 일정</a></li>
-            <li class="toc-item"><a href="#sec6" class="toc-link"><span class="toc-icon">💡</span>6. 컨설팅 실행 로드맵</a></li>
-        </ul>
-    </nav>
+<div class="container">
 
-    <!-- Main Content Body -->
-    <main class="main-content">
-        
-        <header class="header">
-            <h1>2027학년도 수시 논술 6카드 맞춤 전략 보고서</h1>
-            <p>건국대 2027 논술 개편 정밀 진단 반영 & 6카드 지원 플랜 A / B / C 장단점 비교 분석</p>
-            <div class="meta-tags">
-                <span class="tag">👤 피분석 학생: 박정윤 (진선여고 3학년)</span>
-                <span class="tag">📊 내신 성적: 5.5 ~ 6.0 등급 (논술 100% 올인)</span>
-                <span class="tag">🎯 7모 수학: 74점 (3등급 상위 83.1%)</span>
-                <span class="tag">⚖️ 건국대 분석: 인문I (수리무) vs 인문II (수리유)</span>
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <span class="badge">Clean Executive Light Format</span>
+        <h1>2027학년도 수시 논술 6카드 맞춤 전략 보고서</h1>
+        <p>박정윤 학생 (진선여고 3학년) | 3·6·7모 성적 분석 & 예감·피오르 13P 컨설팅 종합 가이드</p>
+        <div class="tag-group">
+            <span class="tag-item">👤 내신 5.5 ~ 6.0등급 (수시 논술 100% 사활)</span>
+            <span class="tag-item">🎯 7모 수학 74점 급반등 (표점 125, 3등급)</span>
+            <span class="tag-item">🏛️ 건국대 인문I (수리무) vs 인문II (수리유) 정밀 비교</span>
+            <span class="tag-item">📋 수시 6카드 Plan A / B / C 3대 다변화 지원안</span>
+        </div>
+    </div>
+
+    <!-- SECTION 0: 마스터 DB & 데이터 출처 -->
+    <div class="grid-full">
+        <div class="card">
+            <div class="card-title">
+                0. 마스터 입시 데이터 체계 및 참고자료 출처 (Data Sources & Citation Links)
+                <span class="badge blue">원천 자료 DB</span>
             </div>
-        </header>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem;">
+                <code>C:\Users\그램\Desktop\입시분석 참고자료</code> 경로 내 모든 입시 자료(성적표 3종, 컨설팅 보고서 15P, 논술일정표 2P 등)를 직접 스캔하여 반영하였습니다.
+            </p>
+            <div class="stat-box">
+                <div class="stat-item">
+                    <div class="stat-val">5개</div>
+                    <div class="stat-lbl">세부 입시 폴더</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val">45개</div>
+                    <div class="stat-lbl">스캔 이미지 & DB 문서</div>
+                </div>
+                <div class="stat-item highlight">
+                    <div class="stat-val">Plan A / B / C</div>
+                    <div class="stat-lbl">다변화 6카드 전략</div>
+                </div>
+            </div>
+            <div class="info-box">
+                📑 <strong>입시자료 마스터 폴더 가이드 문서:</strong> 
+                <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/입시자료_폴더구조_및_목록.md" class="file-link" target="_blank">[입시자료_폴더구조_및_목록.md 바로가기]</a> | 
+                <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/2027_대학별_수능최저학력기준_분석.xls" class="file-link" target="_blank">[수능최저 분석 DB Excel]</a>
+            </div>
+        </div>
+    </div>
 
-        <div class="card-container">
-
-            <!-- SECTION 0: 마스터 DB -->
-            <section id="sec0" class="card">
-                <div class="card-header">
-                    <h2>0. 마스터 입시 데이터 체계 및 참고자료 폴더</h2>
-                    <span class="badge">데이터 출처</span>
-                </div>
-                <div class="card-body">
-                    <p>본 보고서는 <code>C:\Users\그램\Desktop\입시분석 참고자료</code> 내 5개 세부 폴더 및 엑셀 DB를 종합 분석하여 작성되었습니다.</p>
-                    <div class="stats-grid" style="margin-top: 1rem;">
-                        <div class="stat-item"><div class="stat-num">5개</div><div class="stat-label">세부 하위 폴더</div></div>
-                        <div class="stat-item"><div class="stat-num">45개</div><div class="stat-label">분석 이미지/문서</div></div>
-                        <div class="stat-item highlight"><div class="stat-num">Plan A/B/C</div><div class="stat-label">다변화 지원 전략</div></div>
-                    </div>
-                    <div class="highlight-box">
-                        📑 <strong>입시자료 폴더 목록 가이드:</strong> 
-                        <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/입시자료_폴더구조_및_목록.md" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: underline;">
-                            [입시자료_폴더구조_및_목록.md 열기]
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 1: 성적 추이 -->
-            <section id="sec1" class="card">
-                <div class="card-header">
-                    <h2>1. 3월·6월·7월 모의고사 성적 추이 & 피오르 수능 예측</h2>
-                    <span class="badge">피오르/예감 분석</span>
-                </div>
-                <div class="card-body">
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>시험 구분</th>
-                                    <th>과목명</th>
-                                    <th>원 표준점수 (수능예측)</th>
-                                    <th>원 백분위 (수능예측)</th>
-                                    <th>원 등급 (수능예측 목표)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="4"><strong>3월 학평 (3.24)</strong></td>
-                                    <td>국어 (언어와매체)</td>
-                                    <td>128 (126)</td>
-                                    <td>91.18% (89%)</td>
-                                    <td>2 (2등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>수학 (확률과통계)</td>
-                                    <td>111 (105)</td>
-                                    <td>66.23% (59%)</td>
-                                    <td>4 (3등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>지구과학I</td>
-                                    <td>73 (72)</td>
-                                    <td>98.24% (97%)</td>
-                                    <td>1 (1등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>사회문화</td>
-                                    <td>69 (66)</td>
-                                    <td>95.82% (92%)</td>
-                                    <td>1 (2등급)</td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="4"><strong>6월 모평 (6.4)</strong></td>
-                                    <td>국어 (언어와매체)</td>
-                                    <td>120 (119)</td>
-                                    <td>82.00% (80%)</td>
-                                    <td>3 (2등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>수학 (확률과통계)</td>
-                                    <td>114 (112)</td>
-                                    <td>66.00% (62%)</td>
-                                    <td>4 (3등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>사회문화</td>
-                                    <td>61 (60)</td>
-                                    <td>83.00% (80%)</td>
-                                    <td>3 (1.5등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>세계지리</td>
-                                    <td>49 (48)</td>
-                                    <td>51.00% (47%)</td>
-                                    <td>5 (1등급)</td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="4"><strong>7월 학평 (7.8)</strong></td>
-                                    <td>국어 (언어와매체)</td>
-                                    <td>110 (106)</td>
-                                    <td>64.13% (57%)</td>
-                                    <td>4 (2등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>수학 (확률과통계)</td>
-                                    <td>123 (120)</td>
-                                    <td>83.10% (78%)</td>
-                                    <td class="highlight-text">3 (원점수 74점!)</td>
-                                </tr>
-                                <tr>
-                                    <td>세계지리</td>
-                                    <td>49 (47)</td>
-                                    <td>55.62% (49%)</td>
-                                    <td>5 (1등급)</td>
-                                </tr>
-                                <tr>
-                                    <td>사회문화</td>
-                                    <td>61 (59)</td>
-                                    <td>82.91% (76%)</td>
-                                    <td>3 (1.5등급)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 2: 2027 최저 분석 -->
-            <section id="sec2" class="card">
-                <div class="card-header">
-                    <h2>2. 2027 주요 대학 수능 최저학력기준 요약</h2>
-                    <span class="badge orange">프로세스 DB</span>
-                </div>
-                <div class="card-body">
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>구분</th>
-                                    <th>수능 최저 등급 기준</th>
-                                    <th>주요 대학 / 학과</th>
-                                    <th>특이사항</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>3개 반영</td>
-                                    <td>3개 합 6 이내</td>
-                                    <td>성균관대, 중앙대 (일반형)</td>
-                                    <td>중앙대: 영어 2등급 ➔ 1등급 인정!</td>
-                                </tr>
-                                <tr>
-                                    <td>3개 반영</td>
-                                    <td>3개 합 7 이내</td>
-                                    <td>서강대, 한양대</td>
-                                    <td>각 3등급 이내 충족률 100%</td>
-                                </tr>
-                                <tr>
-                                    <td>2개 반영</td>
-                                    <td>2개 합 5 이내 (탐1)</td>
-                                    <td><strong>건국대, 이화여대, 홍익대, 동국대</strong></td>
-                                    <td>건국대/이화여대 수리문항 포함 계열 주의</td>
-                                </tr>
-                                <tr>
-                                    <td>2개 반영</td>
-                                    <td>2개 합 5 이내 (탐평)</td>
-                                    <td>경희대</td>
-                                    <td>사회계열 수리논술 출제</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 3: 건국대 정밀 분석 -->
-            <section id="sec3" class="card">
-                <div class="card-header">
-                    <h2>3. 2027 건국대학교(KU논술우수자) 정밀 분석 & 수리문항 리스크</h2>
-                    <span class="badge purple">건국대 특별진단</span>
-                </div>
-                <div class="card-body">
-                    <p>2027학년도 건국대 논술은 <strong>논술 100% (내신 감점 0점)</strong> 및 <strong>수능 최저 2합 5(탐1)</strong>로 내신 5.5~6.0등급 수험생에게 매우 매력적이지만, 모집단위별 출제 유형 선택이 합불의 핵심 열쇠입니다.</p>
-                    
-                    <div class="stats-grid" style="margin-top: 1rem;">
-                        <div class="stat-item"><div class="stat-num">논술 100%</div><div class="stat-label">학생부 교과/비교과 미반영</div></div>
-                        <div class="stat-item"><div class="stat-num">2합 5</div><div class="stat-label">수능 최저 (탐구 상위 1과목)</div></div>
-                        <div class="stat-item highlight"><div class="stat-num">수능 2등급</div><div class="stat-label">인문II 수리문항 출제 난이도 체감</div></div>
-                    </div>
-
-                    <div class="warning-box">
-                        ⚠️ <strong>학원 설명회 피드백 & 수리문항 리스크 경고:</strong><br>
-                        건국대 <strong>통합계열 (인문사회 II: 경영, 사회과학, KU자유전공)</strong>은 인문지문과 함께 확률/통계 및 수리적 분석 계산 문제가 출제됩니다. 최근 수리 문항 난이도가 **수능 2등급 상위 수준**까지 출제될 수 있어, 7모 수학 3등급(74점)을 기록한 수험생에게 당일 컨디션 및 문제 변형에 따라 고전할 위험이 존재합니다.<br>
-                        반면 <strong>인문계열 (인문사회 I: 국문, 미디어, 사범대 등)</strong>은 **수리문항이 전혀 출제되지 않으며**, 도표 및 통계 자료 해석 중심의 순수 인문논술만 출제되므로 수리 리스크를 완전히 제거할 수 있습니다.
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 4: 6카드 수시 지원서 (플랜 A, B, C) -->
-            <section id="sec4" class="card">
-                <div class="card-header">
-                    <h2>4. 수시 지원 6카드 맞춤 전략: 플랜 A · 플랜 B · 플랜 C</h2>
-                    <span class="badge green">3대 지원 플랜</span>
-                </div>
-                <div class="card-body">
-                    
-                    <!-- PLAN A -->
-                    <div class="plan-header">
-                        <div class="plan-title">
-                            <span>🔥 PLAN A: 수리논술 변별력 극대화 플랜 (상향 & 수리 강점 공격 지원)</span>
-                            <span class="badge orange">상향·주력 중심</span>
-                        </div>
-                        <div class="plan-procons">
-                            <div class="pro-box">
-                                <strong>👍 장점 (Advantage):</strong><br>
-                                7모 수학 83.1%(3등급 상위) 상승세를 적극 활용하여 수리 논술 출제 대학(중앙대, 이대, 경희대, 건국대 인문II)에서 순수 문과 경쟁자 대비 월등한 문항 변별력 획득.
-                            </div>
-                            <div class="con-box">
-                                <strong>👎 단점 / 리스크 (Risk):</strong><br>
-                                건국대 인문II 등에서 수리 문항이 수능 2등급 상위 난이도로 고난도 출제 시 수리 풀이 불완전으로 인한 당일 점수 기복 리스크 존재.
-                            </div>
-                        </div>
-                        <div class="univ-list">
-                            <div class="univ-box">
-                                <div class="univ-title">1. [상향] 서강대 경영학부 <span class="badge orange">3합 7</span></div>
-                                <div class="univ-desc">최저 충족률 95%+ / 논술 100% / 실질 경쟁률 28:1 대폭 하향</div>
-                            </div>
-                            <div class="univ-box">
-                                <div class="univ-title">2. [상향] 성균관대 경영학과 <span class="badge orange">3합 6</span></div>
-                                <div class="univ-desc">최저 충족률 75~80% / 정형화된 분류·도표 평가 문제 출제</div>
-                            </div>
-                            <div class="univ-box" style="background:#eff6ff;">
-                                <div class="univ-title" style="color:#1e40af;">3. [주력★] 중앙대 경영학부 (사회계열) <span class="badge green">3합 6 (영어1인정)</span></div>
-                                <div class="univ-desc">사회 수리논술(확통/기대값) 문항 출제 ➔ 합격 1순위 독점 타깃</div>
-                            </div>
-                            <div class="univ-box" style="background:#eff6ff;">
-                                <div class="univ-title" style="color:#1e40af;">4. [주력★] 이화여대 경영학부 (인문II) <span class="badge green">2합 5</span></div>
-                                <div class="univ-desc">경제 개념 수리 계산 문항 출제 ➔ 인문계 지원자 기피에 따른 변별력 확보</div>
-                            </div>
-                            <div class="univ-box" style="background:#eff6ff;">
-                                <div class="univ-title" style="color:#1e40af;">5. [주력★] 경희대 경영학과 (사회계열) <span class="badge green">2합 5 (탐평)</span></div>
-                                <div class="univ-desc">사회계열 수리논술 포함 / 실질 경쟁률 19~53:1 극복</div>
-                            </div>
-                            <div class="univ-box">
-                                <div class="univ-title">6. [적정] 건국대 경영학과 (인문사회 II) <span class="badge red">2합 5 (수리 2등급 난이도 주의)</span></div>
-                                <div class="univ-desc">논술 100% / 통계 및 수리 계산 문항 포함 / 수리 2등급 난이도 출제 대비 필수</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PLAN B -->
-                    <div class="plan-header" style="margin-top: 1.5rem;">
-                        <div class="plan-title">
-                            <span>⚖️ PLAN B: 균형적 체계 & 건국대 인문I 전환 플랜 (수리 리스크 분산)</span>
-                            <span class="badge purple">밸런스 중심</span>
-                        </div>
-                        <div class="plan-procons">
-                            <div class="pro-box">
-                                <strong>👍 장점 (Advantage):</strong><br>
-                                건국대 지원 시 수리문항이 없는 **인문사회 I (문과대학/미디어/행정 등)**으로 전환하여 수리 2등급 난이도 폭탄 리스크를 완벽 차단하고, 수리논술 3개 + 순수 인문 3개로 최적 균형 형성.
-                            </div>
-                            <div class="con-box">
-                                <strong>👎 단점 / 리스크 (Risk):</strong><br>
-                                건국대 인문I은 순수 인문 지문과 도표 분석 중심이므로, 제시문 독해력 및 문장 완성도에서 순수 인문계 경쟁자들과의 치열한 필력 경쟁 필요.
-                            </div>
-                        </div>
-                        <div class="univ-list">
-                            <div class="univ-box">
-                                <div class="univ-title">1. [상향] 서강대 인문/사회계열 <span class="badge orange">3합 7</span></div>
-                                <div class="univ-desc">논술 100% / 수능 최저 충족 확실시되는 상향 카드</div>
-                            </div>
-                            <div class="univ-box">
-                                <div class="univ-title">2. [상향] 성균관대 사회과학계열 <span class="badge orange">3합 6</span></div>
-                                <div class="univ-desc">인문/사회 통합 논술 / 유형화 기출 훈련으로 합격 가능성 증대</div>
-                            </div>
-                            <div class="univ-box" style="background:#eff6ff;">
-                                <div class="univ-title" style="color:#1e40af;">3. [주력★] 중앙대 경영학부 (사회계열) <span class="badge green">3합 6 (영어1인정)</span></div>
-                                <div class="univ-desc">수리논술 강점 유지 (중앙대 사회 수리는 확실하게 선점)</div>
-                            </div>
-                            <div class="univ-box">
-                                <div class="univ-title">4. [주력★] 이화여대 인문계열 (인문I - 순수 인문) <span class="badge green">2합 5</span></div>
-                                <div class="univ-desc">인문I 순수 지문 논술로 전환 / 수리 부담 없이 2합 5 최저 완벽 활용</div>
-                            </div>
-                            <div class="univ-box" style="background:#eff6ff;">
-                                <div class="univ-title" style="color:#1e40af;">5. [주력★] 경희대 사회계열 <span class="badge green">2합 5 (탐평)</span></div>
-                                <div class="univ-desc">사회계열 수리 포함 논술 / 최저 90%+ 충족 안정권</div>
-                            </div>
-                            <div class="univ-box" style="background:#f0fdf4; border-color:#bbf7d0;">
-                                <div class="univ-title" style="color:#15803d;">6. [안정★] 건국대 문과대학 / 행정학과 (인문사회 I) <span class="badge green">2합 5 (수리 무!)</span></div>
-                                <div class="univ-desc">★ **수리 문항 없음!** 도표 해석 + 국어·사회 지문 독해만 출제되어 수리 리스크 제로화</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PLAN C -->
-                    <div class="plan-header" style="margin-top: 1.5rem;">
-                        <div class="plan-title">
-                            <span>🛡️ PLAN C: 수리논술 완전 회피 & 수능 최저 안정성 극대화 플랜</span>
-                            <span class="badge teal">안정 극대화</span>
-                        </div>
-                        <div class="plan-procons">
-                            <div class="pro-box">
-                                <strong>👍 장점 (Advantage):</strong><br>
-                                모든 수리논술 고난도 문항을 전면 제외하고 순수 인문 논술 및 최저 2합 5~6 안정 대학(동국대, 외대)을 배치하여, 수능 및 논술 당일 어떤 변수에도 합격 안전판 완벽 확보.
-                            </div>
-                            <div class="con-box">
-                                <strong>👎 단점 / 리스크 (Risk):</strong><br>
-                                수리 문항을 통한 압도적 차별화 무기를 포기하므로, 논술 제시문 득점력이 최상위권 수준이어야 하며 최상위 대학(서강대) 카드가 제외됨.
-                            </div>
-                        </div>
-                        <div class="univ-list">
-                            <div class="univ-box">
-                                <div class="univ-title">1. [상향] 성균관대 인문과학계열 <span class="badge orange">3합 6</span></div>
-                                <div class="univ-desc">탐구 개별 반영 / 3합 6 안정적 시도</div>
-                            </div>
-                            <div class="univ-box">
-                                <div class="univ-title">2. [주력] 중앙대 인문계열 (인문사회 I) <span class="badge green">3합 6 (영어1인정)</span></div>
-                                <div class="univ-desc">수리 문항 없는 인문I 전형 / 영어 1등급 인정 환산 혜택 유지</div>
-                            </div>
-                            <div class="univ-box">
-                                <div class="univ-title">3. [주력] 경희대 인문계열 (인문I) <span class="badge green">2합 5</span></div>
-                                <div class="univ-desc">수리 무 / 순수 논술 제시문 요약 및 비교평가</div>
-                            </div>
-                            <div class="univ-box">
-                                <div class="univ-title">4. [주력] 이화여대 인문계열 (인문I) <span class="badge green">2합 5</span></div>
-                                <div class="univ-desc">수리 무 / 언어논술 100% 지원</div>
-                            </div>
-                            <div class="univ-box" style="background:#f0fdf4; border-color:#bbf7d0;">
-                                <div class="univ-title" style="color:#15803d;">5. [안정★] 건국대 미디어연기 / 국어국문 (인문사회 I) <span class="badge green">2합 5 (수리 무)</span></div>
-                                <div class="univ-desc">논술 100% / 수리 배제 도표 논술 전형</div>
-                            </div>
-                            <div class="univ-box" style="background:#f0fdf4; border-color:#bbf7d0;">
-                                <div class="univ-title" style="color:#15803d;">6. [안정★] 동국대 경찰행정 / 인문계열 또는 한국외대 <span class="badge green">2합 5 ~ 2합 6</span></div>
-                                <div class="univ-desc">수능 최저 달성률 100% 확정선 / 최종 안정 수시 카드</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- SECTION 5: 일정 안내 -->
-            <section id="sec5" class="card">
-                <div class="card-header">
-                    <h2>5. 대학별 논술 고사 일정 & 원서접수 일정</h2>
-                    <span class="badge orange">일정 관리</span>
-                </div>
-                <div class="card-body">
-                    <div class="roadmap-list">
-                        <div class="roadmap-step">
-                            <span class="step-badge">원서</span>
-                            <div class="step-info">
-                                <h4>2026.09.07(월) ~ 09.11(금)</h4>
-                                <p>2027 수시 논술 6개 카드 인터넷 원서 접수</p>
-                            </div>
-                        </div>
-                        <div class="roadmap-step">
-                            <span class="step-badge" style="background:#dc2626;">수능</span>
-                            <div class="step-info">
-                                <h4>2026.11.19(목)</h4>
-                                <p>2027 대학수학능력시험 (수능 최저 달성 핵심일)</p>
-                            </div>
-                        </div>
-                        <div class="roadmap-step">
-                            <span class="step-badge" style="background:#0d9488;">1차</span>
-                            <div class="step-info">
-                                <h4>2026.11.21(토) ~ 11.22(일) [수능 직후]</h4>
-                                <p>성균관대, 서강대(11/22), 경희대 논술 고사</p>
-                            </div>
-                        </div>
-                        <div class="roadmap-step">
-                            <span class="step-badge" style="background:#0d9488;">2차</span>
-                            <div class="step-info">
-                                <h4>2026.11.28(토) ~ 11.29(일) [수능 2주후]</h4>
-                                <p>이화여대(11/28), 중앙대(11/28~29), 건국대 논술 고사</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 6: 컨설팅 로드맵 -->
-            <section id="sec6" class="card">
-                <div class="card-header">
-                    <h2>6. 피오르 & 예감 컨설팅 연계 과목별 실행 로드맵</h2>
-                    <span class="badge green">실천 솔루션</span>
-                </div>
-                <div class="card-body">
-                    <div class="roadmap-list">
-                        <div class="roadmap-step">
-                            <span class="step-badge">수학</span>
-                            <div class="step-info">
-                                <h4>수능 수학 84~88점 (2등급 진입) 몰입</h4>
-                                <p>공통:확통 = 3:1 배분, 5~10분 막힐 경우 답지 1줄 체크 후 풀이 훈련, 한완기 Step 1,2 완독</p>
-                            </div>
-                        </div>
-                        <div class="roadmap-step">
-                            <span class="step-badge">국어</span>
-                            <div class="step-info">
-                                <h4>타임 블록 엄수 (언매 15-17m / 문학 25m / 독서 35m)</h4>
-                                <p>전형태 언매, 김상훈/김재홍 분석서 집중, 문학 선지 끝까지 확인하는 태도 확립</p>
-                            </div>
-                        </div>
-                        <div class="roadmap-step">
-                            <span class="step-badge">루틴</span>
-                            <div class="step-info">
-                                <h4>아침 8시 뇌 활성화 & 저녁 몰빵 루틴</h4>
-                                <p>잠 줄이지 않기, 저녁 8시 이후 약점 과목(수학/탐구) 집중 몰빵 전략</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+    <!-- SECTION 1 & 2 GRID -->
+    <div class="grid">
+        
+        <!-- SECTION 1: 성적 추이 -->
+        <div class="card">
+            <div class="card-title">
+                1. 3모·6모·7모 성적 추이 & 피오르 수능 예측
+                <span class="badge orange">성적 진단</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem;">
+                자료 출처: <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/모의고사%20성적/모의고사_성적_추이_분석.xls" class="file-link" target="_blank">모의고사 성적 추이 DB</a>, <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/피오르컨설팅결과/KakaoTalk_20260809_122118897_11.jpg" class="file-link" target="_blank">피오르 10P 세부진단</a>
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>영역</th>
+                        <th>3월 학평</th>
+                        <th>6월 모평</th>
+                        <th>7월 학평</th>
+                        <th>수능 목표</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>국어(언매)</strong></td>
+                        <td>91% (2)</td>
+                        <td>82% (3)</td>
+                        <td>64% (4)</td>
+                        <td><span style="color:#2563eb; font-weight:bold;">90% (2)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>수학(확통)</strong></td>
+                        <td>66% (4)</td>
+                        <td>66% (4)</td>
+                        <td><strong style="color:#d97706;">83.1% (3)★</strong></td>
+                        <td><span style="color:#2563eb; font-weight:bold;">89% (2)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>영어</strong></td>
+                        <td>1등급</td>
+                        <td>3등급</td>
+                        <td>2등급</td>
+                        <td><span style="color:#2563eb; font-weight:bold;">1등급</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>사문</strong></td>
+                        <td>95.8% (1)</td>
+                        <td>83% (3)</td>
+                        <td>82.9% (3)</td>
+                        <td><span style="color:#2563eb; font-weight:bold;">94% (2)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>지1/세지</strong></td>
+                        <td>지1 98% (1)</td>
+                        <td>세지 51% (5)</td>
+                        <td>세지 55.6% (5)</td>
+                        <td><span style="color:#2563eb; font-weight:bold;">97% (1)</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="success-box" style="margin-top: 0.8rem;">
+                💡 <strong>핵심 요약:</strong> 7모 수학 74점(표점 125, 3등급) 반등 성과 체화! 국어는 언매/문학 타임배분(15m/25m/35m) 훈련을 통해 2등급 복귀 조치.
+            </div>
         </div>
 
-    </main>
+        <!-- SECTION 2: 건국대 분석 -->
+        <div class="card">
+            <div class="card-title">
+                2. 건국대 KU논술우수자 정밀 분석
+                <span class="badge purple">건국대 특별분석</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem;">
+                자료 출처: <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/논술일정표/KakaoTalk_20260809_133628902_01.jpg" class="file-link" target="_blank">2027 논술일정표 1P</a>
+            </p>
+            <div class="stat-box">
+                <div class="stat-item">
+                    <div class="stat-val">논술 100%</div>
+                    <div class="stat-lbl">내신 반영비율 0%</div>
+                </div>
+                <div class="stat-item highlight">
+                    <div class="stat-val">2개 합 5</div>
+                    <div class="stat-lbl">수능 최저 (탐1)</div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>출제 유형</th>
+                        <th>해당 모집단위</th>
+                        <th>수리문항 여부 및 특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>인문사회 I</strong></td>
+                        <td>문과대학, 미디어, 행정 등</td>
+                        <td><span style="color:#059669; font-weight:bold;">수리 문항 없음!</span> (도표/통계 분석 중심)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>인문사회 II</strong></td>
+                        <td>경영대학, 사회과학, 자유전공 등</td>
+                        <td><span style="color:#dc2626; font-weight:bold;">수리 계산 포함</span> (수능 2등급 난이도 체감)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="warning-box" style="margin-top: 0.8rem;">
+                ⚠️ <strong>수리문항 리스크:</strong> 인문II는 수능 2등급 난이도의 수리적 계산 문제가 출제되어 수학 당일 기복 위험 존재. 인문I 선점 시 수리 리스크 완벽 제거 가능!
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SECTION 3: 6카드 지원 전략 (PLAN A, B, C) -->
+    <div class="grid-full">
+        <div class="card">
+            <div class="card-title">
+                3. 수시 지원 6카드 맞춤 전략: 플랜 A · 플랜 B · 플랜 C 장단점 비교
+                <span class="badge green">3대 다변화 전략</span>
+            </div>
+
+            <!-- PLAN A -->
+            <div class="plan-card plan-a">
+                <div class="plan-header-title">
+                    <span>🔥 PLAN A: 수리논술 변별력 극대화 플랜 (상향 & 수리 강점 공격 지원)</span>
+                    <span class="badge orange">수리 강점형</span>
+                </div>
+                <div class="pro-con-grid">
+                    <div class="pro-item">
+                        <strong>👍 장점:</strong> 7모 수학 83.1% 상승세를 바탕으로 수리 논술 출제 대학(중앙대, 이대, 경희대, 건국대 인문II)에서 순수 문과 경쟁자 대비 월등한 변별력 획득.
+                    </div>
+                    <div class="con-item">
+                        <strong>👎 단점/리스크:</strong> 건국대/이대 등 수리 난이도가 2등급 상위로 출제 시 당일 수리 풀이 완성도에 따른 기복 위험.
+                    </div>
+                </div>
+                <table class="univ-mini-table">
+                    <thead>
+                        <tr><th>지원 성향</th><th>대학 및 학과</th><th>수능 최저기준</th><th>핵심 지원 전략 사유</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="badge orange">상향</span></td><td><strong>서강대 경영학부</strong></td><td>3개 합 7 (각 3 이내)</td><td>논술 100% / 최저 충족률 95%+ / 실질경쟁률 28:1 하향</td></tr>
+                        <tr><td><span class="badge orange">상향</span></td><td><strong>성균관대 경영학과</strong></td><td>3개 합 6 (탐구 개별)</td><td>최저 충족률 75~80% / 정형화된 분류·도표 분석 기출</td></tr>
+                        <tr style="background:#eff6ff;"><td><span class="badge blue">주력★</span></td><td><strong>중앙대 경영학부 (사회)</strong></td><td>3개 합 6 (영어1인정)</td><td>수리논술(확통) 출제 ➔ 합격 1순위 독점 타깃 카드로 활용</td></tr>
+                        <tr style="background:#eff6ff;"><td><span class="badge blue">주력★</span></td><td><strong>이화여대 경영학부 (인문II)</strong></td><td>2개 합 5 (탐구 1)</td><td>경제 수리 계산 문제 출제 ➔ 문과생 기피에 따른 변별력 확보</td></tr>
+                        <tr style="background:#eff6ff;"><td><span class="badge blue">주력★</span></td><td><strong>경희대 경영학과 (사회)</strong></td><td>2개 합 5 (탐구 평균)</td><td>사회계열 수리논술 포함 ➔ 실질 경쟁률 19~53:1 극복</td></tr>
+                        <tr><td><span class="badge red">적정</span></td><td><strong>건국대 경영학과 (인문II)</strong></td><td>2개 합 5 (탐구 1)</td><td>논술 100% / 통계 수리 계산 출제 (수능 2등급 난이도 대비)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PLAN B -->
+            <div class="plan-card plan-b">
+                <div class="plan-header-title">
+                    <span>⚖️ PLAN B: 균형적 체계 & 건국대 인문I 전환 플랜 (수리 리스크 분산 - 추천★)</span>
+                    <span class="badge blue">최적 균형 추천★</span>
+                </div>
+                <div class="pro-con-grid">
+                    <div class="pro-item">
+                        <strong>👍 장점:</strong> 건국대를 수리문항 없는 **인문사회 I (문과/미디어/행정)**으로 전환하여 수리 2등급 폭탄 위험을 완전 차단하고, 수리 3개 + 순수 인문 3개로 최적 밸런스 확보.
+                    </div>
+                    <div class="con-item">
+                        <strong>👎 단점/리스크:</strong> 건국대 인문I은 도표 해석 및 독해 문장력이 핵심이므로 순수 문과생들과의 치열한 필력 경쟁 필요.
+                    </div>
+                </div>
+                <table class="univ-mini-table">
+                    <thead>
+                        <tr><th>지원 성향</th><th>대학 및 학과</th><th>수능 최저기준</th><th>핵심 지원 전략 사유</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="badge orange">상향</span></td><td><strong>서강대 인문/사회계열</strong></td><td>3개 합 7 (각 3 이내)</td><td>논술 100% / 수능 최저 충족 확실시되는 안전 상향 카드</td></tr>
+                        <tr><td><span class="badge orange">상향</span></td><td><strong>성균관대 사회과학계열</strong></td><td>3개 합 6 (탐구 개별)</td><td>인문/사회 통합 논술 / 유형화 기출 훈련으로 합격선 확보</td></tr>
+                        <tr style="background:#eff6ff;"><td><span class="badge blue">주력★</span></td><td><strong>중앙대 경영학부 (사회)</strong></td><td>3개 합 6 (영어1인정)</td><td>수리논술 강점 유지 (중앙대 사회 수리는 확실하게 선점)</td></tr>
+                        <tr><td><span class="badge blue">주력★</span></td><td><strong>이화여대 인문계열 (인문I)</strong></td><td>2개 합 5 (탐구 1)</td><td>언어논술 100% 전환 / 수리 부담 없이 2합 5 최저 완벽 활용</td></tr>
+                        <tr style="background:#eff6ff;"><td><span class="badge blue">주력★</span></td><td><strong>경희대 사회계열</strong></td><td>2개 합 5 (탐구 평균)</td><td>사회계열 수리 포함 논술 / 최저 90%+ 충족 안정권</td></tr>
+                        <tr style="background:#dcfce7;"><td><span class="badge green">안정★</span></td><td><strong>건국대 문과대학 / 행정학과 (인문I)</strong></td><td>2개 합 5 (탐구 1)</td><td>★ <strong>수리 문항 없음!</strong> 도표 해석 + 국어·사회 지문 중심 안전판</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PLAN C -->
+            <div class="plan-card plan-c">
+                <div class="plan-header-title">
+                    <span>🛡️ PLAN C: 수리논술 완전 회피 & 수능 최저 안정성 극대화 플랜</span>
+                    <span class="badge green">안정성 극대화</span>
+                </div>
+                <div class="pro-con-grid">
+                    <div class="pro-item">
+                        <strong>👍 장점:</strong> 모든 수리논술 고난도 문항을 배제하고 순수 인문 논술 및 최저 2합 5~6 안정 대학(동국대, 외대)을 배치하여 당일 변수에도 합격 안전판 완벽 구축.
+                    </div>
+                    <div class="con-item">
+                        <strong>👎 단점/리스크:</strong> 수학 백분위 83.1% 상승 무기를 활용하지 못하며, 서강대 상향 지원 제외 및 문장력 경쟁 심화.
+                    </div>
+                </div>
+                <table class="univ-mini-table">
+                    <thead>
+                        <tr><th>지원 성향</th><th>대학 및 학과</th><th>수능 최저기준</th><th>핵심 지원 전략 사유</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="badge orange">상향</span></td><td><strong>성균관대 인문과학계열</strong></td><td>3개 합 6 (탐구 개별)</td><td>3개 합 6 탐구 개별 반영 / 인문계열 도판·분석 문제 시도</td></tr>
+                        <tr><td><span class="badge blue">주력</span></td><td><strong>중앙대 인문계열 (인문I)</strong></td><td>3개 합 6 (영어1인정)</td><td>수리 배제 순수 언어논술 / 영어 1등급 인정 혜택 유지</td></tr>
+                        <tr><td><span class="badge blue">주력</span></td><td><strong>경희대 인문계열 (인문I)</strong></td><td>2개 합 5 (탐구 평균)</td><td>순수 인문 지문 요약 및 비교평가 논술</td></tr>
+                        <tr><td><span class="badge blue">주력</span></td><td><strong>이화여대 인문계열 (인문I)</strong></td><td>2개 합 5 (탐구 1)</td><td>수리 배제 순수 언어논술 100% 전형</td></tr>
+                        <tr style="background:#dcfce7;"><td><span class="badge green">안정★</span></td><td><strong>건국대 국문 / 미디어 (인문I)</strong></td><td>2개 합 5 (탐구 1)</td><td>수리 배제 도표 논술 / 최저 달성 시 높은 합격률</td></tr>
+                        <tr style="background:#dcfce7;"><td><span class="badge green">안정★</span></td><td><strong>동국대 경찰행정 / 한국외대</strong></td><td>2개 합 5 ~ 2개 합 6</td><td>수능 최저 달성률 100% 확정선 / 최종 수시 안정 카드</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECTION 4 & 5 GRID -->
+    <div class="grid">
+        
+        <!-- SECTION 4: 일정 안내 -->
+        <div class="card">
+            <div class="card-title">
+                4. 논술 고사 & 수시 접수 타임라인
+                <span class="badge orange">일정 체계</span>
+            </div>
+            <div class="timeline-step">
+                <div class="time-badge">원서 접수</div>
+                <div>
+                    <strong>2026.09.07(월) ~ 09.11(금)</strong><br>
+                    <span style="font-size: 0.85rem; color: var(--muted);">마감시간: 고려대 9/9 17:00, 연세/이화 9/10 17:00, 서강/성균관/중앙 9/11 18:00</span>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="time-badge" style="background:#dc2626;">수능 시험</div>
+                <div>
+                    <strong>2026.11.19(목) D-Day</strong><br>
+                    <span style="font-size: 0.85rem; color: var(--muted);">2027 대학수학능력시험 (수능 최저 충족 분수령)</span>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="time-badge" style="background:#0d9488;">수능후 1차</div>
+                <div>
+                    <strong>2026.11.21(토) ~ 11.22(일)</strong><br>
+                    <span style="font-size: 0.85rem; color: var(--muted);">성균관대, 서강대(11/22 인문), 경희대 논술 고사</span>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="time-badge" style="background:#0d9488;">수능후 2차</div>
+                <div>
+                    <strong>2026.11.28(토) ~ 11.29(일)</strong><br>
+                    <span style="font-size: 0.85rem; color: var(--muted);">이화여대(11/28), 중앙대(11/28~29), 건국대(11/28~29)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: 컨설팅 처방전 -->
+        <div class="card">
+            <div class="card-title">
+                5. 피오르 & 예감 1:1 과목별 실행 솔루션
+                <span class="badge green">맞춤 처방전</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.8rem;">
+                자료 출처: <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/예감학원%20컨설팅자료/KakaoTalk_20260809_134935370_01.jpg" class="file-link" target="_blank">예감 처방전 2P</a>, <a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/피오르컨설팅결과/KakaoTalk_20260809_134935370_03.jpg" class="file-link" target="_blank">피오르 PART 2</a>
+            </p>
+            <div class="info-box" style="margin-top: 0;">
+                <strong>📐 수학 (84~88점 2등급 진입):</strong> 공통:확통 = 3:1 배분, 한완기 Step 1,2 완독 후 이해원 N제/드라일 연계. 5~10분 막히면 해설지 1줄 체크 훈련.
+            </div>
+            <div class="info-box" style="margin-top: 0.5rem; background: #fdf2f8; border-color: #ec4899; color: #831843;">
+                <strong>📖 국어 (타임 배분 체화):</strong> 언매 15~17m ➔ 문학 25m ➔ 독서 35m 엄수! 전형태 언매, 김상훈 독서/문학 분석서 반복.
+            </div>
+            <div class="info-box" style="margin-top: 0.5rem; background: #f0fdf4; border-color: #10b981; color: #065f46;">
+                <strong>☀️ 생활 루틴:</strong> 잠을 줄이지 않는 아침 8시 뇌 활성화 수능 고시실 루틴 체화. 저녁 8시 이후 약점 과목(수학/탐구) 집중 몰빵.
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 </body>

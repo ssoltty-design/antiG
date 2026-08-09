@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample 1: 프리미엄 딥 다크 콕핏</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --primary: #3b82f6;
+            --purple: #8b5cf6;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --green: #34d399;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Pretendard', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem; }
+        .header { text-align: center; margin-bottom: 2rem; border-bottom: 1px solid var(--card-border); padding-bottom: 1.5rem; }
+        .header h1 { font-size: 2.2rem; font-weight: 800; background: linear-gradient(to right, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .card-title { font-size: 1.2rem; font-weight: 700; color: #60a5fa; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .stat-box { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .stat-item { flex:1; background: rgba(15,23,42,0.6); border: 1px solid var(--card-border); padding: 1rem; border-radius: 10px; text-align: center; }
+        .stat-item.highlight { background: rgba(59,130,246,0.15); border-color: rgba(96,165,250,0.4); }
+        .stat-val { font-size: 1.8rem; font-weight: 800; color: #60a5fa; }
+        .stat-lbl { font-size: 0.8rem; color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+        th { background: rgba(15,23,42,0.8); color: #cbd5e1; padding: 8px; font-size: 0.85rem; border-bottom: 1px solid var(--card-border); }
+        td { padding: 8px; border-bottom: 1px solid rgba(51,65,85,0.5); font-size: 0.85rem; text-align: center; }
+        .badge { background: rgba(139,92,246,0.2); color: #c084fc; padding: 2px 8px; border-radius: 99px; font-size: 0.75rem; border: 1px solid rgba(139,92,246,0.3); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="badge">포맷 샘플 1</span>
+        <h1>프리미엄 딥 다크 콕핏 (Deep Navy Dark)</h1>
+        <p style="color:var(--muted); margin-top:0.5rem;">몰입감 높은 다크 모드 UI / 네온 백그라운드 수치 하이라이트</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-title">
+                1. 2027 논술 수능 최저 & 경쟁률
+                <span class="badge">실질 경쟁률 파악</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-item">
+                    <div class="stat-val">16%</div>
+                    <div class="stat-lbl">정시 주력 합격률</div>
+                </div>
+                <div class="stat-item highlight">
+                    <div class="stat-val">84%</div>
+                    <div class="stat-lbl">논술 주력 합격률</div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th>대학명</th><th>최초 경쟁률</th><th>수능 최저</th><th>실질 경쟁률</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>고려대</td><td>71.85:1</td><td>4합 8</td><td style="color:#60a5fa; font-weight:bold;">12.99:1</td></tr>
+                    <tr><td>중앙대</td><td>70~120:1</td><td>3합 6 (영1간주)</td><td style="color:#60a5fa; font-weight:bold;">12~25:1</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                2. [박정윤 학생] 6논술 수리전형 전략
+                <span class="badge">맞춤 진단</span>
+            </div>
+            <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1rem;">7월 학평 수학 3등급(83.1%) 반등에 따른 사회계열 수리논술 집중 공략</p>
+            <table>
+                <thead>
+                    <tr><th>추천 대학</th><th>전형 특징</th><th>수능 최저</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>중앙대 경영</strong></td><td>3번 수리 논술 포함</td><td>3합 6 (영어1인정)</td></tr>
+                    <tr><td><strong>이화여대 인문II</strong></td><td>경제 수리 계산 문제</td><td>2합 5</td></tr>
+                    <tr><td><strong>경희대 경영</strong></td><td>사회 수리 논술 문항</td><td>2합 5</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

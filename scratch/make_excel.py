@@ -1,0 +1,207 @@
+# -*- coding: utf-8 -*-
+import os
+import sys
+import codecs
+
+# Define file paths using unicode string
+csv_path_reports = u"C:\\Users\\그램\\Documents\\antiG\\reports\\2027_대학별_수능최저학력기준_분석.csv"
+csv_path_desktop = u"C:\\Users\\그램\\Desktop\\프로세스\\2027_대학별_수능최저학력기준_분석.csv"
+
+xls_path_reports = u"C:\\Users\\그램\\Documents\\antiG\\reports\\2027_대학별_수능최저학력기준_분석.xls"
+xls_path_desktop = u"C:\\Users\\그램\\Desktop\\프로세스\\2027_대학별_수능최저학력기준_분석.xls"
+
+csv_content = u"""구분,수능 최저 등급 기준 (높은 순),대상 대학 / 학과,비고 및 메모 (선지문장/탐구/손글씨)
+4개 영역 반영,국/수/영/탐(1) 4개 합 8,고려대,실질경쟁률 13:1 (수능 최저 충족시 대폭 하향)
+3개 영역 반영,국/수/영/탐(평) 中 3개 합 4,경희대 한의예과,탐구 평균 반영
+3개 영역 반영,국/수/영/탐(평) 中 3개 합 5,"성균관대 (글로벌리더, 글로벌경영, 글로벌경제, 자유전공)",탐구 평균 반영
+3개 영역 반영,국/수/영/탐(평) 中 3개 합 5,성균관대 소프트웨어,수학 의무 반영 / 탐구 평균 반영
+3개 영역 반영,국/수/영/탐(평) 中 3개 합 6,"성균관대 (글로벌융합, 인문, 사회, 경영)",탐구 평균 반영
+3개 영역 반영,국/수/영/탐(평) 中 3개 합 6,"성균관대 (건설, 공학, 전기, 자연)",수학 의무 반영 / 탐구 평균 반영
+3개 영역 반영,국/수/영/탐(1) 中 3개 합 5,이화여대 스크랜튼학부,탐구 1과목 반영
+3개 영역 반영,국/수/영/탐(1) 中 3개 합 6,중앙대 일반형,영어 2등급 -> 1등급 간주 (1간주) / 손글씨 2합 5 극상향
+3개 영역 반영,국/수/영/탐(1) 中 3개 합 7,"서강대, 한양대",손글씨: 상향 지원 카드
+2개 영역 반영,국/수/영/탐(1) 中 2개 합 4,"한국외대 (LD, LT포함), 동국대 경찰행정",탐구 1과목 반영
+2개 영역 반영,국/수/영/탐(평) 中 2개 합 5,경희대,탐구 평균 반영 (손글씨 동그라미)
+2개 영역 반영,국/수/영/탐(1) 中 2개 합 5,"홍익대, 건국대, 동국대, 숙명여대, 세종대",탐구 1과목 반영
+2개 영역 반영,국/수/영/탐(1) 中 2개 합 5,이화여대,국어 의무 반영 (★ 선지문장 난이도 있음)
+2개 영역 반영,국/수/영/탐(1) 中 2개 합 5,동국대 AI융합학과,수학 의무 반영
+2개 영역 반영,국/수/영/탐(1) 中 2개 합 6,"숭실대, 한국외대(글로벌), 동덕여대, 국민대, 항공대",손글씨: 약술형으로 변경 (DP 프로세스 논술)
+2개 영역 반영,국/수/영/탐(1) 中 2개 합 7,"성신여대, 덕성여대",탐구 1과목 반영
+1개 영역 반영,국/수/영/탐(평) 中 1개 3 이내,경희대 (체육학과),손글씨: 수체
+1개 영역 반영,국/수/영/탐(1) 中 1개 3 이내,가천대,1개 영역 반영
+최저 미적용 (논술100%),수능 최저 기준 미적용,"연세대, 중앙대[창의형]",재수생 X / 23전형 변형으로 기출과 유사
+최저 미적용 (논술100%),수능 최저 기준 미적용,"단국대, 인하대, 아주대, 광운대, 경기대, 가톨릭대, 서울여대, 연세대(미래), 상명대",수능 최저 적용하지 않는 대학 (대학 문호가 넓음)
+실질경쟁률 핵심메모,✔ 허수 지원자가 섞인 지원 경쟁률에 현혹되지 말자,전체 수험생 대상,최저 충족 시 실질 경쟁률 하향
+실질경쟁률 핵심메모,✔ 수능 최저기준 충족 후의 실질경쟁률은 대폭 하향한다,전체 수험생 대상,수능 최저 충족이 1차 관문
+실질경쟁률 핵심메모,✔ 수능 최저 기준을 충족한 수험생들 중 논술을 꾸준히 제대로 준비한 학생들 간의 경쟁이 진짜 실질 경쟁률이다.,프로세스 논술 핵심 메시지,진짜 실질 경쟁률의 정의
+"""
+
+html_xls_content = u"""<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--[if gte mso 9]>
+<xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>2027 대학별 수능최저학력기준</x:Name>
+    <x:WorksheetOptions>
+     <x:DisplayGridlines/>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+ </x:ExcelWorkbook>
+</xml>
+<![endif]-->
+<style>
+  body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; }
+  table { border-collapse: collapse; width: 100%; }
+  th { background-color: #1e3a8a; color: #ffffff; font-weight: bold; border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
+  td { border: 1px solid #cbd5e1; padding: 8px; font-size: 13px; }
+  .title-bg { background-color: #0f172a; color: #38bdf8; font-size: 18px; font-weight: bold; text-align: center; padding: 15px; }
+  .cat-bg { background-color: #eff6ff; font-weight: bold; color: #1e40af; }
+  .note-bg { background-color: #fef3c7; color: #92400e; font-weight: bold; }
+  .center { text-align: center; }
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <td colspan="4" class="title-bg">2027학년도 주요 대학 수능 최저학력기준 분석표 (KakaoTalk_20260809_122018179_12.jpg)</td>
+  </tr>
+  <tr>
+    <th width="15%">영역 구분</th>
+    <th width="30%">수능 최저 등급 기준 (높은 순)</th>
+    <th width="35%">대상 대학 / 학과</th>
+    <th width="20%">비고 및 메모 (선지문장/탐구/손글씨)</th>
+  </tr>
+  <tr>
+    <td class="cat-bg center">4개 영역 반영</td>
+    <td>국/수/영/탐(1) 4개 합 8</td>
+    <td><b>고려대</b></td>
+    <td>실질경쟁률 13:1 (최저 충족시 대폭 하향)</td>
+  </tr>
+  <tr>
+    <td class="cat-bg center" rowspan="8">3개 영역 반영</td>
+    <td>국/수/영/탐(평) 中 3개 합 4</td>
+    <td>경희대 한의예과</td>
+    <td>탐구 평균 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(평) 中 3개 합 5</td>
+    <td>성균관대 (글로벌리더, 글로벌경영, 글로벌경제, 자유전공)</td>
+    <td>탐구 평균 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(평) 中 3개 합 5</td>
+    <td>성균관대 소프트웨어</td>
+    <td>수학 의무 반영 / 탐구 평균 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(평) 中 3개 합 6</td>
+    <td>성균관대 (글로벌융합, 인문, 사회, 경영)</td>
+    <td>탐구 평균 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(평) 中 3개 합 6</td>
+    <td>성균관대 (건설, 공학, 전기, 자연)</td>
+    <td>수학 의무 반영 / 탐구 평균 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(1) 中 3개 합 5</td>
+    <td>이화여대 스크랜튼학부</td>
+    <td>탐구 1과목 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(1) 中 3개 합 6</td>
+    <td>중앙대 일반형</td>
+    <td>영어 2등급 -> 1등급 간주 (손글씨: 2합 5 극상향)</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(1) 中 3개 합 7</td>
+    <td><b>서강대, 한양대</b></td>
+    <td class="note-bg">손글씨: 상향 지원 카드</td>
+  </tr>
+  <tr>
+    <td class="cat-bg center" rowspan="7">2개 영역 반영</td>
+    <td>국/수/영/탐(1) 中 2개 합 4</td>
+    <td>한국외대 (LD, LT포함), 동국대 경찰행정</td>
+    <td>탐구 1과목 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(평) 中 2개 합 5</td>
+    <td>경희대</td>
+    <td>탐구 평균 반영 (손글씨 동그라미)</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(1) 中 2개 합 5</td>
+    <td>홍익대, 건국대, 동국대, 숙명여대, 세종대</td>
+    <td>탐구 1과목 반영</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(1) 中 2개 합 5</td>
+    <td>이화여대</td>
+    <td>국어 의무 반영 (★ 선지문장 난이도 있음)</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(1) 中 2개 합 5</td>
+    <td>동국대 AI융합학과</td>
+    <td>수학 의무 반영</td>
+  </tr>
+  <tr>
+    <td class="cat-bg center" rowspan="2">1개 영역 반영</td>
+    <td>국/수/영/탐(평) 中 1개 3 이내</td>
+    <td>경희대 (체육학과)</td>
+    <td>손글씨: 수체</td>
+  </tr>
+  <tr>
+    <td>국/수/영/탐(1) 中 1개 3 이내</td>
+    <td>가천대</td>
+    <td>1개 영역 반영</td>
+  </tr>
+  <tr>
+    <td class="cat-bg center" rowspan="2">최저 미적용<br>(논술 100%)</td>
+    <td>수능 최저 기준 미적용</td>
+    <td><b>연세대, 중앙대[창의형]</b></td>
+    <td>재수생 X / 23전형 변형으로 기출과 유사</td>
+  </tr>
+  <tr>
+    <td>수능 최저 기준 미적용</td>
+    <td>단국대, 인하대, 아주대, 광운대, 경기대, 가톨릭대, 서울여대, 연세대(미래), 상명대</td>
+    <td>수능 최저 적용 안 함 (대학 문호 넓음)</td>
+  </tr>
+  <tr>
+    <td class="note-bg center" colspan="4">논술 전형 진/짜 실질 경쟁률 핵심 가이드 (프로세스 논술)</td>
+  </tr>
+  <tr>
+    <td class="center">실질경쟁률 핵심</td>
+    <td colspan="3">✔ 허수 지원자가 섞인 지원 경쟁률에 현혹되지 말자</td>
+  </tr>
+  <tr>
+    <td class="center">실질경쟁률 핵심</td>
+    <td colspan="3">✔ 수능 최저기준 충족 후의 실질경쟁률은 대폭 하향한다</td>
+  </tr>
+  <tr>
+    <td class="center">실질경쟁률 핵심</td>
+    <td colspan="3">✔ 수능 최저 기준을 충족한 수험생들 중 논술을 꾸준히 제대로 준비한 학생들 간의 경쟁이 진짜 실질 경쟁률이다.</td>
+  </tr>
+</table>
+</body>
+</html>
+"""
+
+# Write CSV with UTF-8 BOM
+with open(csv_path_reports, "wb") as f:
+    f.write(codecs.BOM_UTF8)
+    f.write(csv_content.encode("utf-8"))
+with open(csv_path_desktop, "wb") as f:
+    f.write(codecs.BOM_UTF8)
+    f.write(csv_content.encode("utf-8"))
+
+# Write XLS (Excel HTML Spreadsheet)
+with open(xls_path_reports, "wb") as f:
+    f.write(html_xls_content.encode("utf-8"))
+with open(xls_path_desktop, "wb") as f:
+    f.write(html_xls_content.encode("utf-8"))
+
+print("Excel files created successfully!")

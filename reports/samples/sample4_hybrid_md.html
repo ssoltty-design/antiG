@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample 4: 하이브리드 고밀도 마크다운/HTML</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1f2937;
+            --card-bg: #111827;
+            --border: #374151;
+            --blue: #38bdf8;
+            --green: #4ade80;
+            --text: #f9fafb;
+            --muted: #9ca3af;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Pretendard', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .header { border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .header h1 { font-size: 1.8rem; color: var(--blue); }
+        .alert-box { background: rgba(56, 189, 248, 0.1); border-left: 4px solid var(--blue); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; font-size: 0.9rem; }
+        .alert-box.green { background: rgba(74, 222, 128, 0.1); border-left-color: var(--green); }
+        h2 { font-size: 1.3rem; color: #f3f4f6; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+        th { background: #1f2937; color: var(--blue); padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+        td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+        .badge { background: #374151; color: var(--blue); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="badge">포맷 샘플 4</span>
+            <h1 style="margin-top:0.3rem;">하이브리드 고밀도 마크다운/HTML (Hybrid High-Density MD/HTML)</h1>
+            <p style="color:var(--muted); font-size:0.9rem; margin-top:0.3rem;">텍스트 & 테이블 중심의 빠른 스캔 구조 / GitHub Alert 콜아웃 박스 활용</p>
+        </div>
+
+        <div class="alert-box">
+            <strong>💡 입시 핵심 지표:</strong> 수시 논술 합격자 비중은 일찍 논술에 전념한 수험생이 <strong>84%</strong>를 차지하며, 수능 최저 충족 시 실질 경쟁률은 1/3 이하로 대폭 하향합니다.
+        </div>
+
+        <h2>1. 대학별 수능 최저 & 경쟁률 매트릭스</h2>
+        <table>
+            <thead>
+                <tr><th>대학명</th><th>최초 경쟁률</th><th>수능 최저학력기준</th><th>실질 경쟁률</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>서강대</strong></td><td>100~110:1</td><td>3개 영역 합 7 이내</td><td>28~33:1</td></tr>
+                <tr><td><strong>중앙대</strong></td><td>70~120:1</td><td>3개 영역 합 6 이내 (영어1인정)</td><td>12~25:1</td></tr>
+            </tbody>
+        </table>
+
+        <h2>2. 박정윤 학생 수시 6카드 추천 요약</h2>
+        <div class="alert-box green">
+            <strong>🎯 핵심 강점:</strong> 7모 수학 3등급(백분위 83.1%) 상승세를 반영하여 수리 논술이 포함된 사회계열 전형(중앙대/이화여대/경희대/건국대) 집중 응시 추천.
+        </div>
+        <table>
+            <thead>
+                <tr><th>구분</th><th>추천 대학 및 학과</th><th>수능 최저 달성률</th><th>추천 사유</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="badge">상향</span></td><td>서강대 경영학부</td><td>100% (영어2+수학3+사문2=7)</td><td>내신 불이익 0점 / 실질경쟁률 하향</td></tr>
+                <tr><td><span class="badge">주력★</span></td><td>중앙대 경영학부</td><td>100% (영어1인정+사문2+수학3=6)</td><td>사회계열 수리논술 변별력 최상</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

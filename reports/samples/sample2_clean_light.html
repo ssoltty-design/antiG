@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample 2: 클린 에그제큐티브 라이트</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --primary: #1e3a8a;
+            --accent: #2563eb;
+            --teal: #0d9488;
+            --text: #0f172a;
+            --muted: #64748b;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Pretendard', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem; }
+        .header { text-align: center; margin-bottom: 2rem; background: #ffffff; border: 1px solid var(--card-border); padding: 2rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header h1 { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .card-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; border-bottom: 2px solid #eff6ff; padding-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .stat-box { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .stat-item { flex:1; background: #f1f5f9; border: 1px solid var(--card-border); padding: 1rem; border-radius: 8px; text-align: center; }
+        .stat-item.highlight { background: #eff6ff; border-color: #bfdbfe; }
+        .stat-val { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+        .stat-lbl { font-size: 0.8rem; color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+        th { background: #f8fafc; color: var(--primary); padding: 10px; font-size: 0.85rem; border-bottom: 2px solid var(--card-border); text-align: center; }
+        td { padding: 10px; border-bottom: 1px solid var(--card-border); font-size: 0.85rem; text-align: center; }
+        .badge { background: #ccfbf1; color: #0f766e; padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="badge">포맷 샘플 2</span>
+        <h1 style="margin-top:0.5rem;">클린 에그제큐티브 라이트 (Clean Executive Light)</h1>
+        <p style="color:var(--muted); margin-top:0.5rem;">화이트 & 네이비톤의 미니멀리즘 스타일 / 인쇄 및 PDF 저장 가독성 최상</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-title">
+                1. 2027 대학별 수능 최저 & 실질 경쟁률
+                <span class="badge">입시 팩트 데이터</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-item">
+                    <div class="stat-val" style="color:#64748b;">16%</div>
+                    <div class="stat-lbl">정시 주력 합격률</div>
+                </div>
+                <div class="stat-item highlight">
+                    <div class="stat-val">84%</div>
+                    <div class="stat-lbl">논술 일찍 집중한 합격률</div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th>대학명</th><th>최초 경쟁률</th><th>수능 최저학력기준</th><th>실질 경쟁률</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>서강대</strong></td><td>100~110:1</td><td>3개 합 7 (각 3이내)</td><td style="color:#2563eb; font-weight:bold;">28~33:1</td></tr>
+                    <tr><td><strong>이화여대</strong></td><td>45~60:1</td><td>2개 합 5 (탐1)</td><td style="color:#2563eb; font-weight:bold;">15~22:1</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                2. [박정윤 학생] 수시 6카드 전략적 분석
+                <span class="badge">피오르 컨설팅</span>
+            </div>
+            <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1rem;">내신 5.5~6.0등급 극복을 위한 수리논술 계열 및 최저 충족권 6카드 선정</p>
+            <table>
+                <thead>
+                    <tr><th>지원 성향</th><th>추천 대학</th><th>핵심 전략 사유</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span style="color:#ef4444; font-weight:bold;">상향</span></td><td>서강대 경영</td><td>3합7 최저 충족률 100% (실질경쟁률 하향)</td></tr>
+                    <tr><td><span style="color:#2563eb; font-weight:bold;">주력★</span></td><td>중앙대 경영</td><td>영어2등급➔1등급 인정 (3합6 수리논술 변별력)</td></tr>
+                    <tr><td><span style="color:#059669; font-weight:bold;">안정</span></td><td>건국대 경영</td><td>수1/수2/확통 수리논술 안전판 전형</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

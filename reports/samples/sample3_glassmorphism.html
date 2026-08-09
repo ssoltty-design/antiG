@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample 3: 네오 글래스모피즘 매트릭스</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyan: #06b6d4;
+            --magenta: #ec4899;
+            --purple: #a855f7;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Pretendard', sans-serif; }
+        body {
+            background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 50%, #0f172a 100%);
+            min-height: 100vh;
+            color: var(--text);
+            padding: 2rem;
+        }
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { font-size: 2.2rem; font-weight: 800; background: linear-gradient(to right, var(--cyan), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 1.5rem; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .card-title { font-size: 1.2rem; font-weight: 700; color: var(--cyan); margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .stat-box { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .stat-item { flex:1; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.08); padding: 1rem; border-radius: 12px; text-align: center; }
+        .stat-item.highlight { background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.4); }
+        .stat-val { font-size: 1.8rem; font-weight: 800; color: var(--cyan); }
+        .stat-lbl { font-size: 0.8rem; color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+        th { background: rgba(0, 0, 0, 0.4); color: var(--cyan); padding: 10px; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; text-align: center; }
+        .badge { background: rgba(236, 72, 153, 0.2); color: #f472b6; padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; border: 1px solid rgba(236, 72, 153, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="badge">포맷 샘플 3</span>
+        <h1 style="margin-top:0.5rem;">네오 글래스모피즘 매트릭스 (Neo Glassmorphism Matrix)</h1>
+        <p style="color:var(--muted); margin-top:0.5rem;">반투명 유리의 입체감과 사이버 네온 컬러 조합의 감각적인 미래형 대시보드</p>
+    </div>
+
+    <div class="grid">
+        <div class="glass-card">
+            <div class="card-title">
+                1. 2027 수능 최저 & 실질 경쟁률
+                <span class="badge">Futuristic UI</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-item">
+                    <div class="stat-val" style="color:#9ca3af;">16%</div>
+                    <div class="stat-lbl">정시 주력 합격률</div>
+                </div>
+                <div class="stat-item highlight">
+                    <div class="stat-val">84%</div>
+                    <div class="stat-lbl">논술 주력 합격률</div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th>대학명</th><th>최초 경쟁률</th><th>수능 최저</th><th>실질 경쟁률</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>성균관대</td><td>~110:1</td><td>3합 5~6</td><td style="color:var(--cyan); font-weight:bold;">25~36:1</td></tr>
+                    <tr><td>경희대</td><td>78~520:1</td><td>2합 5 (탐평)</td><td style="color:var(--cyan); font-weight:bold;">19~53:1</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">
+                2. [박정윤 학생] 6논술 추천 계열 분석
+                <span class="badge">Fjord Matrix</span>
+            </div>
+            <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1rem;">7월 수학 백분위 83.1% 상승 ➔ 수리논술 변별력 전형 극대화 전략</p>
+            <table>
+                <thead>
+                    <tr><th>추천 학과</th><th>수리 논술 범위</th><th>수능 최저</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>중앙대 경영</strong></td><td>확률, 통계, 기대값</td><td>3합 6 (영1인정)</td></tr>
+                    <tr><td><strong>이화여대 인문II</strong></td><td>경제 개념 및 수리 계산</td><td>2합 5</td></tr>
+                    <tr><td><strong>경희대 경영</strong></td><td>사회계열 수리 통계</td><td>2합 5</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

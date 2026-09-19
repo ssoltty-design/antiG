@@ -456,6 +456,144 @@
       transition: width 0.3s ease;
     }
 
+    /* APEX-Design Benchmark Pattern #5: SVG Circular Progress Gauge */
+    .svg-gauge-wrap {
+      width: 58px;
+      height: 58px;
+      flex-shrink: 0;
+    }
+    .svg-circular-gauge {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .gauge-bg {
+      fill: none;
+      stroke: #e2e8f0;
+      stroke-width: 3.8;
+    }
+    .gauge-fill {
+      fill: none;
+      stroke: #2563eb;
+      stroke-width: 3.8;
+      stroke-linecap: round;
+      transition: stroke-dasharray 0.4s ease;
+    }
+    .gauge-text {
+      fill: #0f172a;
+      font-family: 'Outfit', sans-serif;
+      font-size: 8.5px;
+      font-weight: 900;
+      text-anchor: middle;
+      transform: rotate(90deg);
+      transform-origin: 18px 18px;
+    }
+
+    /* APEX-Design Benchmark Pattern #1: Visual Pipeline Stepper */
+    .pipeline-stepper-wrap {
+      background: #ffffff;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin: 10px 14px 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .stepper-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .stepper-title {
+      font-size: 11.5px;
+      font-weight: 900;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .stepper-phase-badge {
+      font-size: 10px;
+      font-weight: 800;
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 2px 7px;
+      border-radius: 6px;
+      border: 1px solid #bfdbfe;
+    }
+    .stepper-track {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    .stepper-track::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 20px;
+      right: 20px;
+      height: 2.5px;
+      background: #e2e8f0;
+      z-index: 1;
+    }
+    .stepper-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      text-align: center;
+    }
+    .step-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2.5px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 900;
+      color: #64748b;
+      margin-bottom: 5px;
+      transition: all 0.2s ease;
+    }
+    .stepper-step.completed .step-circle {
+      background: #059669;
+      border-color: #059669;
+      color: #ffffff;
+    }
+    .stepper-step.active .step-circle {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+      color: #ffffff;
+      box-shadow: 0 0 0 3.5px rgba(29, 78, 216, 0.2);
+    }
+    .stepper-step.upcoming .step-circle {
+      background: #ffffff;
+      border-color: #f59e0b;
+      color: #d97706;
+    }
+    .stepper-step.final .step-circle {
+      background: #ffffff;
+      border-color: #dc2626;
+      color: #dc2626;
+    }
+    .step-label {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .step-date {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+
     .todo-item-mobile {
       display: flex;
       align-items: center;
@@ -547,7 +685,7 @@
     }
 
 
-    /* CSAT Visual Cartoon Webtoon Tokens & Cards */
+    /* CSAT Visual Cartoon Webtoon Tokens & Cards (APEX Spectra v3.0) */
     .cartoon-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -559,31 +697,36 @@
     }
     .cartoon-panel {
       background: #ffffff;
-      border: 2px solid #0f172a;
-      border-radius: var(--radius-md);
+      border: 1.5px solid #e2e8f0;
+      border-radius: var(--radius-md, 14px);
       overflow: hidden;
-      box-shadow: 3px 3px 0px #0f172a;
-      transition: transform 0.15s ease;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cartoon-panel:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
     .panel-header {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 6px 12px;
-      font-size: 11px;
+      background: #f8fafc;
+      color: #0f172a;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding: 8px 12px;
+      font-size: 11.5px;
       font-weight: 800;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .panel-visual {
-      background: #f8fafc;
+      background: #ffffff;
       padding: 14px;
-      min-height: 130px;
+      min-height: 125px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-bottom: 1.5px solid #0f172a;
+      border-bottom: 1.5px solid #f1f5f9;
     }
     .panel-svg-illu {
       width: 72px;
@@ -591,17 +734,18 @@
       margin-bottom: 8px;
     }
     .speech-bubble {
-      background: #ffffff;
-      border: 2px solid #0f172a;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
       border-radius: 10px;
-      padding: 6px 10px;
-      font-size: 11px;
+      padding: 8px 12px;
+      font-size: 11.5px;
       font-weight: 800;
-      color: var(--text-main);
+      color: #0f172a;
       position: relative;
       max-width: 95%;
       text-align: center;
-      box-shadow: 2px 2px 0px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+      line-height: 1.45;
     }
     .speech-bubble::after {
       content: '';
@@ -611,24 +755,24 @@
       transform: translateX(-50%);
       border-width: 6px 6px 0;
       border-style: solid;
-      border-color: #ffffff transparent;
+      border-color: #f8fafc transparent;
       display: block;
       width: 0;
     }
     .speech-bubble::before {
       content: '';
       position: absolute;
-      bottom: -9px;
+      bottom: -8px;
       left: 50%;
       transform: translateX(-50%);
-      border-width: 8px 8px 0;
+      border-width: 7px 7px 0;
       border-style: solid;
-      border-color: #0f172a transparent;
+      border-color: #cbd5e1 transparent;
       display: block;
       width: 0;
     }
     .panel-body {
-      padding: 10px 12px;
+      padding: 12px 14px;
       background: #ffffff;
     }
     .rule-box {
@@ -887,6 +1031,36 @@
       <button class="seg-item" onclick="switchMobileTab('todos')">✅ 오늘 Todo</button>
     </div>
   </header>
+
+  <!-- APEX Visual Pipeline Stepper (Rule 9 Benchmark #1) -->
+  <div class="pipeline-stepper-wrap">
+    <div class="stepper-heading-row">
+      <span class="stepper-title">🎯 2027 대입 실전 로드맵 파이프라인</span>
+      <span class="stepper-phase-badge">Phase 2: 수능·논술 파이널</span>
+    </div>
+    <div class="stepper-track">
+      <div class="stepper-step completed">
+        <div class="step-circle">✓</div>
+        <div class="step-label">수시 6장 접수</div>
+        <div class="step-date">9/13 완료</div>
+      </div>
+      <div class="stepper-step active">
+        <div class="step-circle">2</div>
+        <div class="step-label">수능·실모 파이널</div>
+        <div class="step-date">현재 집중</div>
+      </div>
+      <div class="stepper-step upcoming">
+        <div class="step-circle">3</div>
+        <div class="step-label">홍익 논술고사</div>
+        <div class="step-date">10/4 (D-15)</div>
+      </div>
+      <div class="stepper-step final">
+        <div class="step-circle">🏁</div>
+        <div class="step-label">2027 수능 결전</div>
+        <div class="step-date">11/19 (D-61)</div>
+      </div>
+    </div>
+  </div>
 
   <!-- D-Day Quick Pill Bar -->
   <div class="dday-pill-bar">
@@ -1858,14 +2032,26 @@
       <span class="section-sub-badge">터치하여 완료 체크</span>
     </div>
 
-    <!-- Progress Card -->
+    <!-- Progress Card with SVG Circular Gauge -->
     <div class="todo-progress-card">
-      <div class="todo-stat-row">
-        <span style="font-size:12.5px; font-weight:800; color:var(--text-main);">오늘의 실천 달성률</span>
-        <span class="todo-stat-number" id="mobileTodoStats">0 / 7 (0%)</span>
-      </div>
-      <div class="todo-bar-bg">
-        <div class="todo-bar-fill" id="mobileTodoFillBar"></div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div class="svg-gauge-wrap">
+          <svg class="svg-circular-gauge" viewBox="0 0 36 36">
+            <path class="gauge-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="gauge-fill" id="todoGaugeCircle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <text x="18" y="21" class="gauge-text" id="todoGaugeText">0%</text>
+          </svg>
+        </div>
+        <div style="flex:1;">
+          <div class="todo-stat-row">
+            <span style="font-size:12.5px; font-weight:800; color:var(--text-main);">오늘의 실천 달성률</span>
+            <span class="todo-stat-number" id="mobileTodoStats">0 / 7 (0%)</span>
+          </div>
+          <div class="todo-bar-bg">
+            <div class="todo-bar-fill" id="mobileTodoFillBar"></div>
+          </div>
+          <div style="font-size:10.5px; color:var(--text-muted); margin-top:6px;">터치 시 자동 영구 저장 (오프라인 지원)</div>
+        </div>
       </div>
     </div>
 
@@ -2087,8 +2273,13 @@
 
       const statEl = document.getElementById('mobileTodoStats');
       const fillEl = document.getElementById('mobileTodoFillBar');
+      const circleEl = document.getElementById('todoGaugeCircle');
+      const textEl = document.getElementById('todoGaugeText');
+
       if (statEl) statEl.textContent = `${checked} / ${total} (${pct}%)`;
       if (fillEl) fillEl.style.width = pct + '%';
+      if (circleEl) circleEl.setAttribute('stroke-dasharray', `${pct}, 100`);
+      if (textEl) textEl.textContent = `${pct}%`;
     }
 
     const APEX_TODOS_TEXT = [

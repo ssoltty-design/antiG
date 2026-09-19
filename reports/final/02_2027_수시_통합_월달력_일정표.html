@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027학년도 수시 종합면접 & 수시논술 통합 월달력 일정표 (원서접수 마감일시 완전통합판)</title>
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+            --navy-primary: #1e3a8a;
+            --blue-accent: #2563eb;
+            --teal-badge: #0d9488;
+            --orange-badge: #c2410c;
+            --purple-badge: #6b21a8;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #cbd5e1;
+
+            /* Category Colors */
+            --csat-bg: #fee2e2;
+            --csat-border: #ef4444;
+            --csat-text: #991b1b;
+
+            --johap-bg: #dbeafe;
+            --johap-text: #1e40af;
+            --johap-border: #3b82f6;
+
+            --nonsul-bg: #ffedd5;
+            --nonsul-text: #9a3412;
+            --nonsul-border: #f97316;
+
+            --gyokwa-bg: #f3e8ff;
+            --gyokwa-text: #6b21a8;
+            --gyokwa-border: #a855f7;
+
+            /* Application Deadline Colors */
+            --dl-1-bg: #fef2f2;
+            --dl-1-border: #dc2626;
+            --dl-1-text: #991b1b;
+
+            --dl-2-bg: #fefce8;
+            --dl-2-border: #ca8a04;
+            --dl-2-text: #854d0e;
+
+            --dl-3-bg: #eff6ff;
+            --dl-3-border: #2563eb;
+            --dl-3-text: #1e40af;
+
+            --dl-4-bg: #faf5ff;
+            --dl-4-border: #9333ea;
+            --dl-4-text: #6b21a8;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 30px 15px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1550px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--navy-primary);
+            border-radius: 12px;
+            padding: 24px 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .header h1 {
+            color: var(--navy-primary);
+            font-size: 26px;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin: 0 0 16px 0;
+        }
+
+        /* Top 4-Stage Application Deadline Banner */
+        .deadline-banner {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 14px;
+        }
+
+        .banner-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--navy-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .deadline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .dl-card {
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 12px;
+            border-left: 5px solid;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .dl-card.d1 { background: var(--dl-1-bg); border-color: var(--dl-1-border); color: var(--dl-1-text); }
+        .dl-card.d2 { background: var(--dl-2-bg); border-color: var(--dl-2-border); color: var(--dl-2-text); }
+        .dl-card.d3 { background: var(--dl-3-bg); border-color: var(--dl-3-border); color: var(--dl-3-text); }
+        .dl-card.d4 { background: var(--dl-4-bg); border-color: var(--dl-4-border); color: var(--dl-4-text); }
+
+        .dl-time {
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .dl-univs {
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Month Navigation Tabs */
+        .month-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active {
+            background-color: var(--navy-primary);
+            color: #ffffff;
+            border-color: var(--navy-primary);
+            box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);
+        }
+
+        .tab-btn.dl-tab.active {
+            background-color: #dc2626;
+            border-color: #dc2626;
+            box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background-color: #f1f5f9;
+        }
+
+        /* Legend Bar */
+        .legend-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            background: #ffffff;
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            font-size: 13px;
+            align-items: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+        }
+
+        .tag-pill {
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        /* Calendar Grid Section */
+        .calendar-section {
+            display: none;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .calendar-section.active {
+            display: block;
+        }
+
+        .calendar-month-title {
+            color: var(--navy-primary);
+            font-size: 22px;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .day-header {
+            background-color: #f1f5f9;
+            color: var(--navy-primary);
+            font-weight: 800;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .day-header.sun { color: #dc2626; }
+        .day-header.sat { color: #2563eb; }
+
+        /* UNLIMITED HEIGHT CELL / ZERO INTERNAL SCROLLBAR */
+        .day-cell {
+            min-height: 150px;
+            height: auto;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: visible;
+        }
+
+        .day-cell.other-month {
+            background-color: #f8fafc;
+            opacity: 0.4;
+        }
+
+        .day-number {
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 4px;
+        }
+
+        .day-cell.sun .day-number { color: #dc2626; }
+        .day-cell.sat .day-number { color: #2563eb; }
+
+        .d-day-tag {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .events-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            overflow: visible;
+            max-height: none;
+            flex-grow: 1;
+        }
+
+        .event-card {
+            font-size: 11px;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            line-height: 1.4;
+            border-left: 4px solid;
+            word-break: keep-all;
+            white-space: normal;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .event-card .univ-name {
+            font-weight: 800;
+            font-size: 12px;
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-card .time-info {
+            font-size: 10px;
+            opacity: 0.9;
+        }
+
+        .event-card .deadline-tag {
+            font-size: 9px;
+            font-weight: 800;
+            padding: 1px 4px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        /* Distinct Event Category Classes */
+        .card-csat {
+            background-color: var(--csat-bg);
+            color: var(--csat-text);
+            border-color: var(--csat-border);
+            font-weight: 800;
+        }
+
+        .card-johap {
+            background-color: var(--johap-bg);
+            color: var(--johap-text);
+            border-color: var(--johap-border);
+        }
+
+        .card-nonsul {
+            background-color: var(--nonsul-bg);
+            color: var(--nonsul-text);
+            border-color: var(--nonsul-border);
+        }
+
+        .card-gyokwa {
+            background-color: var(--gyokwa-bg);
+            color: var(--gyokwa-text);
+            border-color: var(--gyokwa-border);
+        }
+
+        .card-deadline-critical {
+            background-color: #fef2f2;
+            color: #991b1b;
+            border-color: #dc2626;
+            font-weight: 800;
+        }
+
+        /* Print Layout Rules */
+        @media print {
+            body { padding: 0; background: #fff; }
+            .month-tabs { display: none; }
+            .calendar-section { display: block !important; page-break-after: always; margin-bottom: 20px; }
+            .day-cell { min-height: 110px; height: auto; overflow: visible; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>🗓️ 2027학년도 수시 종합면접 & 수시논술 통합 월달력 일정표</h1>
+        <p>2027학년도 대학수학능력시험일: <strong>2026년 11월 19일 (목요일)</strong> | 학종 면접 45개 전형 & 수시 논술 전수 병합 매핑 (원서접수 마감일시 전면 통합)</p>
+
+        <!-- Top 4-Stage Application Deadline Banner -->
+        <div class="deadline-banner">
+            <div class="banner-title">
+                <span>🚨 2027학년도 수시 원서접수 대학별 4단계 마감 타임라인 (KakaoTalk_20260809_133628902_02.jpg 완전 반영)</span>
+            </div>
+            <div class="deadline-grid">
+                <div class="dl-card d1">
+                    <div class="dl-time">🔴 1차 마감: 9월 9일 (수) 17:00</div>
+                    <div class="dl-univs"><strong>고려대</strong> (가장 빠른 마감! 서두를 것)</div>
+                </div>
+                <div class="dl-card d2">
+                    <div class="dl-time">🟡 2차 마감: 9월 10일 (목) 17:00</div>
+                    <div class="dl-univs"><strong>연세대, 이화여대</strong></div>
+                </div>
+                <div class="dl-card d3">
+                    <div class="dl-time">🔵 3차 마감: 9월 11일 (금) 17:00</div>
+                    <div class="dl-univs">건국대, 경기대, 광운대, 동국대, 숙명여대, 연세미래, 한국외대</div>
+                </div>
+                <div class="dl-card d4">
+                    <div class="dl-time">🟣 4차 마감: 9월 11일 (금) 18:00</div>
+                    <div class="dl-univs">가천, 가톨릭, 경희, 고려세종, 국민, 단국, 덕성, 동덕, 상명, 서강, 서울여, 성균관, 성신, 세종, 수원, 숭실, 아주, 인하, 중앙(일반/창의), 항공, 한양, 홍익, 홍익세종</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend-bar" style="margin-top:16px; margin-bottom:0;">
+            <span style="font-weight: 800; color: var(--navy-primary);">카테고리 구분:</span>
+            <div class="legend-item"><span class="tag-pill" style="background: var(--csat-bg); color: var(--csat-text); border: 1px solid var(--csat-border);">★ 2027 수능일 (11/19 목)</span></div>
+            <div class="legend-item"><span class="tag-pill" style="background: var(--johap-bg); color: var(--johap-text); border: 1px solid var(--johap-border);">🟦 [학종 면접] 전형</span></div>
+            <div class="legend-item"><span class="tag-pill" style="background: var(--nonsul-bg); color: var(--nonsul-text); border: 1px solid var(--nonsul-border);">🟧 [수시 논술] 고사</span></div>
+            <div class="legend-item"><span class="tag-pill" style="background: var(--gyokwa-bg); color: var(--gyokwa-text); border: 1px solid var(--gyokwa-border);">🟪 [교과/특기자] 면접</span></div>
+            <div class="legend-item"><span class="tag-pill" style="background: #fef2f2; color: #dc2626; border: 1px solid #dc2626;">🚨 [원서접수 마감]</span></div>
+        </div>
+    </div>
+
+    <!-- Month Navigation Tabs -->
+    <div class="month-tabs">
+        <button class="tab-btn dl-tab active" onclick="switchMonth('sep')">🚨 2026년 9월 수시 원서접수 달력</button>
+        <button class="tab-btn" onclick="switchMonth('oct')">2026년 10월 통합달력 (수능전)</button>
+        <button class="tab-btn" onclick="switchMonth('nov')">2026년 11월 통합달력 (★수능/피크)</button>
+        <button class="tab-btn" onclick="switchMonth('dec')">2026년 12월 통합달력 (최종면접)</button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2026년 9월 달력 (원서접수 마감 달력) -->
+    <!-- ========================================== -->
+    <div id="month-sep" class="calendar-section active">
+        <div class="calendar-month-title">
+            <span>🚨 2026년 9월 (수시 원서접수 마감 카운트다운 달력)</span>
+            <span style="font-size: 14px; font-weight: 700; color: #dc2626;">★ 9월 9일(수) ~ 9월 11일(금) 원서접수 진행</span>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="day-header sun">일</div>
+            <div class="day-header">월</div>
+            <div class="day-header">화</div>
+            <div class="day-header">수</div>
+            <div class="day-header">목</div>
+            <div class="day-header">금</div>
+            <div class="day-header sat">토</div>
+
+            <!-- Week 1: Aug 30 - Sep 5 -->
+            <div class="day-cell other-month"><div class="day-number">30</div></div>
+            <div class="day-cell other-month"><div class="day-number">31</div></div>
+            <div class="day-cell"><div class="day-number">1</div></div>
+            <div class="day-cell"><div class="day-number">2</div></div>
+            <div class="day-cell"><div class="day-number">3</div></div>
+            <div class="day-cell"><div class="day-number">4</div></div>
+            <div class="day-cell sat"><div class="day-number">5</div></div>
+
+            <!-- Week 2: Sep 6 - Sep 12 -->
+            <div class="day-cell sun"><div class="day-number">6</div></div>
+            <div class="day-cell"><div class="day-number">7</div></div>
+            <div class="day-cell"><div class="day-number">8</div></div>
+
+            <!-- Sep 9 (Wed) - 1st Deadline -->
+            <div class="day-cell" style="background-color: #fff1f2; border: 2px solid #e11d48;">
+                <div class="day-number" style="color:#be123c;">9 <span class="d-day-tag" style="background:#e11d48; color:#fff;">🔴 1차 마감 (17시)</span></div>
+                <div class="events-container">
+                    <div class="event-card card-deadline-critical">
+                        <div class="univ-name">🚨 [17:00 마감] 고려대</div>
+                        <div class="time-info">수시 원서접수 마감 (가장 빠른 마감!)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sep 10 (Thu) - 2nd Deadline -->
+            <div class="day-cell" style="background-color: #fefce8; border: 2px solid #ca8a04;">
+                <div class="day-number" style="color:#854d0e;">10 <span class="d-day-tag" style="background:#ca8a04; color:#fff;">🟡 2차 마감 (17시)</span></div>
+                <div class="events-container">
+                    <div class="event-card" style="background:#fef08a; border-left:4px solid #ca8a04; color:#713f12;">
+                        <div class="univ-name">🚨 [17:00 마감] 연세대 / 이화여대</div>
+                        <div class="time-info">수시 원서접수 마감 (17시 엄수)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sep 11 (Fri) - 3rd & 4th Deadline -->
+            <div class="day-cell" style="background-color: #f0fdf4; border: 2px solid #16a34a;">
+                <div class="day-number" style="color:#15803d;">11 <span class="d-day-tag" style="background:#16a34a; color:#fff;">🔵/🟣 3~4차 최종마감</span></div>
+                <div class="events-container">
+                    <div class="event-card" style="background:#dbeafe; border-left:4px solid #2563eb; color:#1e40af;">
+                        <div class="univ-name">🚨 [17:00 마감] 7개 대학</div>
+                        <div class="time-info">건국대, 경기대, 광운대, 동국대, 숙명여대, 연세미래, 한국외대</div>
+                    </div>
+                    <div class="event-card" style="background:#f3e8ff; border-left:4px solid #9333ea; color:#6b21a8;">
+                        <div class="univ-name">🚨 [18:00 최종마감] 23개 대학</div>
+                        <div class="time-info">성균관, 서강, 한양, 중앙(일반/창의), 경희, 세종, 숭실, 아주, 인하, 가천, 가톨릭, 항공, 단국 등 전 대학 마감</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-cell sat"><div class="day-number">12</div></div>
+
+            <!-- Week 3: Sep 13 - Sep 19 -->
+            <div class="day-cell sun"><div class="day-number">13</div></div>
+            <div class="day-cell"><div class="day-number">14</div></div>
+            <div class="day-cell"><div class="day-number">15</div></div>
+            <div class="day-cell"><div class="day-number">16</div></div>
+            <div class="day-cell"><div class="day-number">17</div></div>
+            <div class="day-cell"><div class="day-number">18</div></div>
+            <div class="day-cell sat"><div class="day-number">19</div></div>
+
+            <!-- Week 4: Sep 20 - Sep 26 -->
+            <div class="day-cell sun"><div class="day-number">20</div></div>
+            <div class="day-cell"><div class="day-number">21</div></div>
+            <div class="day-cell"><div class="day-number">22</div></div>
+            <div class="day-cell"><div class="day-number">23</div></div>
+            <div class="day-cell"><div class="day-number">24</div></div>
+            <div class="day-cell"><div class="day-number">25</div></div>
+            <div class="day-cell sat"><div class="day-number">26</div></div>
+
+            <!-- Week 5: Sep 27 - Sep 30 -->
+            <div class="day-cell sun"><div class="day-number">27</div></div>
+            <div class="day-cell"><div class="day-number">28</div></div>
+            <div class="day-cell"><div class="day-number">29</div></div>
+            <div class="day-cell"><div class="day-number">30</div></div>
+            <div class="day-cell other-month"><div class="day-number">1</div></div>
+            <div class="day-cell other-month"><div class="day-number">2</div></div>
+            <div class="day-cell other-month"><div class="day-number">3</div></div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2026년 10월 달력 -->
+    <!-- ========================================== -->
+    <div id="month-oct" class="calendar-section">
+        <div class="calendar-month-title">
+            <span>🍁 2026년 10월 (수능 전 학종 면접 & 수시 논술 구간)</span>
+            <span style="font-size: 14px; font-weight: 600; color: var(--text-muted);">수능 D-49 ~ D-19</span>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="day-header sun">일</div>
+            <div class="day-header">월</div>
+            <div class="day-header">화</div>
+            <div class="day-header">수</div>
+            <div class="day-header">목</div>
+            <div class="day-header">금</div>
+            <div class="day-header sat">토</div>
+
+            <!-- Week 1: Sep 27 - Oct 3 -->
+            <div class="day-cell other-month"><div class="day-number">27</div></div>
+            <div class="day-cell other-month"><div class="day-number">28</div></div>
+            <div class="day-cell other-month"><div class="day-number">29</div></div>
+            <div class="day-cell other-month"><div class="day-number">30</div></div>
+            <div class="day-cell"><div class="day-number">1</div></div>
+            <div class="day-cell"><div class="day-number">2</div></div>
+            <div class="day-cell sat"><div class="day-number">3</div></div>
+
+            <!-- Week 2: Oct 4 - Oct 10 -->
+            <div class="day-cell sun">
+                <div class="day-number">4 <span class="d-day-tag" style="background:#ffedd5; color:#9a3412;">D-46</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 홍익대(서울) <span class="deadline-tag" style="background:#e0e7ff; color:#1e3a8a;">마감: 9/11 18시</span></div>
+                        <div class="time-info">자연계열 (10:00 / 2합5)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">5</div></div>
+            <div class="day-cell"><div class="day-number">6</div></div>
+            <div class="day-cell"><div class="day-number">7</div></div>
+            <div class="day-cell"><div class="day-number">8</div></div>
+            <div class="day-cell"><div class="day-number">9</div></div>
+            <div class="day-cell sat">
+                <div class="day-number">10 <span class="d-day-tag" style="background:#ffedd5; color:#9a3412;">D-40</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 연세대(서울) <span class="deadline-tag" style="background:#fefce8; color:#854d0e;">마감: 9/10 17시</span></div>
+                        <div class="time-info">★ 최저무 (15:30~17:30 / 수학논술)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 성신여대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">인문 10:00 / 자연 14:00 (2합7)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 3: Oct 11 - Oct 17 -->
+            <div class="day-cell sun">
+                <div class="day-number">11 <span class="d-day-tag" style="background:#ffedd5; color:#9a3412;">D-39</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul" style="background-color:#fef3c7; border-color:#d97706;">
+                        <div class="univ-name">★ 🟧 [논술] 중앙대 (창의형) <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 최저무/고3현역만 (10:00~12:00 경영18/경제4/영문4/미커4)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 가톨릭대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 최저무 (15:00~16:30 / 90분)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 한국항공대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">이공/인문 (15:00~16:30 / 2합6)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">12</div></div>
+            <div class="day-cell"><div class="day-number">13</div></div>
+            <div class="day-cell"><div class="day-number">14</div></div>
+            <div class="day-cell">
+                <div class="day-number">15 <span class="d-day-tag" style="background:#dbeafe; color:#1e40af;">D-35</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 상명대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">국가안보학과 체력/면접</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell">
+                <div class="day-number">16 <span class="d-day-tag" style="background:#ffedd5; color:#9a3412;">D-34</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 연세대(미래) <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">★ 최저무 (자율융합87)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell sat"><div class="day-number">17</div></div>
+
+            <!-- Week 4: Oct 18 - Oct 24 -->
+            <div class="day-cell sun">
+                <div class="day-number">18 <span class="d-day-tag" style="background:#dbeafe; color:#1e40af;">D-32</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [실기] 동국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">국어국문문예창작 실기</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 단국대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 최저무 (9:30 인문 / 15:00 사회)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">19</div></div>
+            <div class="day-cell"><div class="day-number">20</div></div>
+            <div class="day-cell"><div class="day-number">21</div></div>
+            <div class="day-cell"><div class="day-number">22</div></div>
+            <div class="day-cell"><div class="day-number">23</div></div>
+            <div class="day-cell sat">
+                <div class="day-number">24 <span class="d-day-tag" style="background:#f3e8ff; color:#6b21a8;">★ 납치유의</span></div>
+                <div class="events-container">
+                    <div class="event-card card-gyokwa">
+                        <div class="univ-name">🟪 [교과] 이화여대 <span class="deadline-tag" style="background:#fefce8; color:#854d0e;">마감: 9/10 17시</span></div>
+                        <div class="time-info">고교추천 면접 20% (수능전)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 5: Oct 25 - Oct 31 -->
+            <div class="day-cell sun">
+                <div class="day-number">25 <span class="d-day-tag" style="background:#dbeafe; color:#1e40af;">D-25</span></div>
+                <div class="events-container">
+                    <div class="event-card card-gyokwa">
+                        <div class="univ-name">🟪 [교과] 이화여대 <span class="deadline-tag" style="background:#fefce8; color:#854d0e;">마감: 9/10 17시</span></div>
+                        <div class="time-info">고교추천 면접 20%</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 성균관대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">성과인재 (스포츠과학)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 국민대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">어학특기자 구술면접</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">26</div></div>
+            <div class="day-cell"><div class="day-number">27</div></div>
+            <div class="day-cell"><div class="day-number">28</div></div>
+            <div class="day-cell"><div class="day-number">29</div></div>
+            <div class="day-cell">
+                <div class="day-number">30 <span class="d-day-tag" style="background:#ffedd5; color:#9a3412;">D-20</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 상명대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 약술형/최저무 (60분/10문)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell sat">
+                <div class="day-number">31 <span class="d-day-tag" style="background:#dbeafe; color:#1e40af;">D-19</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 고려대 <span class="deadline-tag" style="background:#fee2e2; color:#991b1b;">마감: 9/9 17시</span></div>
+                        <div class="time-info">사이버국방 군면접/체력</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 광운대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">참빛인재I / SW (면접 40%)</div>
+                    </div>
+                    <div class="event-card card-gyokwa">
+                        <div class="univ-name">🟪 [교과] 명지대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">교과면접 (인문캠 30%)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 동덕여대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">창의리더 (면접 60% 역전)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2026년 11월 달력 -->
+    <!-- ========================================== -->
+    <div id="month-nov" class="calendar-section">
+        <div class="calendar-month-title">
+            <span>🍂 2026년 11월 (★ 2027 수능 시행 및 수시 1~2주차 병합 피크)</span>
+            <span style="font-size: 15px; font-weight: 800; color: #dc2626;">★ 수능일: 11월 19일 (목)</span>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="day-header sun">일</div>
+            <div class="day-header">월</div>
+            <div class="day-header">화</div>
+            <div class="day-header">수</div>
+            <div class="day-header">목</div>
+            <div class="day-header">금</div>
+            <div class="day-header sat">토</div>
+
+            <!-- Week 1: Nov 1 - Nov 7 -->
+            <div class="day-cell sun">
+                <div class="day-number">1 <span class="d-day-tag" style="background:#dbeafe; color:#1e40af;">D-18</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [특기자] 연세대 <span class="deadline-tag" style="background:#fefce8; color:#854d0e;">마감: 9/10 17시</span></div>
+                        <div class="time-info">언더우드 영어면접(40%)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 성균관대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">과학인재 제시문 (7배수)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 광운대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">참빛인재I 서류기반</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">2</div></div>
+            <div class="day-cell"><div class="day-number">3</div></div>
+            <div class="day-cell"><div class="day-number">4</div></div>
+            <div class="day-cell"><div class="day-number">5</div></div>
+            <div class="day-cell"><div class="day-number">6</div></div>
+            <div class="day-cell sat">
+                <div class="day-number">7 <span class="d-day-tag" style="background:#dbeafe; color:#1e40af;">D-12</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 고려대 <span class="deadline-tag" style="background:#fee2e2; color:#991b1b;">마감: 9/9 17시</span></div>
+                        <div class="time-info">계열적합형 심층 (인문)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 2: Nov 8 - Nov 14 -->
+            <div class="day-cell sun">
+                <div class="day-number">8 <span class="d-day-tag" style="background:#dbeafe; color:#1e40af;">D-11</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 고려대 <span class="deadline-tag" style="background:#fee2e2; color:#991b1b;">마감: 9/9 17시</span></div>
+                        <div class="time-info">계열적합형 심층 (자연)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 성균관대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">성과인재 (사범/의예/자유)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">9</div></div>
+            <div class="day-cell"><div class="day-number">10</div></div>
+            <div class="day-cell"><div class="day-number">11</div></div>
+            <div class="day-cell"><div class="day-number">12</div></div>
+            <div class="day-cell"><div class="day-number">13</div></div>
+            <div class="day-cell sat">
+                <div class="day-number">14</div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 국민대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">알고리즘 / 실기재능</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 3: Nov 15 - Nov 21 -->
+            <div class="day-cell sun"><div class="day-number">15</div></div>
+            <div class="day-cell"><div class="day-number">16</div></div>
+            <div class="day-cell"><div class="day-number">17</div></div>
+            <div class="day-cell"><div class="day-number">18</div></div>
+            
+            <!-- CSAT DAY -->
+            <div class="day-cell" style="background-color: #fef2f2; border: 2px solid #ef4444;">
+                <div class="day-number" style="color:#dc2626;">19 <span class="d-day-tag" style="background:#dc2626; color:#fff;">★ 수능일</span></div>
+                <div class="events-container">
+                    <div class="event-card card-csat">★ 2027 대학수학능력시험</div>
+                </div>
+            </div>
+
+            <div class="day-cell"><div class="day-number">20</div></div>
+            
+            <!-- SUPER SATURDAY (11/21) -->
+            <div class="day-cell sat" style="background-color: #fffbeb; border: 2px solid #f59e0b;">
+                <div class="day-number">21 <span class="d-day-tag" style="background:#f59e0b; color:#fff;">★ 1주차 중복 피크</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 연세대 <span class="deadline-tag" style="background:#fefce8; color:#854d0e;">마감: 9/10 17시</span></div>
+                        <div class="time-info">활동우수형 (인문 심층 40%)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 한국외대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">면접형 (전학과 면접 50% 역전)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 성균관대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">인문 8:30 / 사회 10:30 (3합5)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 건국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">인문/사회 (9:20~11:00 / 2합5)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 이화여대 <span class="deadline-tag" style="background:#fefce8; color:#854d0e;">마감: 9/10 17시</span></div>
+                        <div class="time-info">미래인재 면접형 (30%)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 4: Nov 22 - Nov 28 -->
+            <div class="day-cell sun" style="background-color: #fffbeb; border: 2px solid #f59e0b;">
+                <div class="day-number">22 <span class="d-day-tag" style="background:#f59e0b; color:#fff;">★ 1주차 중복 피크</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 고려대 <span class="deadline-tag" style="background:#fee2e2; color:#991b1b;">마감: 9/9 17시</span></div>
+                        <div class="time-info">★ 논술100% (8:30 입실 / 4합8)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 서강대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 논술100% (16:00~17:40 / 3합7)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 동국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">인문계열 (13:00~14:40 / 2합4)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 경희대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">인문/사회 (15:00~17:00 / 2합5)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 숙명여대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">인문계열 (10:00~11:40 / 2합5)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">23</div></div>
+            <div class="day-cell"><div class="day-number">24</div></div>
+            <div class="day-cell"><div class="day-number">25</div></div>
+            <div class="day-cell"><div class="day-number">26</div></div>
+            <div class="day-cell">
+                <div class="day-number">27 <span class="d-day-tag" style="background:#ccfbf1; color:#0f766e;">D+8</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 서울대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">일반전형 제시문 심층 (금)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 숭실대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">SSU미래인재 (면접 50% 역전)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SUPER SATURDAY (11/28) -->
+            <div class="day-cell sat" style="background-color: #fffbeb; border: 2px solid #f59e0b;">
+                <div class="day-number">28 <span class="d-day-tag" style="background:#f59e0b; color:#fff;">★ 2주차 중복 피크</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 이화여대 <span class="deadline-tag" style="background:#fefce8; color:#854d0e;">마감: 9/10 17시</span></div>
+                        <div class="time-info">★ 논술100% (8:30인문1 / 14:20인문2)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 한양대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 논술100% (9:30 상경 / 13:30 / 17:00)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 한국외대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">★ 논술100% (10:00 T1 / 15:00 T2)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 세종대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">인문 (9:00~11:00 / 2합5)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 5: Nov 29 - Nov 30 -->
+            <div class="day-cell sun" style="background-color: #fffbeb; border: 2px solid #f59e0b;">
+                <div class="day-number">29 <span class="d-day-tag" style="background:#f59e0b; color:#fff;">★ 2주차 중복 피크</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 중앙대 (일반형) <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">10:00 경영36 / 14:00 인문 (3합6)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 광운대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">★ 최저무 (10:00 인문 / 14:30 사회)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 한국외대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">★ 논술100% (10:00 T3 / 15:00 T4)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell">
+                <div class="day-number">30 <span class="d-day-tag" style="background:#ffedd5; color:#9a3412;">D+11</span></div>
+                <div class="events-container">
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 가천대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 약술형 (1개 3등급 / 80분)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell other-month"><div class="day-number">1</div></div>
+            <div class="day-cell other-month"><div class="day-number">2</div></div>
+            <div class="day-cell other-month"><div class="day-number">3</div></div>
+            <div class="day-cell other-month"><div class="day-number">4</div></div>
+            <div class="day-cell other-month"><div class="day-number">5</div></div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2026년 12월 달력 -->
+    <!-- ========================================== -->
+    <div id="month-dec" class="calendar-section">
+        <div class="calendar-month-title">
+            <span>❄️ 2026년 12월 (최종 면접 및 3~4주차 병합 피크)</span>
+            <span style="font-size: 14px; font-weight: 600; color: #166534;">★ 12/5~6 학종면접 피크 & 인하/아주/국민 약술 논술</span>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="day-header sun">일</div>
+            <div class="day-header">월</div>
+            <div class="day-header">화</div>
+            <div class="day-header">수</div>
+            <div class="day-header">목</div>
+            <div class="day-header">금</div>
+            <div class="day-header sat">토</div>
+
+            <!-- Week 1: Nov 29 - Dec 5 -->
+            <div class="day-cell other-month"><div class="day-number">29</div></div>
+            <div class="day-cell other-month"><div class="day-number">30</div></div>
+            <div class="day-cell"><div class="day-number">1</div></div>
+            <div class="day-cell"><div class="day-number">2</div></div>
+            <div class="day-cell"><div class="day-number">3</div></div>
+            <div class="day-cell">
+                <div class="day-number">4 <span class="d-day-tag" style="background:#dcfce7; color:#166534;">D+15</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 서울대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">지역균형 서류기반 면접 (금)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SUPER SATURDAY (12/5) -->
+            <div class="day-cell sat" style="background-color: #fffbeb; border: 2px solid #f59e0b;">
+                <div class="day-number">5 <span class="d-day-tag" style="background:#f59e0b; color:#fff;">★ 학종피크/논술</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 건국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">KU자기추천 2단계 면접 (30%)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 경희대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">네오르네상스 1차 면접 (30%)</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 중앙대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">CAU탐구형 / 성장형 면접</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 인하대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 최저무 (경영22/행정10/인문 100분)</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">🟧 [논술] 국민대 (약술형) <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">90분 약술 (2합6 / 경영11/행정6/정외3)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 2: Dec 6 - Dec 12 -->
+            <div class="day-cell sun" style="background-color: #fffbeb; border: 2px solid #f59e0b;">
+                <div class="day-number">6 <span class="d-day-tag" style="background:#f59e0b; color:#fff;">★ 학종피크/논술</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 건국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">KU자기추천 2차 면접</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 경희대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">네오르네상스 2차 면접</div>
+                    </div>
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 중앙대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">CAU융합형(의학) / 탐구형</div>
+                    </div>
+                    <div class="event-card card-nonsul">
+                        <div class="univ-name">★ 🟧 [논술] 아주대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">★ 최저무 (9:00~11:00 경영15/국문)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">7</div></div>
+            <div class="day-cell"><div class="day-number">8</div></div>
+            <div class="day-cell"><div class="day-number">9</div></div>
+            <div class="day-cell"><div class="day-number">10</div></div>
+            <div class="day-cell">
+                <div class="day-number">11 <span class="d-day-tag" style="background:#fef3c7; color:#92400e;">D+22</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 동국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">Do Dream 1차 면접 (금)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell sat">
+                <div class="day-number">12 <span class="d-day-tag" style="background:#fef3c7; color:#92400e;">D+23</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 동국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">Do Dream 2차 면접 (토)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 3: Dec 13 - Dec 19 -->
+            <div class="day-cell sun">
+                <div class="day-number">13 <span class="d-day-tag" style="background:#fef3c7; color:#92400e;">D+24</span></div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">★ 🟦 [학종] 동국대 <span class="deadline-tag" style="background:#dbeafe; color:#1e40af;">마감: 9/11 17시</span></div>
+                        <div class="time-info">Do Dream 3차 면접 (일)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell">
+                <div class="day-number">14</div>
+                <div class="events-container">
+                    <div class="event-card card-johap">
+                        <div class="univ-name">🟦 [학종] 아주대 <span class="deadline-tag" style="background:#f3e8ff; color:#6b21a8;">마감: 9/11 18시</span></div>
+                        <div class="time-info">ACE / 지역의사 (의약학)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-cell"><div class="day-number">15</div></div>
+            <div class="day-cell"><div class="day-number">16</div></div>
+            <div class="day-cell"><div class="day-number">17</div></div>
+            <div class="day-cell"><div class="day-number">18</div></div>
+            <div class="day-cell sat"><div class="day-number">19</div></div>
+
+            <!-- Week 4: Dec 20 - Dec 26 -->
+            <div class="day-cell sun"><div class="day-number">20</div></div>
+            <div class="day-cell"><div class="day-number">21</div></div>
+            <div class="day-cell"><div class="day-number">22</div></div>
+            <div class="day-cell"><div class="day-number">23</div></div>
+            <div class="day-cell"><div class="day-number">24</div></div>
+            <div class="day-cell"><div class="day-number">25</div></div>
+            <div class="day-cell sat"><div class="day-number">26</div></div>
+
+            <!-- Week 5: Dec 27 - Dec 31 -->
+            <div class="day-cell sun"><div class="day-number">27</div></div>
+            <div class="day-cell"><div class="day-number">28</div></div>
+            <div class="day-cell"><div class="day-number">29</div></div>
+            <div class="day-cell"><div class="day-number">30</div></div>
+            <div class="day-cell"><div class="day-number">31</div></div>
+            <div class="day-cell other-month"><div class="day-number">1</div></div>
+            <div class="day-cell other-month"><div class="day-number">2</div></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchMonth(monthId) {
+        document.querySelectorAll('.calendar-section').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+        document.getElementById('month-' + monthId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>

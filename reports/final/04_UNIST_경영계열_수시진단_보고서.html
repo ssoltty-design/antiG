@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIST(울산과기원) 경영계열 수시 합격 가능성 정밀 진단 보고서 - 박정윤 학생</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --primary: #1e3a8a;
+            --accent: #2563eb;
+            --teal: #0d9488;
+            --text: #0f172a;
+            --muted: #64748b;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Pretendard', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .header { text-align: center; margin-bottom: 2rem; background: #ffffff; border: 1px solid var(--card-border); padding: 2.5rem 1.5rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04); }
+        .header h1 { font-size: 2.1rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .header p { color: var(--muted); margin-top: 0.5rem; font-size: 1.05rem; }
+        
+        .badge { display: inline-block; background: #ccfbf1; color: #0f766e; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+        .badge.blue { background: #dbeafe; color: #1e40af; }
+        .badge.orange { background: #fef3c7; color: #b45309; }
+        .badge.purple { background: #f3e8ff; color: #6b21a8; }
+        .badge.red { background: #fee2e2; color: #991b1b; }
+        .badge.green { background: #dcfce7; color: #15803d; }
+
+        .tag-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag-item { background: #f1f5f9; color: #334155; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .grid-full { margin-bottom: 1.5rem; }
+        
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03); }
+        .card-title { font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 1.2rem; border-bottom: 2px solid #eff6ff; padding-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: center; }
+        
+        .stat-box { display: flex; gap: 1rem; margin-bottom: 1.2rem; }
+        .stat-item { flex:1; background: #f8fafc; border: 1px solid var(--card-border); padding: 1rem; border-radius: 12px; text-align: center; }
+        .stat-item.highlight { background: #eff6ff; border-color: #bfdbfe; }
+        .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+        .stat-lbl { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.88rem; }
+        th { background: #f8fafc; color: var(--primary); padding: 10px 8px; border-bottom: 2px solid var(--card-border); text-align: center; font-weight: 700; }
+        td { padding: 10px 8px; border-bottom: 1px solid var(--card-border); text-align: center; color: var(--text); }
+        tr:hover { background-color: #f8fafc; }
+        
+        .file-link { color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+        .file-link:hover { text-decoration: underline; }
+
+        .info-box { background: #eff6ff; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #1e3a8a; }
+        .warning-box { background: #fff1f2; border-left: 4px solid #f43f5e; padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #9f1239; }
+        .teal-box { background: #f0fdf4; border-left: 4px solid var(--teal); padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #065f46; }
+
+        ul { padding-left: 1.2rem; margin-top: 0.5rem; font-size: 0.9rem; color: #334155; }
+        li { margin-bottom: 0.4rem; }
+
+        .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+        .swot-box { padding: 1.2rem; border-radius: 12px; border: 1px solid var(--card-border); font-size: 0.88rem; }
+        .swot-s { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+        .swot-w { background: #fff1f2; border-color: #fecdd3; color: #9f1239; }
+        .swot-o { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+        .swot-t { background: #fff7ed; border-color: #ffedd5; color: #9a3412; }
+        .swot-title { font-weight: 800; font-size: 1.05rem; margin-bottom: 0.5rem; }
+
+        .footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <span class="badge blue">과기원 경영계열 유일 선발 대학 분석</span>
+            <h1 style="margin-top: 0.5rem;">UNIST(울산과기원) 경영계열 수시 합격 가능성 정밀 진단 보고서</h1>
+            <p>진선여자고등학교 3학년 박정윤 학생 (GPA 5.72 / 7모 수학 83.1%) 맞춤형 심층 분석</p>
+            <div class="tag-group">
+                <span class="tag-item">🏫 출신고: 진선여자고등학교 (강남 8학군)</span>
+                <span class="tag-item">📊 내신 평점: 5.72등급 (미적분 7등급 / 원점수 17점)</span>
+                <span class="tag-item">🎯 전형 특징: 서류 100% 정성평가 / 수능최저 없음</span>
+                <span class="tag-item">🎁 혜택: 수시 6회 지원 제한 규정 미적용 (군외 7번째 카드)</span>
+            </div>
+        </div>
+
+        <!-- Section 1: 전형 요약 및 입결 팩트 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>1. UNIST 경영계열 수시 모집요강 및 대입 입결 팩트 분석</span>
+                    <span class="badge orange">핵심 팩트 분석</span>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-item highlight">
+                        <div class="stat-val">유일선발</div>
+                        <div class="stat-lbl">4대 과기원 중 경영계열 별도선발</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">서류 100%</div>
+                        <div class="stat-lbl">면접 없음 (학생부 정성평가)</div>
+                    </div>
+                    <div class="stat-item highlight">
+                        <div class="stat-val">최저 없음</div>
+                        <div class="stat-lbl">수능 최저학력기준 미적용</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">1.5 ~ 1.8</div>
+                        <div class="stat-lbl">일반고 최종등록자 평균 등급</div>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>UNIST 경영계열 수시 모집 규정</th>
+                            <th>박정윤 학생 적용 및 시사점</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>모집 단위 및 전형</strong></td>
+                            <td>경영계열 (수시 무학과 이공계와 별도 선발 / 서류 100%)</td>
+                            <td>문과계열 지원자가 직접 지원 가능한 유일한 과기원 수시 트랙</td>
+                        </tr>
+                        <tr>
+                            <td><strong>수시 6회 제한 적용 여부</strong></td>
+                            <td><strong>미적용 (군외 대학 - 6회 제한 규정에서 완전히 제외)</strong></td>
+                            <td><strong>일반 4년제 수시 6카드 손실 없이 원서 접수 가능한 '보너스 7번째 카드'</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>수능 최저학력기준</strong></td>
+                            <td><strong>미적용 (없음)</strong></td>
+                            <td>수능 성적 부담 없이 학생부 정성 서류로만 평가</td>
+                        </tr>
+                        <tr>
+                            <td><strong>수시 경쟁률</strong></td>
+                            <td>12 : 1 ~ 18 : 1 (이공계 대비 소수 인원 선발로 바늘구멍 경쟁)</td>
+                            <td>서류 100% 전형 특성상 1단계 컷 통과 여부가 합불 직결</td>
+                        </tr>
+                        <tr>
+                            <td><strong>합격선 (교과 등급 기준)</strong></td>
+                            <td>일반고 평균 1.5~1.8등급 / 자사고·강남권 최하단 컷 2.0~2.8등급</td>
+                            <td>박정윤 학생 3개년 단순 평균 <strong>5.72등급</strong>으로 정량/정성 합격선과 거리 존재</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 2: 교과 이수 대조 및 학업역량 정밀 대조 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>2. UNIST 권장 교과목 vs 박정윤 학생 실제 이수 성적 정밀 대조</span>
+                    <span class="badge blue">이수 과목 & 성적 진단</span>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>교과 구분</th>
+                            <th>UNIST 경영계열 권장 교과목</th>
+                            <th>박정윤 학생 실제 수강 과목 및 성적</th>
+                            <th>정성평가 영향력 진단 및 평가</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>수학 교과<br>(핵심 평가)</strong></td>
+                            <td>• 일반선택: `수학Ⅰ`, `수학Ⅱ`, `확률과통계`, `미적분`<br>• 진로선택: `경제수학`, `인공지능수학` 등</td>
+                            <td>• `수학Ⅰ`: **5등급** / `수학Ⅱ`: **5등급**<br>• `확률과통계`: **6등급 (1학기) / 7등급 (2학기)**<br>• `미적분`: **7등급 (원점수 17점)**<br>• `심화수학Ⅰ`: 진로 **B등급** (163명 수강)</td>
+                            <td><strong>권장과목 이수 트랙 부합 🟢 / 정성 성적 평가 열세 ⚠️</strong><br>미적분과 심화수학I을 수강한 이력은 긍정적이나, `미적분 7등급(원점수 17점)`과 `확통 6~7등급`은 UNIST 서류평가에서 기초 학업수월성 우려 항목으로 작용.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>탐구 및 정보<br>교과</strong></td>
+                            <td>• 사회: `경제`, `정치와법`, `사회·문화`<br>• 과학/정보: `정보`, `인공지능기초`, 기초과학Ⅰ</td>
+                            <td>• `통합사회`: **5등급 / 5등급**<br>• `사회문제탐구`: 진로 **A등급** (A비율 93.2%)<br>• `지구과학Ⅰ`: **5등급 / 4등급**<br>• `화학Ⅰ`: **7등급 / 6등급** / `생명Ⅰ`: **7등급 / 7등급**<br>• `인공지능기초`: 진로 **B등급** (221명 수강)</td>
+                            <td><strong>탐구 융합 활동 확인 🟢 / 과학 교과 정량 열세 ⚠️</strong><br>사회문제탐구 A등급 및 인공지능기초 이수로 사회/IT 융합 관심은 나타나나, 과학 기초 과목들이 5~7등급선 형성.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>성적 변화 추이</strong></td>
+                            <td>3개년 교과 성적 발전 가능성 및 학업태도</td>
+                            <td>1학년 **5.40** ➔ 2학년 **5.86** ➔ 3학년 1학기 **6.64**</td>
+                            <td>3학년 1학기 주요과목(문학 6/미적 7/영II 7) 하락세가 뚜렷하여 학업역량 평가 요소 부담.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>수능 모의고사<br>수학 반등세</strong></td>
+                            <td>수능 수학적 사고력 역량 (참고 지표)</td>
+                            <td><strong>7월 학평 수학(확통) 83.10% (3등급 / 원점수 74점)</strong></td>
+                            <td>내신 정량 감점 대비 수능 수리적 사고력 잠재력은 급반등하는 긍정적 지표.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3: SWOT 분석 및 합격 가능성 종합 진단 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>3. UNIST 경영계열 수시 지원 SWOT 분석</span>
+                    <span class="badge purple">SWOT 분석</span>
+                </div>
+
+                <div class="swot-grid">
+                    <div class="swot-box swot-s">
+                        <div class="swot-title">💪 Strength (강점)</div>
+                        <ul>
+                            <li>UNIST 권장 이수 과목(`미적분`, `확률과통계`, `심화수학Ⅰ`, `인공지능기초`, `사회문제탐구`) 충실 이수.</li>
+                            <li>강남 8학군 진선여고 특유의 높은 수능 평균 및 심화 교육과정 프로파일.</li>
+                            <li>7모 수학 83.1%(74점) 급상승을 통한 수학적 잠재력 보유.</li>
+                        </ul>
+                    </div>
+
+                    <div class="swot-box swot-w">
+                        <div class="swot-title">⚠️ Weakness (약점)</div>
+                        <ul>
+                            <li>3개년 평점 **5.72등급** 및 3학년 1학기 **6.64등급** 하락세.</li>
+                            <li>핵심 과목 `미적분 7등급 (원점수 17점)` 및 `확통 6~7등급` 정량/정성 감점.</li>
+                            <li>면접 고사가 없어 서류 100% 정성평가를 뒤집을 2차 역전 기회가 없음.</li>
+                        </ul>
+                    </div>
+
+                    <div class="swot-box swot-o">
+                        <div class="swot-title">🎁 Opportunity (기회)</div>
+                        <ul>
+                            <li><strong>수시 6회 지원 제한 규정 미적용 (군외 대학)</strong>으로 지원 시 원서 차단 리스크 0%.</li>
+                            <li>수능 최저학력기준이 없어 수능 당일 컨디션 부담 없음.</li>
+                            <li>자연/인문 융합 생기부 작성자에 대한 서류 정성 참작 가능성.</li>
+                        </ul>
+                    </div>
+
+                    <div class="swot-box swot-t">
+                        <div class="swot-title">🚨 Threat (위협)</div>
+                        <ul>
+                            <li>일반고 최종 등록자 평균 **1.5~1.8등급선** 형성으로 정성 컷 격차 존재.</li>
+                            <li>경쟁률 12:1 ~ 18:1의 소수 정예 경영계열 선발 구조.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: 최종 지원 가이던스 및 종합 판정 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>4. 최종 합격 가능성 판정 및 컨설팅 지원 가이던스</span>
+                    <span class="badge red">최종 진단 및 가이던스</span>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-item highlight" style="background: #fff1f2; border-color: #fecdd3;">
+                        <div class="stat-val" style="color: #e11d48;">극상향 / 소신 지원</div>
+                        <div class="stat-lbl">합격 가능성 종합 판정</div>
+                    </div>
+                    <div class="stat-item highlight" style="background: #f0fdf4; border-color: #bbf7d0;">
+                        <div class="stat-val" style="color: #16a34a;">원서 접수 추천 🟢</div>
+                        <div class="stat-lbl">보너스 7번째 원서 (손실 0%)</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>💡 종합 입시 가이던스:</strong><br>
+                    1) <strong>보너스 7번째 원서로서 원서 접수를 적극 추천합니다 (추천 🟢)</strong>:<br>
+                    UNIST 경영계열은 수시 6회 제한에 포함되지 않는 과학기술원 전형입니다. 지원하더라도 일반 4년제 수시 6카드(서강대/성대/중대 논술, 동국대 상위10과목 교과, 외대/시립대 면접형 학종 등)에 손실이 전혀 없는 <strong>'무료 보너스 상향 카드'</strong>이므로 원서를 제출하는 것이 유익합니다.<br><br>
+                    2) <strong>수시 6카드 내 주력 카드로 과도한 기대를 거는 것은 예방해야 합니다 (주의 ⚠️)</strong>:<br>
+                    내신 5.72등급 및 미적분 7등급(원점수 17점)으로 인해 서류 100% 정성평가 통과 가능성은 현실적으로 희박합니다. 따라서 수시 6카드는 당초 설계한 **[수시 논술 100% 전형]**, **[동국대 상위10과목 교과전형]**, **[2027 신설최저 성대 융합인재 학종]**, **[외대/시립대 면접 50% 역전형 학종]**으로 든든히 다지고 정시 수능에 주력해야 합니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: 출처 파이프라인 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>5. 참조 및 출처 데이터 파이프라인 (Source Files)</span>
+                </div>
+                <ul>
+                    <li><strong>진학사 수시 합격예측 성적표 PDF</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/내신성적/학생부교과_합격예측_진학사.pdf">학생부교과_합격예측_진학사.pdf</a></li>
+                    <li><strong>학생부 과목별 상세 성적 DB (CSV)</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/내신성적/학생부_과목별_상세성적_분석.csv">학생부_과목별_상세성적_분석.csv</a></li>
+                    <li><strong>모의고사 성적 추이 DB (XLS)</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/모의고사%20성적/모의고사_성적_추이_분석.xls">모의고사_성적_추이_분석.xls</a></li>
+                    <li><strong>마스터 입시자료 폴더 목록 가이드</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/입시자료_폴더구조_및_목록.md">입시자료_폴더구조_및_목록.md</a></li>
+                    <li><strong>대입 종합 분석 보고서 HTML</strong>: <a class="file-link" href="file:///C:/Users/그램/Documents/antiG/reports/admission_report.html">admission_report.html</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Antigravity Admission Guidance System &copy; 2026. Clean Executive Light Format Applied.</p>
+        </div>
+
+    </div>
+</body>
+</html>

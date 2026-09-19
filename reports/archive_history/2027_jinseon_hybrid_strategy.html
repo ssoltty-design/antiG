@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027학년도 수시 논술+비논술 하이브리드 융합 전략 보고서 - 진선여고 박정윤 학생</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --primary: #1e3a8a;
+            --accent: #2563eb;
+            --teal: #0d9488;
+            --text: #0f172a;
+            --muted: #64748b;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Pretendard', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .header { text-align: center; margin-bottom: 2rem; background: #ffffff; border: 1px solid var(--card-border); padding: 2.5rem 1.5rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04); }
+        .header h1 { font-size: 2.1rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .header p { color: var(--muted); margin-top: 0.5rem; font-size: 1.05rem; }
+        
+        .badge { display: inline-block; background: #ccfbf1; color: #0f766e; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+        .badge.blue { background: #dbeafe; color: #1e40af; }
+        .badge.orange { background: #fef3c7; color: #b45309; }
+        .badge.purple { background: #f3e8ff; color: #6b21a8; }
+        .badge.red { background: #fee2e2; color: #991b1b; }
+        .badge.green { background: #dcfce7; color: #15803d; }
+
+        .tag-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag-item { background: #f1f5f9; color: #334155; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.85rem; border: 1px solid #cbd5e1; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+        .grid-full { margin-bottom: 1.5rem; }
+        
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03); }
+        .card-title { font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 1.2rem; border-bottom: 2px solid #eff6ff; padding-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: center; }
+        
+        .stat-box { display: flex; gap: 1rem; margin-bottom: 1.2rem; }
+        .stat-item { flex:1; background: #f8fafc; border: 1px solid var(--card-border); padding: 1rem; border-radius: 12px; text-align: center; }
+        .stat-item.highlight { background: #eff6ff; border-color: #bfdbfe; }
+        .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+        .stat-lbl { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.88rem; }
+        th { background: #f8fafc; color: var(--primary); padding: 10px 8px; border-bottom: 2px solid var(--card-border); text-align: center; font-weight: 700; }
+        td { padding: 10px 8px; border-bottom: 1px solid var(--card-border); text-align: center; color: var(--text); }
+        tr:hover { background-color: #f8fafc; }
+        
+        .file-link { color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+        .file-link:hover { text-decoration: underline; }
+
+        .info-box { background: #eff6ff; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #1e3a8a; }
+        .warning-box { background: #fff1f2; border-left: 4px solid #f43f5e; padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #9f1239; }
+        .teal-box { background: #f0fdf4; border-left: 4px solid var(--teal); padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-size: 0.9rem; color: #065f46; }
+
+        ul { padding-left: 1.2rem; margin-top: 0.5rem; font-size: 0.9rem; color: #334155; }
+        li { margin-bottom: 0.4rem; }
+
+        .plan-card { border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; background: #ffffff; }
+        .plan-card.plan-a { border-top: 4px solid #f59e0b; }
+        .plan-card.plan-b { border-top: 4px solid #2563eb; background: #fafafa; }
+        .plan-card.plan-c { border-top: 4px solid #0d9488; }
+        .plan-header-title { font-size: 1.1rem; font-weight: 800; color: var(--primary); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+
+        .footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <span class="badge blue">2027 대입 하이브리드(논술+비논술) 융합 전략</span>
+            <h1 style="margin-top: 0.5rem;">진선여고 내신 5.72등급 수시 논술+비논술 하이브리드 전략 보고서</h1>
+            <p>강남 8학군 진선여자고등학교 3학년 박정윤 학생 논술 100% & 학종/교과 시너지 극대화 설계</p>
+            <div class="tag-group">
+                <span class="tag-item">🏫 출신고: 진선여자고등학교 (강남 8학군)</span>
+                <span class="tag-item">📊 내신: 3개년 평균 5.72등급 (1학년 5.40 / 2학년 5.86 / 3학년 6.64)</span>
+                <span class="tag-item">🎯 모의고사: 7모 수학 83.1% (3등급/74점 급상승)</span>
+                <span class="tag-item">💡 전략: 논술 2~3장 + 수능최저학종/동국대교과 3장 융합</span>
+            </div>
+        </div>
+
+        <!-- Section 1: 하이브리드 전략 배경 및 진단 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>1. 왜 논술 + 비논술 하이브리드(Hybrid) 전략인가?</span>
+                    <span class="badge green">하이브리드 전략 도입</span>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-item highlight">
+                        <div class="stat-val">5.72 등급</div>
+                        <div class="stat-lbl">전학년 단순 평균 내신</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">2.5 ~ 3.2 등급</div>
+                        <div class="stat-lbl">동국대 상위 10과목 산출 내신</div>
+                    </div>
+                    <div class="stat-item highlight">
+                        <div class="stat-val">3개 합 6 이내</div>
+                        <div class="stat-lbl">성대/중대/이대 수능최저 목표</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">논술 3 + 비논술 3</div>
+                        <div class="stat-lbl">황금 비율 수시 6카드</div>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <strong>📌 하이브리드 전략의 핵심 필요성:</strong><br>
+                    1) <strong>논술 100% 전형</strong>: 내신 5.72등급 감점이 미미(1~3점)하여 서강대, 성균관대, 중앙대, 이화여대, 경희대 등 인서울 상위권 대학 상향 지원의 유일한 무기입니다.<br>
+                    2) <strong>비논술 전형(특수 산출 교과 및 수능 최저 연계 학종)</strong>: 
+                    - <strong>동국대 학교장추천인재 교과전형</strong>: 국·수·사·영·한국사 중 <strong>상위 10과목만 반영</strong>하여 정량 내신이 **2.5~3.2등급으로 급상승**하여 교과 감점이 상쇄됩니다.<br>
+                    - <strong>2027 수능 최저 연계 학종(성균관대 융합인재 3합6 신설 / 중앙대 성장형인재 3합6 신설 / 고려대 학업우수 4합8 / 이화여대 미래인재 2합5)</strong>: 높은 수능 최저 기준이 미충족 정량 상위 내신자를 걸러내어, 강남권 학생의 학업역량 정성평가 혜택을 극대화합니다.<br>
+                    - <strong>2단계 면접 50% 역전형 학종(한국외대 면접형 / 시립대 면접형 / 건국대 KU자기추천)</strong>: 3학년 1학기 내신 하락세(6.64)를 2단계 면접 50%로 역전합니다.<br>
+                    3) <strong>결론</strong>: 논술만 6장 쓸 때의 부담감과 당일 필력 변수를 완화하고, **[논술 상향 3장 + 비논술 적정/안정 3장]**의 융합 구조로 합격 안정성과 대학 상향을 동시 달성합니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: 하이브리드 수시 6카드 3대 맞춤 플랜 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>2. 논술 + 비논술 하이브리드(Hybrid) 수시 6카드 3대 맞춤 플랜</span>
+                    <span class="badge blue">2027 팩트 검토</span>
+                </div>
+
+                <div class="plan-card plan-a">
+                    <div class="plan-header-title">
+                        <span>🔥 HYBRID PLAN A: 수리강점 상향 논술 3장 + 최저 학종/동국대 교과 3장 (상향공격형)</span>
+                        <span class="badge orange">상향/공격 융합</span>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>카드</th>
+                                <th>전형 구분</th>
+                                <th>대학 및 학과</th>
+                                <th>전형 요소 및 반영비율</th>
+                                <th>2027 수능 최저학력기준</th>
+                                <th>합격 전략 및 변별력 포인트</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1번</strong></td>
+                                <td><span class="badge blue">논술 [상향]</span></td>
+                                <td><strong>성균관대 경영학과</strong></td>
+                                <td>논술 100%</td>
+                                <td>3개 영역 등급 합 6 이내 (탐개별)</td>
+                                <td>수능 최저 충족 시 실질 경쟁률 급감 / 정형화 기출</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2번</strong></td>
+                                <td><span class="badge blue">논술 [주력★]</span></td>
+                                <td><strong>중앙대 경영학부 (사회계열)</strong></td>
+                                <td>논술 70% + 학생부 30%</td>
+                                <td>3개 영역 등급 합 6 이내 (영어 1인정)</td>
+                                <td><strong>수리논술(확통) 포함 출제 ➔ 7모 수학 83.1% 변별력 활용</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3번</strong></td>
+                                <td><span class="badge blue">논술 [주력★]</span></td>
+                                <td><strong>경희대 경영학과 (사회계열)</strong></td>
+                                <td>논술 100%</td>
+                                <td>2개 영역 등급 합 5 이내 (탐평)</td>
+                                <td>사회계열 수리논술 계산 문항 포함 ➔ 수리 강점 발휘</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4번</strong></td>
+                                <td><span class="badge green">교과 [적정★]</span></td>
+                                <td><strong>동국대 학교장추천인재</strong></td>
+                                <td>교과 70% + 서류 30%</td>
+                                <td><strong>수능 최저 미적용</strong></td>
+                                <td><strong>상위 10과목 반영 ➔ 내신 2.5~3.2등급 반등, 서류 30%로 결정</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5번</strong></td>
+                                <td><span class="badge purple">학종 [상향]</span></td>
+                                <td><strong>이화여대 미래인재전형</strong></td>
+                                <td>서류 100% 정성평가</td>
+                                <td>2개 영역 등급 합 5 이내</td>
+                                <td>이화여대 수능 최저 충족자 실질 컷 낮아짐 ➔ 진선여고 혜택</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6번</strong></td>
+                                <td><span class="badge purple">학종 [주력]</span></td>
+                                <td><strong>한국외대 면접형</strong></td>
+                                <td>1단계 서류 100% ➔ 2단계 면접 50%</td>
+                                <td><strong>수능 최저 미적용</strong></td>
+                                <td><strong>2단계 면접 비중 50% ➔ 3학년 1학기 내신 하락 완전 역전</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>보너스</strong></td>
+                                <td><span class="badge red">과기원 [6회외]</span></td>
+                                <td><strong>UNIST (울산과기원) 경영계열</strong></td>
+                                <td>서류 100% 정성평가</td>
+                                <td><strong>수능 최저 미적용</strong></td>
+                                <td>수시 6회 지원 제한 규정 적용받지 않는 7번째 보너스 카드</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="plan-card plan-b">
+                    <div class="plan-header-title">
+                        <span>⚖️ HYBRID PLAN B: 안정형 건국대 인문I 논술 3장 + 동국대/외대/신설학종 3장 (균형추천형★)</span>
+                        <span class="badge green">추천 1순위</span>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>카드</th>
+                                <th>전형 구분</th>
+                                <th>대학 및 학과</th>
+                                <th>전형 요소 및 반영비율</th>
+                                <th>2027 수능 최저학력기준</th>
+                                <th>합격 전략 및 변별력 포인트</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1번</strong></td>
+                                <td><span class="badge blue">논술 [상향]</span></td>
+                                <td><strong>서강대 인문/사회계열</strong></td>
+                                <td>논술 100%</td>
+                                <td>3개 영역 등급 합 7 이내</td>
+                                <td>서강대 3합 7 수능 최저 완벽 달성 기반 상향 도전</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2번</strong></td>
+                                <td><span class="badge blue">논술 [주력★]</span></td>
+                                <td><strong>건국대 문과대학 / 행정학과</strong></td>
+                                <td>논술 100% (인문사회 I)</td>
+                                <td>2개 영역 등급 합 5 이내</td>
+                                <td><strong>★ 수리 문항 없는 순수 언어/도표 논술 ➔ 수리 2등급 폭탄 위험 차단</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3번</strong></td>
+                                <td><span class="badge blue">논술 [주력★]</span></td>
+                                <td><strong>이화여대 인문계열 (인문I)</strong></td>
+                                <td>논술 100% (인문사회 I)</td>
+                                <td>2개 영역 등급 합 5 이내</td>
+                                <td>수리 계산 배제 순수 언어논술 ➔ 문장 분석 및 필력 승부</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4번</strong></td>
+                                <td><span class="badge green">교과 [주력★]</span></td>
+                                <td><strong>동국대 학교장추천인재</strong></td>
+                                <td>교과 70% + 서류 30%</td>
+                                <td><strong>수능 최저 미적용</strong></td>
+                                <td><strong>상위 10과목 정량 반영으로 내신 감점 0.1점 미만 무력화</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5번</strong></td>
+                                <td><span class="badge purple">학종 [주력★]</span></td>
+                                <td><strong>성균관대 융합인재전형</strong></td>
+                                <td>서류 100% 정성평가</td>
+                                <td><strong>3개 영역 등급 합 6 이내 (2027 신설!)</strong></td>
+                                <td><strong>2027년 수능 최저 신설로 실질 합격 컷 하향 안정화 혜택</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>6번</strong></td>
+                                <td><span class="badge purple">학종 [안정★]</span></td>
+                                <td><strong>동국대 Do Dream / 가천대 바람개비</strong></td>
+                                <td>1단계 서류 ➔ 2단계 면접 30~50%</td>
+                                <td><strong>수능 최저 미적용</strong></td>
+                                <td>면접 역전 및 수도권/인서울 합격 안전판 완벽 구축</td>
+                            </tr>
+                            <tr>
+                                <td><strong>보너스</strong></td>
+                                <td><span class="badge red">과기원 [6회외]</span></td>
+                                <td><strong>UNIST (울산과기원) 경영계열</strong></td>
+                                <td>서류 100% 정성평가</td>
+                                <td><strong>수능 최저 미적용</strong></td>
+                                <td>자연/인문 융합 생기부 우수자 보너스 지원 카드</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="plan-card plan-c">
+                    <div class="plan-header-title">
+                        <span>🛡️ HYBRID PLAN C: 수시 콤팩트 4장 (논술2+학종2) + 정시(수능) 올인 (수시납치 방지형)</span>
+                        <span class="badge purple">수시납치 차단</span>
+                    </div>
+                    <ul>
+                        <li><strong>1번 [논술 - 상향]</strong>: 성균관대 경영/사회계열 (3합 6, 논술 100%)</li>
+                        <li><strong>2번 [논술 - 상향]</strong>: 중앙대 경영학부 (사회계열) (3합 6, 수리논술 포함)</li>
+                        <li><strong>3번 [학종 - 상향]</strong>: 고려대 학업우수형 (4개 합 8, 서류 100%)</li>
+                        <li><strong>4번 [학종 - 주력]</strong>: 이화여대 미래인재전형 (2개 합 5, 서류 100%)</li>
+                        <li><strong>5~6번 카드</strong>: **수시 원서 미접수 (하향/안정 미작성으로 수시 납치 완전 차단)**</li>
+                        <li><strong>정시 올인 파이프라인</strong>: 7모 수학 83.1% 상승세 유지 ➔ **수능 목표 점수(국2/수2 84~88점/영1/사1~2) 달성하여 정시로 인서울 중경외시 직격 타깃**</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: 하이브리드 전략의 시너지 분석 -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">
+                    <span>3.1 논술 vs 비논술 하이브리드 시너지 장점</span>
+                    <span class="badge green">시너지 이점</span>
+                </div>
+                <div class="teal-box">
+                    <strong>👍 하이브리드 조합의 3대 강점:</strong>
+                    <ul>
+                        <li><strong>1) 논술 100% 상향 탑승</strong>: 내신 5.72등급 한계를 서강대·성대·중대 논술 100%로 완벽 돌파.</li>
+                        <li><strong>2) 동국대 특수 교과 활용</strong>: 상위 10과목 정량 산출(2.5~3.2등급 반등)로 안정적인 교과 카드 확보.</li>
+                        <li><strong>3) 2027 수능 최저 신설 학종 수혜</strong>: 성균관대 융합인재(3합6), 중앙대 성장형인재(3합6) 신설 최저로 강남권 수능 강자 유리.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span>3.2 지원 시 유의사항 및 리스크 관리</span>
+                    <span class="badge orange">리스크 점검</span>
+                </div>
+                <div class="warning-box">
+                    <strong>⚠️ 하이브리드 지원 시 체크포인트:</strong>
+                    <ul>
+                        <li><strong>일정 중복 점검</strong>: 수능 후 주말 논술 시험일(11/21~22 성대/서강대/경희대, 11/28~29 중대/이대/건대)과 대학별 면접 일정의 중복 여부를 사전 대조해야 함.</li>
+                        <li><strong>수능 최저 미달 대비</strong>: 학종 면접형(외대/시립대/동국대) 및 동국대 교과는 수능 최저가 없으므로 수능 최저 미달 시의 안전판 역할을 수행함.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: 2027 대입 핵심 일정 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>4. 2027 대입 핵심 일정 및 가이던스</span>
+                    <span class="badge red">일정 관리</span>
+                </div>
+                <ul>
+                    <li><strong>2027 수시 원서 접수 기간</strong>: 2026년 9월 7일(월) ~ 9월 11일(금) (대학별 마감시각 17:00/18:00 확인)</li>
+                    <li><strong>2027 대학수학능력시험일</strong>: 2026년 11월 19일(목)</li>
+                    <li><strong>수시 1단계 발표 및 면접</strong>: 2026년 10월 말 ~ 11월 말 (수능 전/후 면접)</li>
+                    <li><strong>수시 합격자 최종 발표</strong>: 2026년 12월 18일(금) 이전</li>
+                    <li><strong>2027 정시 원서 접수 기간</strong>: 2026년 12월 28일(월) ~ 12월 31일(목)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 5: 출처 파이프라인 -->
+        <div class="grid-full">
+            <div class="card">
+                <div class="card-title">
+                    <span>5. 참조 및 출처 데이터 파이프라인 (Source Links)</span>
+                </div>
+                <ul>
+                    <li><strong>학생부 원본 성적표 이미지</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/내신성적/학생부_전교과_평균등급.png">학생부_전교과_평균등급.png</a></li>
+                    <li><strong>학생부 내신 정량 분석 DB</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/내신성적/학생부_내신성적_분석.csv">학생부_내신성적_분석.csv</a> | <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/내신성적/학생부_내신성적_분석.xls">학생부_내신성적_분석.xls</a></li>
+                    <li><strong>2027 대학별 수능최저학력기준 분석표</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/2027_대학별_수능최저학력기준_분석.xls">2027_대학별_수능최저학력기준_분석.xls</a></li>
+                    <li><strong>마스터 입시자료 폴더 목록 가이드</strong>: <a class="file-link" href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/입시자료_폴더구조_및_목록.md">입시자료_폴더구조_및_목록.md</a></li>
+                    <li><strong>대입 종합 분석 보고서 HTML</strong>: <a class="file-link" href="file:///C:/Users/그램/Documents/antiG/reports/admission_report.html">admission_report.html</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Antigravity Admission Guidance System &copy; 2026. Clean Executive Light Format Applied.</p>
+        </div>
+
+    </div>
+</body>
+</html>

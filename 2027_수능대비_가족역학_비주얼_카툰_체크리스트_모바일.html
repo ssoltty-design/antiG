@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>2027 수능대비 가족역학 비주얼 카툰 포켓 체크리스트</title>
+  <style>
+    /* ==========================================================================
+       APEX-Design™ System & Pure White (Rule 5) High-Visibility Tokens
+       ========================================================================== */
+    :root {
+      --bg-main: #ffffff;
+      --bg-sub: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #334155;
+      --text-muted: #64748b;
+      --border-main: #e2e8f0;
+      --border-focus: #2563eb;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+      /* Stakeholder Accent Colors */
+      --color-mom: #e11d48;
+      --color-mom-bg: #fff1f2;
+      --color-mom-border: #fecdd3;
+      --color-dad: #d97706;
+      --color-dad-bg: #fffbeb;
+      --color-dad-border: #fde68a;
+      --color-jy: #1d4ed8;
+      --color-jy-bg: #eff6ff;
+      --color-jy-border: #bfdbfe;
+      --color-alert: #dc2626;
+      --color-alert-bg: #fef2f2;
+      --color-alert-border: #fecaca;
+      --color-success: #059669;
+      --color-success-bg: #ecfdf5;
+      --color-success-border: #a7f3d0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-sub);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+
+    /* Container */
+    .app-container {
+      max-width: 768px;
+      margin: 0 auto;
+      background: var(--bg-main);
+      min-height: 100vh;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Header */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-main);
+      padding: 14px 18px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dday-badge {
+      background: var(--color-alert);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Progress KPI Bar */
+    .kpi-container {
+      background: var(--bg-sub);
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+    }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 9px;
+      background: #e2e8f0;
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #1d4ed8, #059669);
+      width: 0%;
+      transition: width 0.4s ease;
+      border-radius: var(--radius-full);
+    }
+
+    /* Top Nav Quick Actions */
+    .quick-actions {
+      display: flex;
+      gap: 8px;
+      padding: 10px 18px 4px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .quick-actions::-webkit-scrollbar { display: none; }
+
+    .action-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-main);
+      background: #ffffff;
+      color: var(--text-sub);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .action-pill-btn:hover, .action-pill-btn:active {
+      background: var(--bg-sub);
+      border-color: var(--border-focus);
+      color: var(--border-focus);
+    }
+
+    /* Tabs Navigation */
+    .tab-bar {
+      display: flex;
+      overflow-x: auto;
+      border-bottom: 2px solid var(--border-main);
+      background: #ffffff;
+      padding: 0 14px;
+      scrollbar-width: none;
+    }
+    .tab-bar::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      flex: 0 0 auto;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: none;
+      background: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      color: #1d4ed8;
+      border-bottom-color: #1d4ed8;
+    }
+
+    /* Content Area */
+    .content-section {
+      padding: 16px 18px;
+    }
+
+    .section-title-wrap {
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       Cartoon Webtoon Comic Strip (4-Cut Style)
+       ========================================================================== */
+    .cartoon-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .cartoon-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .cartoon-panel {
+      background: #ffffff;
+      border: 2px solid #0f172a;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 4px 4px 0px #0f172a;
+      transition: transform 0.2s;
+    }
+    .cartoon-panel:hover {
+      transform: translateY(-2px);
+    }
+
+    .panel-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .panel-visual {
+      background: #f8fafc;
+      padding: 16px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1.5px solid #0f172a;
+    }
+
+    .panel-svg-illu {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .speech-bubble {
+      background: #ffffff;
+      border: 2px solid #0f172a;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-main);
+      position: relative;
+      max-width: 90%;
+      text-align: center;
+      box-shadow: 2px 2px 0px rgba(15, 23, 42, 0.15);
+    }
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px 8px 0;
+      border-style: solid;
+      border-color: #ffffff transparent;
+      display: block;
+      width: 0;
+    }
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #0f172a transparent;
+      display: block;
+      width: 0;
+    }
+
+    .panel-body {
+      padding: 12px 14px;
+      background: #ffffff;
+    }
+
+    .rule-box {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .rule-pill-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      margin-bottom: 4px;
+    }
+    .tag-danger { background: #fee2e2; color: #b91c1c; }
+    .tag-success { background: #dcfce7; color: #15803d; }
+    .tag-primary { background: #dbeafe; color: #1d4ed8; }
+
+    .card-footer-link {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    .detail-doc-btn {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #1d4ed8;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .detail-doc-btn:hover {
+      background: #dbeafe;
+      border-color: #1d4ed8;
+    }
+
+    /* ==========================================================================
+       Character Profile Cards
+       ========================================================================== */
+    .profile-card {
+      background: #ffffff;
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .profile-card.mom { border-left: 5px solid var(--color-mom); }
+    .profile-card.dad { border-left: 5px solid var(--color-dad); }
+    .profile-card.jy { border-left: 5px solid var(--color-jy); }
+
+    .avatar-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 2px solid #0f172a;
+    }
+    .avatar-mom { background: #ffe4e6; }
+    .avatar-dad { background: #fef3c7; }
+    .avatar-jy { background: #dbeafe; }
+
+    .profile-info {
+      flex: 1;
+    }
+    .profile-name {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .profile-motto {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       Interactive Checklist Items
+       ========================================================================== */
+    .checklist-group {
+      background: #ffffff;
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .group-header {
+      background: var(--bg-sub);
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-main);
+    }
+
+    .group-count-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #ffffff;
+      border: 1px solid var(--border-main);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .checklist-item {
+      padding: 12px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+    .checklist-item:hover {
+      background: #f8fafc;
+    }
+
+    .custom-checkbox {
+      margin-top: 3px;
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 2px solid #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      background: #ffffff;
+    }
+    .custom-checkbox.checked {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+    .custom-checkbox.checked::after {
+      content: '✓';
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .item-content {
+      flex: 1;
+    }
+    .item-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+      cursor: pointer;
+    }
+    .checklist-item.is-done .item-title {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    .item-desc {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .item-tags {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+
+    .sub-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    /* ==========================================================================
+       16대 돌발상황 처방전 카드 (Troubleshooting Cards)
+       ========================================================================== */
+    .crisis-card {
+      background: #ffffff;
+      border: 1px solid var(--border-main);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .crisis-card.high-alert {
+      border-left: 4px solid var(--color-alert);
+      background: linear-gradient(to right, #fff5f5, #ffffff 15%);
+    }
+
+    .crisis-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .crisis-case-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .crisis-target-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .crisis-situation {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .crisis-rx {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #166534;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-dialog {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      border: 1px solid var(--border-main);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      z-index: 10;
+    }
+
+    .modal-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .modal-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .modal-body {
+      padding: 20px;
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .modal-body h4 {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin: 14px 0 6px;
+    }
+    .modal-body ul {
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+    .modal-body li {
+      margin-bottom: 4px;
+    }
+
+    .modal-footer {
+      padding: 12px 20px;
+      border-top: 1px solid var(--border-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-sub);
+    }
+
+    /* Print CSS */
+    @media print {
+      body { background: #ffffff; }
+      .app-header, .quick-actions, .tab-bar, .modal-overlay, .card-footer-link { display: none !important; }
+      .app-container { box-shadow: none; max-width: 100%; }
+      .cartoon-panel { box-shadow: none; border: 1px solid #000; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+
+  <!-- Sticky Header with D-Day and Live Progress -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-title">
+        <span>🎨</span>
+        <span>수능 D-Day 비주얼 포켓 체크리스트</span>
+      </div>
+      <div class="dday-badge" id="ddayBadge">D-61 2026.11.19</div>
+    </div>
+
+    <!-- Live Progress Bar -->
+    <div class="kpi-container">
+      <div class="kpi-header">
+        <span>전체 필수 준비 완료율</span>
+        <span id="kpiProgressText" style="color:#1d4ed8; font-weight:800;">0% (0/28완료)</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Action Navigation Pills -->
+  <div class="quick-actions">
+    <button class="action-pill-btn" onclick="resetAllChecks()">🔄 체크 초기화</button>
+    <button class="action-pill-btn" onclick="window.print()">🖨️ 인쇄/PDF 저장</button>
+    <a class="action-pill-btn" href="../../AG_통합_일일브리핑_및_Todo캘린더_mobile.html" target="_blank">📱 일일 브리핑 바로가기</a>
+    <a class="action-pill-btn" href="05_공통_통합체크리스트_및_비상대응/05_가족역학별_실전_사례집_및_트리거방어_실행가이드.md" target="_blank">📖 안티그래비티 원문</a>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <nav class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('tab-cartoon')">🎨 4컷 만화 요약</button>
+    <button class="tab-btn" onclick="switchTab('tab-mom')">👩 엄마 체크</button>
+    <button class="tab-btn" onclick="switchTab('tab-dad')">👨 아빠 체크</button>
+    <button class="tab-btn" onclick="switchTab('tab-jy')">👧 정윤이 체크</button>
+    <button class="tab-btn" onclick="switchTab('tab-crisis')">🚨 16대 돌발 처방전</button>
+  </nav>
+
+  <!-- =========================================================================
+       TAB 1: 4컷 만화 요약 (Cartoon Visual Strip)
+       ========================================================================= -->
+  <section id="tab-cartoon" class="content-section">
+    <div class="section-title-wrap">
+      <h2 class="section-title">✨ 만화로 보는 수능 D-Day 4대 수호 원칙</h2>
+      <p class="section-desc">가장 빈번한 실수 4가지를 만화 컷으로 익히고 실수를 원천 차단합니다.</p>
+    </div>
+
+    <div class="cartoon-grid">
+      
+      <!-- Cut 1 -->
+      <div class="cartoon-panel">
+        <div class="panel-header">
+          <span>CUT 1. 당일 아침 인쇄 대참사 방어</span>
+          <span>D-3 셧다운</span>
+        </div>
+        <div class="panel-visual">
+          <!-- SVG Illustration: Printer with X -->
+          <svg class="panel-svg-illu" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="40" width="70" height="40" rx="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="3"/>
+            <rect x="28" y="20" width="44" height="25" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+            <line x1="35" y1="30" x2="65" y2="30" stroke="#94a3b8" stroke-width="2"/>
+            <line x1="35" y1="35" x2="55" y2="35" stroke="#94a3b8" stroke-width="2"/>
+            <rect x="30" y="60" width="40" height="15" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+            <!-- Big Red No Symbol -->
+            <circle cx="50" cy="50" r="34" stroke="#dc2626" stroke-width="6"/>
+            <line x1="26" y1="26" x2="74" y2="74" stroke="#dc2626" stroke-width="6"/>
+          </svg>
+          <div class="speech-bubble">
+            👧 "엄마! 패드에 요약한 거 지금 뽑아줘!"<br>
+            👩 "안 돼! D-3에 뽑아둔 가방 속 바인더만 본다!"
+          </div>
+        </div>
+        <div class="panel-body">
+          <span class="rule-pill-tag tag-danger">실수 01 방어</span>
+          <p class="rule-box">아침 06:40에 프린터를 켜면 잉크 부족, 용지 걸림으로 집안이 패닉에 빠집니다. D-3(월)에 모든 인쇄를 마치고 전원을 끕니다.</p>
+          <div class="card-footer-link">
+            <button class="detail-doc-btn" onclick="openModal('doc-mom-print')">📖 안티그래비티 수칙 보기</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cut 2 -->
+      <div class="cartoon-panel">
+        <div class="panel-header">
+          <span>CUT 2. 차내 침묵의 수호 드라이버</span>
+          <span>훈계·지적 0회</span>
+        </div>
+        <div class="panel-visual">
+          <!-- SVG Illustration: Calm Dad & Car -->
+          <svg class="panel-svg-illu" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="45" width="80" height="35" rx="10" fill="#fef3c7" stroke="#0f172a" stroke-width="3"/>
+            <circle cx="30" cy="80" r="10" fill="#0f172a"/>
+            <circle cx="70" cy="80" r="10" fill="#0f172a"/>
+            <path d="M22 45 L35 25 L68 25 L80 45 Z" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+            <circle cx="50" cy="35" r="7" fill="#f59e0b"/>
+            <!-- Music notes -->
+            <path d="M78 18 Q82 12 86 18 V28" stroke="#1d4ed8" stroke-width="2.5" fill="none"/>
+            <circle cx="86" cy="28" r="3" fill="#1d4ed8"/>
+          </svg>
+          <div class="speech-bubble">
+            👨 "차 안에서는 침묵! 훈계·지적 0회!<br>
+            딸의 심박수를 편안하게 지킨다."
+          </div>
+        </div>
+        <div class="panel-body">
+          <span class="rule-pill-tag tag-success">실수 09·11 방어</span>
+          <p class="rule-box">"넌 매사에 준비가 안 돼 있어"라는 한마디는 1교시 국어 뇌를 마비시킵니다. 허용 멘트는 오직 "온도 괜찮니?"와 "아빠가 믿는다" 2문장뿐입니다.</p>
+          <div class="card-footer-link">
+            <button class="detail-doc-btn" onclick="openModal('doc-dad-silence')">📖 아빠 침묵 수칙 보기</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cut 3 -->
+      <div class="cartoon-panel">
+        <div class="panel-header">
+          <span>CUT 3. 가방 봉인 & 수험표 직행 약도</span>
+          <span>Zero-Decision</span>
+        </div>
+        <div class="panel-visual">
+          <!-- SVG Illustration: Backpack with Padlock & Map -->
+          <svg class="panel-svg-illu" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="30" width="50" height="55" rx="12" fill="#eff6ff" stroke="#0f172a" stroke-width="3"/>
+            <rect x="35" y="45" width="30" height="25" rx="6" fill="#bfdbfe" stroke="#0f172a" stroke-width="2"/>
+            <!-- Map tag -->
+            <rect x="60" y="20" width="28" height="36" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+            <text x="64" y="32" font-size="8" font-weight="bold" fill="#2563eb">3D 맵</text>
+            <line x1="64" y1="38" x2="82" y2="38" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="64" y1="44" x2="78" y2="44" stroke="#94a3b8" stroke-width="1.5"/>
+          </svg>
+          <div class="speech-bubble">
+            👧 "누구에게도 길 묻지 않고 직행!<br>
+            가방은 교실 책상 앉을 때까지 안 연다!"
+          </div>
+        </div>
+        <div class="panel-body">
+          <span class="rule-pill-tag tag-primary">실수 03·06 방어</span>
+          <p class="rule-box">차 안에서 가방을 뒤집어 수험표를 찾거나 교문에서 우왕좌왕하지 않습니다. D-1 봉인된 가방과 수험표 뒷면 3D 메모로 책상까지 직행합니다.</p>
+          <div class="card-footer-link">
+            <button class="detail-doc-btn" onclick="openModal('doc-jy-routine')">📖 정윤이 직행 루틴 보기</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cut 4 -->
+      <div class="cartoon-panel">
+        <div class="panel-header">
+          <span>CUT 4. 10분 전 마킹 & 귀가 무조건 지지</span>
+          <span>멘탈 철통 방어</span>
+        </div>
+        <div class="panel-visual">
+          <!-- SVG Illustration: Clock 10 min left & Warm Heart -->
+          <svg class="panel-svg-illu" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="36" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+            <path d="M50 50 L50 22" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+            <path d="M50 50 L30 40" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="4" fill="#0f172a"/>
+            <!-- Heart Badge -->
+            <path d="M72 68 C68 62 60 62 58 68 C56 74 72 86 72 86 C72 86 88 74 86 68 C84 62 76 62 72 68 Z" fill="#e11d48"/>
+          </svg>
+          <div class="speech-bubble">
+            ⏱️ "종료 10분 전 OMR 마킹 완료!"<br>
+            💖 "귀가 땐 채점 묻지 않고 '고생했어' 포옹!"
+          </div>
+        </div>
+        <div class="panel-body">
+          <span class="rule-pill-tag tag-success">실수 04·13 방어</span>
+          <p class="rule-box">시험 종료령 후 마킹은 0점 처리 위험이 있습니다. 10분 전 마킹을 끝내고, 시험 종료 후엔 가채점 질문 대신 "정말 고생 많았다" 따뜻하게 안아줍니다.</p>
+          <div class="card-footer-link">
+            <button class="detail-doc-btn" onclick="openModal('doc-omr-care')">📖 OMR & 귀가 수칙 보기</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TAB 2: 엄마 체크리스트 (Mom's Checklist)
+       ========================================================================= -->
+  <section id="tab-mom" class="content-section" style="display: none;">
+    <div class="profile-card mom">
+      <div class="avatar-wrap avatar-mom">
+        <span style="font-size: 1.8rem;">👩</span>
+      </div>
+      <div class="profile-info">
+        <div class="profile-name">엄마 지원단 (영양·의류·단방향 서빙)</div>
+        <div class="profile-motto">"질문 대신 물건 건네기! 05:40 기상부터 따뜻한 도시락 서빙 완수"</div>
+      </div>
+    </div>
+
+    <!-- D-Day Morning Group -->
+    <div class="checklist-group">
+      <div class="group-header">
+        <span>⏰ D-Day 당일 아침 분 단위 실행 (11/19 목)</span>
+        <span class="group-count-badge">당일 최우선</span>
+      </div>
+
+      <div class="checklist-item" id="item-mom-1">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-1')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-1')">05:40 조용히 기상 및 밥솥 가동</div>
+          <div class="item-desc">정윤이 방에 알람 소리 안 들리도록 무음/진동 확인. 백미밥 취사 및 소고기뭇국 약불 가열.</div>
+          <div class="item-tags"><span class="sub-tag">05:40</span><span class="sub-tag">기상</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-2">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-2')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-2')">06:00 보온도시락 용기 예열 (끓는 물 5분)</div>
+          <div class="item-desc">밥통/국통에 펄펄 끓는 물을 가득 채워 5분간 뚜껑 닫기. 실리콘 패킹 완벽 체결 확인.</div>
+          <div class="item-tags"><span class="sub-tag">06:00</span><span class="sub-tag">보온도시락</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-3">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-3')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-3')">06:15 도시락 팩킹 & 핫팩 동봉</div>
+          <div class="item-desc">예열 물 버리고 갓 지은 밥 75% 분량 담기, 뭇국 밀폐, 파우치 겉면에 얇은 미니 핫팩 1개 동봉.</div>
+          <div class="item-tags"><span class="sub-tag">06:15</span><span class="sub-tag">도시락 팩킹</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-4">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-4')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-4')">06:30 정윤이 기상 & 단일 옷걸이 착장</div>
+          <div class="item-desc">미온수 1잔 전달. 방문에 걸린 [단일 옷걸이] 옷을 고민 없이 바로 입도록 조용히 안내.</div>
+          <div class="item-tags"><span class="sub-tag">06:30</span><span class="sub-tag">Zero-Decision 착장</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-5">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-5')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-5')">06:50 가방 열지 않고 외곽 촉감 점검</div>
+          <div class="item-desc">가방 지퍼 열지 않고 앞주머니 손 대어 아날로그 시계와 수험표 지퍼백 딱딱한 판 촉감 확인.</div>
+          <div class="item-tags"><span class="sub-tag">06:50</span><span class="sub-tag">가방 봉인 유지</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-6">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-6')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-6')">17:00 귀가 마중: 가채점 질문 금지 & 따뜻한 포옹</div>
+          <div class="item-desc">고사장 200m 외곽 마중. "시험 잘 봤니?" 등 결과 질문 일체 금지. "정윤아 정말 고생 많았어!" 포옹만 건네기.</div>
+          <div class="item-tags"><span class="sub-tag">17:00</span><span class="sub-tag">무조건적 지지</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D-1 & D-3 Prep Group -->
+    <div class="checklist-group">
+      <div class="group-header">
+        <span>📅 D-3 ~ D-1 선제 차단 체크리스트</span>
+        <span class="group-count-badge">사전 방어</span>
+      </div>
+
+      <div class="checklist-item" id="item-mom-7">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-7')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-7')">D-3(월) 18:00 요약 자료 인쇄 완료 & 프린터 전원 OFF</div>
+          <div class="item-desc">태블릿 단권화 노트를 과목별로 인쇄 철 완료. "시험 전날과 당일엔 프린터 안 켠다" 선언.</div>
+          <div class="item-tags"><span class="sub-tag">D-3</span><span class="sub-tag">인쇄 셧다운</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-8">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-8')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-8')">D-1 전자기기 무의식 소지 방지: 주머니 전수 탈탈 털기</div>
+          <div class="item-desc">외투/바지 주머니, 가방 안쪽에 에어팟 케이스, 스마트워치, 보조배터리가 없는지 엄마가 직접 검수 수거.</div>
+          <div class="item-tags"><span class="sub-tag">D-1 밤</span><span class="sub-tag">부정행위 방지</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-9">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-9')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-9')">D-1 안경 착용 확인 및 인공눈물 파우치 수납</div>
+          <div class="item-desc">콘택트렌즈 대신 편안한 안경 착용 확인. 무방부제 인공눈물과 안경닦이 가방에 쏙.</div>
+          <div class="item-tags"><span class="sub-tag">D-1 밤</span><span class="sub-tag">안구 건조 방지</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-mom-10">
+        <div class="custom-checkbox" onclick="toggleCheck('mom-10')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('mom-10')">D-1 22:00 불면 안심 멘트 건네기</div>
+          <div class="item-desc">"정윤아, 눈만 감고 누워있어도 뇌는 80% 이상 회복되니까 잠 안 온다고 전혀 걱정 마" 안심시키기.</div>
+          <div class="item-tags"><span class="sub-tag">D-1 밤</span><span class="sub-tag">수면 케어</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TAB 3: 아빠 체크리스트 (Dad's Checklist)
+       ========================================================================= -->
+  <section id="tab-dad" class="content-section" style="display: none;">
+    <div class="profile-card dad">
+      <div class="avatar-wrap avatar-dad">
+        <span style="font-size: 1.8rem;">👨</span>
+      </div>
+      <div class="profile-info">
+        <div class="profile-name">아빠 지원단 (교통·물류·침묵의 수호)</div>
+        <div class="profile-motto">"비난·지적 0회! 차내 온도 22도 예열 및 안전 라이딩 완수"</div>
+      </div>
+    </div>
+
+    <!-- Dad D-Day Group -->
+    <div class="checklist-group">
+      <div class="group-header">
+        <span>⏰ D-Day 당일 아침 아빠 행동 체크표 (11/19 목)</span>
+        <span class="group-count-badge">기동 작전</span>
+      </div>
+
+      <div class="checklist-item" id="item-dad-1">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-1')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-1')">06:20 기상 및 실시간 TMAP 교통 확인</div>
+          <div class="item-desc">조용히 기상하여 영하 기온 및 결빙 여부 점검, 고사장 방향 돌발 사고 구간 유무 1차 확인.</div>
+          <div class="item-tags"><span class="sub-tag">06:20</span><span class="sub-tag">교통 점검</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-dad-2">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-2')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-2')">06:35 차량 시동 및 실내 난방 22도 예열</div>
+          <div class="item-desc">주차장 먼저 이동. 실내 난방 22도 설정 및 시트 열선 1단 예열. 유리창 성에 제거 완료.</div>
+          <div class="item-tags"><span class="sub-tag">06:35</span><span class="sub-tag">차량 예열</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-dad-3">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-3')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-3')">06:55 수능 가방 뒷좌석 거치 & 비상 파우치 확인</div>
+          <div class="item-desc">트렁크는 차가우므로 반드시 차내 거치. 아빠 지갑 안 비상 여권사진 2매 및 비상금 확인.</div>
+          <div class="item-tags"><span class="sub-tag">06:55</span><span class="sub-tag">비상 준비</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-dad-4">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-4')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-4')">07:05 정각 출발 & 차내 침묵 모드(Silence) 집행</div>
+          <div class="item-desc">조용한 클래식 라디오 볼륨 15 재생. 딸의 산만한 행동(다리 떨기 등)에 절대 지적 금지. 허용 멘트: "온도 괜찮니?"</div>
+          <div class="item-tags"><span class="sub-tag">07:05</span><span class="sub-tag">침묵 모드</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-dad-5">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-5')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-5')">07:28 고사장 200m 전 사전 답사 A지점 하차 배웅</div>
+          <div class="item-desc">교문 앞 혼잡 피하고 200m 외곽 부드럽게 정차. "정윤아, 아빠는 널 100% 믿는다. 파이팅!" 힘찬 악수.</div>
+          <div class="item-tags"><span class="sub-tag">07:28</span><span class="sub-tag">하차 배웅</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-dad-6">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-6')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-6')">16:40 사전 지정 B지점 픽업 대기 & 가채점 질문 금지</div>
+          <div class="item-desc">교문 200m 외곽 주차 대기, 차내 히터 예열, 목베개 세팅. "수학 몇 번 찍었어?" 등 질문 일체 금지.</div>
+          <div class="item-tags"><span class="sub-tag">16:40</span><span class="sub-tag">픽업 작전</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dad Logistics Group -->
+    <div class="checklist-group">
+      <div class="group-header">
+        <span>🚗 D-7 ~ D-1 기동 및 논술 릴레이 사전 점검</span>
+        <span class="group-count-badge">인프라</span>
+      </div>
+
+      <div class="checklist-item" id="item-dad-7">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-7')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-7')">D-7 차량 기름 만충(Full) 주유 및 배터리 전압 점검</div>
+          <div class="item-desc">한파 대비 배터리 12.5V 이상 확인, 타이어 공기압 보충, 워셔액 보충 완료.</div>
+          <div class="item-tags"><span class="sub-tag">D-7</span><span class="sub-tag">차량 정비</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-dad-8">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-8')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-8')">D-1 예비소집 동행 & 하차(A)/픽업(B) 지점 2곳 확정</div>
+          <div class="item-desc">교문 정문 정차 금지. 하차 포인트(A)와 오후 픽업 포인트(B)를 정윤이와 현장에서 눈으로 확인.</div>
+          <div class="item-tags"><span class="sub-tag">D-1</span><span class="sub-tag">동선 확정</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-dad-9">
+        <div class="custom-checkbox" onclick="toggleCheck('dad-9')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('dad-9')">수능 직후 주말(11/21~22) 논술 릴레이 주차 거점 확보</div>
+          <div class="item-desc">토요일/일요일 지원 대학 인근 공영주차장 2곳 카카오T 사전 등록 완료.</div>
+          <div class="item-tags"><span class="sub-tag">주말 대비</span><span class="sub-tag">논술 릴레이</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TAB 4: 정윤이 체크리스트 (Student's Checklist)
+       ========================================================================= -->
+  <section id="tab-jy" class="content-section" style="display: none;">
+    <div class="profile-card jy">
+      <div class="avatar-wrap avatar-jy">
+        <span style="font-size: 1.8rem;">👧</span>
+      </div>
+      <div class="profile-info">
+        <div class="profile-name">수험생 박정윤 (Zero-Decision 루틴)</div>
+        <div class="profile-motto">"가방은 교실 책상까지 봉인! 1교시 국어 비문학 뇌 예열 집중!"</div>
+      </div>
+    </div>
+
+    <!-- Student Checklist Group -->
+    <div class="checklist-group">
+      <div class="group-header">
+        <span>🎒 가방 팩킹 및 고사장 직행 수칙</span>
+        <span class="group-count-badge">수험생 필수</span>
+      </div>
+
+      <div class="checklist-item" id="item-jy-1">
+        <div class="custom-checkbox" onclick="toggleCheck('jy-1')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('jy-1')">수험표 + 신분증 + 3D 약도 투명 L자 파일 수납</div>
+          <div class="item-desc">수험표 뒷면에 테이프로 [본관 3층 / 7시험실 / 창가 2번째] 메모 부착. 안내선생님 안 묻고 직행.</div>
+          <div class="item-tags"><span class="sub-tag">D-1</span><span class="sub-tag">직행 L자 파일</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-jy-2">
+        <div class="custom-checkbox" onclick="toggleCheck('jy-2')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('jy-2')">아날로그 손목시계 가방 앞주머니 수납</div>
+          <div class="item-desc">전자식/스마트워치 절대 금지. 아날로그 바늘 시계 시간 맞추고 가방 앞주머니에 쏙.</div>
+          <div class="item-tags"><span class="sub-tag">D-1</span><span class="sub-tag">아날로그 시계</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-jy-3">
+        <div class="custom-checkbox" onclick="toggleCheck('jy-3')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('jy-3')">1교시 국어 비문학 웜업 페이퍼 챙기기 (한국사만 챙김 방지)</div>
+          <div class="item-desc">기출 비문학 1지문 + 문학 1세트 + 행동강령 A4 1장 가방 수납. 08:10 착석 즉시 읽기.</div>
+          <div class="item-tags"><span class="sub-tag">08:10</span><span class="sub-tag">국어 뇌 예열</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-jy-4">
+        <div class="custom-checkbox" onclick="toggleCheck('jy-4')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('jy-4')">종료 10분 전 OMR 마킹 완료 & 수정테이프 밀착</div>
+          <div class="item-desc">종료령 후 마킹은 부정행위 처리 위험. 10분 전 마킹 완료하고 종료령 울리면 즉시 필기구 내려놓기.</div>
+          <div class="item-tags"><span class="sub-tag">실전</span><span class="sub-tag">OMR 수칙</span></div>
+        </div>
+      </div>
+
+      <div class="checklist-item" id="item-jy-5">
+        <div class="custom-checkbox" onclick="toggleCheck('jy-5')"></div>
+        <div class="item-content">
+          <div class="item-title" onclick="toggleCheck('jy-5')">쉬는 시간 가채점 및 친구 대화 차단 (귀마개 착용)</div>
+          <div class="item-desc">1교시 끝나면 정답 맞추지 말고 귀마개 착용 후 화장실 다녀와서 2교시 수학 공식 1장만 응시.</div>
+          <div class="item-tags"><span class="sub-tag">쉬는 시간</span><span class="sub-tag">멘탈 방어</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TAB 5: 16대 돌발상황 만화 처방전 (Crisis Troubleshooting)
+       ========================================================================= -->
+  <section id="tab-crisis" class="content-section" style="display: none;">
+    <div class="section-title-wrap">
+      <h2 class="section-title">🚨 16대 돌발 상황별 원터치 해결 처방전</h2>
+      <p class="section-desc">발생 즉시 1초 만에 실행할 수 있는 행동 가이드입니다.</p>
+    </div>
+
+    <!-- Case 01 -->
+    <div class="crisis-card">
+      <div class="crisis-header">
+        <span class="crisis-case-num">사례 01</span>
+        <span class="crisis-target-tag">당일 06:40 / 엄마</span>
+      </div>
+      <div class="crisis-situation">아침에 "패드 요약본 지금 인쇄해줘" 요구</div>
+      <div class="crisis-rx">
+        <span>💡</span>
+        <span>"이미 D-3에 뽑아둔 단권화 바인더 가방에 있다. 그것만 본다." 단호히 거절 후 프린터 전원 차단.</span>
+      </div>
+    </div>
+
+    <!-- Case 02 -->
+    <div class="crisis-card">
+      <div class="crisis-header">
+        <span class="crisis-case-num">사례 02</span>
+        <span class="crisis-target-tag">출발 전 07:00 / 아빠</span>
+      </div>
+      <div class="crisis-situation">출발 5분 전 화장실 들어가서 20분간 안 나옴</div>
+      <div class="crisis-rx">
+        <span>💡</span>
+        <span>화장실 문 두드리지 말 것. 아빠가 차 시동 켜고 "천천히 나와라, 시간 15분 여유 있다" 안심시키기.</span>
+      </div>
+    </div>
+
+    <!-- Case 03 -->
+    <div class="crisis-card">
+      <div class="crisis-header">
+        <span class="crisis-case-num">사례 03</span>
+        <span class="crisis-target-tag">차내 이동 중 / 아빠</span>
+      </div>
+      <div class="crisis-situation">차 안에서 "수험표 어디 갔지?" 가방 쏟아붓기</div>
+      <div class="crisis-rx">
+        <span>💡</span>
+        <span>"정윤아 가방 열지 마. 앞주머니 만져봐. 딱딱한 판 있지? 거기 있다." 촉감으로 안심시키기.</span>
+      </div>
+    </div>
+
+    <!-- Case 08 -->
+    <div class="crisis-card high-alert">
+      <div class="crisis-header">
+        <span class="crisis-case-num">사례 08 [중대]</span>
+        <span class="crisis-target-tag">고사장 입실 직후 / 수험생</span>
+      </div>
+      <div class="crisis-situation">외투 주머니 속 에어팟/스마트워치 미제출 발견</div>
+      <div class="crisis-rx">
+        <span>💡</span>
+        <span>숨기지 말고 1교시 시작 전 감독관에게 즉시 자진 제출! 전원 OFF 후 제출 시 불이익 제로.</span>
+      </div>
+    </div>
+
+    <!-- Case 09 -->
+    <div class="crisis-card high-alert">
+      <div class="crisis-header">
+        <span class="crisis-case-num">사례 09 [중대]</span>
+        <span class="crisis-target-tag">종료 종 직전 / 수험생</span>
+      </div>
+      <div class="crisis-situation">종료령 울린 후 1문제 더 마킹하려는 충동</div>
+      <div class="crisis-rx">
+        <span>💡</span>
+        <span>종료 10분 전 무조건 마킹 완료! 종료 종 울리면 즉시 필기구를 책상 위에 내려놓기.</span>
+      </div>
+    </div>
+
+    <!-- Case 13 -->
+    <div class="crisis-card high-alert">
+      <div class="crisis-header">
+        <span class="crisis-case-num">사례 13 [가족]</span>
+        <span class="crisis-target-tag">귀가 차내 / 엄마·아빠</span>
+      </div>
+      <div class="crisis-situation">귀가하자마자 "국어 몇 번 찍었어?" 가채점 압박</div>
+      <div class="crisis-rx">
+        <span>💡</span>
+        <span>시험 결과 질문 100% 금지! "우리 딸 정말 큰 산 하나 넘었구나, 최고야!" 무조건적 포옹만 건네기.</span>
+      </div>
+    </div>
+
+    <!-- Case 16 -->
+    <div class="crisis-card">
+      <div class="crisis-header">
+        <span class="crisis-case-num">사례 16</span>
+        <span class="crisis-target-tag">D-1 전야 23:00 / 엄마</span>
+      </div>
+      <div class="crisis-situation">전날 밤 "가슴이 너무 뛰어서 잠이 안 와" 패닉</div>
+      <div class="crisis-rx">
+        <span>💡</span>
+        <span>"눈 감고 누워만 있어도 뇌는 80% 이상 충전된다" 안심시키기. 검증 안 된 약물 복용 절대 금지.</span>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 14px;">
+      <a class="action-pill-btn" href="05_공통_통합체크리스트_및_비상대응/05_가족역학별_실전_사례집_및_트리거방어_실행가이드.md" target="_blank">
+        📖 16대 돌발상황 전체 안티그래비티 매뉴얼 열기
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- =========================================================================
+     Modal Dialog Window for Detailed Antigravity Docs
+     ========================================================================= -->
+<div class="modal-overlay" id="docModal">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">안티그래비티 상세 매뉴얼</div>
+      <button class="modal-close-btn" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <!-- Dynamic Content Loaded Here -->
+    </div>
+    <div class="modal-footer">
+      <a class="action-pill-btn" id="modalFileLink" href="#" target="_blank">📁 원본 파일 열기</a>
+      <button class="action-pill-btn" style="background:#1d4ed8; color:#ffffff; border-color:#1d4ed8;" onclick="closeModal()">확인 완료</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ==========================================================================
+     D-Day Counter & Local Storage Persistence
+     ========================================================================== */
+  const EXAM_DATE = new Date('2026-11-19T08:40:00+09:00');
+
+  function updateDDay() {
+    const now = new Date();
+    const diffTime = EXAM_DATE.getTime() - now.getTime();
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const badge = document.getElementById('ddayBadge');
+    if (diffDays > 0) {
+      badge.textContent = `D-${diffDays} 2026.11.19`;
+    } else if (diffDays === 0) {
+      badge.textContent = `D-DAY 2026.11.19`;
+    } else {
+      badge.textContent = `D+${Math.abs(diffDays)} 수능완수`;
+    }
+  }
+
+  /* Checklist State Management */
+  const CHECK_ITEMS = [
+    'mom-1', 'mom-2', 'mom-3', 'mom-4', 'mom-5', 'mom-6', 'mom-7', 'mom-8', 'mom-9', 'mom-10',
+    'dad-1', 'dad-2', 'dad-3', 'dad-4', 'dad-5', 'dad-6', 'dad-7', 'dad-8', 'dad-9',
+    'jy-1', 'jy-2', 'jy-3', 'jy-4', 'jy-5'
+  ];
+
+  function loadCheckState() {
+    const saved = JSON.parse(localStorage.getItem('csat_prep_checks') || '{}');
+    let doneCount = 0;
+
+    CHECK_ITEMS.forEach(id => {
+      const itemEl = document.getElementById('item-' + id);
+      if (!itemEl) return;
+      const chkBox = itemEl.querySelector('.custom-checkbox');
+      if (saved[id]) {
+        chkBox.classList.add('checked');
+        itemEl.classList.add('is-done');
+        doneCount++;
+      } else {
+        chkBox.classList.remove('checked');
+        itemEl.classList.remove('is-done');
+      }
+    });
+
+    const percent = Math.round((doneCount / CHECK_ITEMS.length) * 100);
+    document.getElementById('kpiProgressText').textContent = `${percent}% (${doneCount}/${CHECK_ITEMS.length}완료)`;
+    document.getElementById('progressBarFill').style.width = percent + '%';
+  }
+
+  function toggleCheck(id) {
+    const saved = JSON.parse(localStorage.getItem('csat_prep_checks') || '{}');
+    saved[id] = !saved[id];
+    localStorage.setItem('csat_prep_checks', JSON.stringify(saved));
+    loadCheckState();
+  }
+
+  function resetAllChecks() {
+    if (confirm('모든 체크 표시를 초기화하시겠습니까?')) {
+      localStorage.removeItem('csat_prep_checks');
+      loadCheckState();
+    }
+  }
+
+  /* Tab Navigation */
+  function switchTab(tabId) {
+    document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+    const targetSec = document.getElementById(tabId);
+    if (targetSec) targetSec.style.display = 'block';
+
+    const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+    if (activeBtn) activeBtn.classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* Detail Modal Contents */
+  const MODAL_DATA = {
+    'doc-mom-print': {
+      title: '엄마 지원단: D-3 인쇄 셧다운 가이드',
+      file: '02_학부모/01_엄마_준비사항_및_날짜별체크리스트/05_수험생_정서안정_및_자율루틴_비간섭_지원가이드.md',
+      content: `
+        <h4>목적 및 배경</h4>
+        <p>시험 당일 아침 06:40에 태블릿 자료 출력을 요구하다가 토너 부족이나 종이 걸림으로 시험 전 멘탈이 와해되는 사고가 매년 발생합니다.</p>
+        <h4>의무 실행 액션</h4>
+        <ul>
+          <li><strong>D-3(11/16 월) 18:00</strong>: 엄마가 먼저 프린터 앞에 서서 "정윤아, 패드에 있는 요약본 지금 전부 인쇄해서 철하자. 시험 전날엔 프린터 끈다" 선제 공지.</li>
+          <li>출력물은 과목별 집게로 묶어 L자 홀더에 수납 완료.</li>
+          <li>D-1 및 D-Day 아침에는 프린터 전원 플러그를 뽑아둡니다.</li>
+        </ul>
+      `
+    },
+    'doc-dad-silence': {
+      title: '아빠 지원단: 침묵의 수호 드라이버 행동 수칙',
+      file: '02_학부모/02_아빠_준비사항_및_날짜별체크리스트/05_비난지적_원천차단_침묵지원_행동수칙.md',
+      content: `
+        <h4>목적 및 배경</h4>
+        <p>아빠의 "넌 매사에 준비가 안 돼 있어", "정신사납게 굴지 마"라는 훈계는 수험생의 교감신경을 과항진시켜 1교시 국어 지문 독해를 불가능하게 만듭니다.</p>
+        <h4>차내 허용 발언 단 2문장</h4>
+        <ul>
+          <li>탑승 시: <em>"차 안 온도 괜찮니? 불편하면 말해라."</em></li>
+          <li>하차 시: <em>"정윤아, 연습한 대로 편안하게 쏟아붓고 와라. 아빠가 여기서 기다린다."</em></li>
+          <li>딸이 다리를 떨거나 소지품을 뒤적여도 절대 제지하지 않고 묵묵히 안전 운전에만 집중합니다.</li>
+        </ul>
+      `
+    },
+    'doc-jy-routine': {
+      title: '수험생 박정윤: Zero-Decision 직행 루틴',
+      file: '01_수험생_박정윤/07_수험생_실전집중력_사수_및_루틴자동화_액션매뉴얼.md',
+      content: `
+        <h4>100% 외주화 루틴</h4>
+        <ul>
+          <li><strong>단일 옷걸이</strong>: 기상 후 방문 손잡이에 걸린 옷을 위에서부터 차례로 입고 어떤 옷을 입을지 1초도 고민하지 않습니다.</li>
+          <li><strong>봉인된 가방</strong>: D-1 21:00에 봉인된 가방은 고사장 책상에 앉을 때까지 집과 차 안에서 절대 열지 않습니다.</li>
+          <li><strong>수험표 뒤 3D 약도</strong>: 교문에 들어서면 안내선생님에게 묻지 않고 수험표 뒤 메모 [본관 3층 / 7시험실]만 보고 직행 착석합니다.</li>
+        </ul>
+      `
+    },
+    'doc-omr-care': {
+      title: 'OMR 마킹 수칙 & 수능 직후 멘탈 케어',
+      file: '05_공통_통합체크리스트_및_비상대응/05_가족역학별_실전_사례집_및_트리거방어_실행가이드.md',
+      content: `
+        <h4>OMR 마킹 안전 프로토콜</h4>
+        <ul>
+          <li>종료 10분 전 무조건 문제 풀이를 중단하고 마킹 완료.</li>
+          <li>수정테이프 사용 시 손가락으로 꾹 눌러 완벽 밀착.</li>
+          <li>종료령 후 마킹은 부정행위로 전 과목 0점 처리되므로 즉시 필기구를 내려놓습니다.</li>
+        </ul>
+        <h4>귀가 시 가채점 압박 금지</h4>
+        <ul>
+          <li>하교 마중 시 "국어 어려웠니?", "몇 점 나올 것 같아?" 등 성적 질문 절대 금지.</li>
+          <li>"정말 고생 많았어, 우리 딸 최고야!" 따뜻한 포옹만 건넵니다.</li>
+        </ul>
+      `
+    }
+  };
+
+  function openModal(docKey) {
+    const data = MODAL_DATA[docKey];
+    if (!data) return;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalBody').innerHTML = data.content;
+    document.getElementById('modalFileLink').href = data.file;
+    document.getElementById('docModal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('docModal').classList.remove('active');
+  }
+
+  // Close on backdrop click
+  document.getElementById('docModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Init
+  document.addEventListener('DOMContentLoaded', () => {
+    updateDDay();
+    loadCheckState();
+  });
+</script>
+
+</body>
+</html>

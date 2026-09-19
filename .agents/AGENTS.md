@@ -10,3 +10,5 @@
    자료를 바탕으로 답변을 작성할 때, 어떤 자료를 참고했는지 파일 링크와 함께 명시합니다.
 5. **보고서 출력 기본 포맷 규칙 (Clean Executive Light)**:
    이후 작성하는 모든 입시 보고서 및 분석 결과물 HTML은 **`클린 에그제큐티브 라이트 (Clean Executive Light)`** 스타일(Soft Ice Gray 배경 `#f8fafc`, 클린 화이트 카드 `#ffffff`, 딥 네이비 타이틀 `#1e3a8a`, 로열 블루 하이라이트 `#2563eb`, 틸 그린 뱃지 `#0d9488`, 인쇄 및 PDF 저장 가독성 최적화)을 기본 포맷으로 전면 적용 및 유지합니다. (참조 샘플: [sample2_clean_light.html](file:///C:/Users/그램/Documents/antiG/reports/samples/sample2_clean_light.html))
+6. **보고서 버전 관리 운영 규칙 (Report Versioning Operations)**:
+   입시 분석 보고서 및 월달력 일정표를 갱신·업데이트할 때는 기존 버전 HTML 파일을 `reports/archive_history/` 경로로 이력 보관(예: `20260810_v1_...html`) 처리한 후, 최신 최종본을 `reports/final/` 및 바탕화면 `00_최종보고서_및_달력/`에 동일한 표준 파일명(`01_2027_수시_통합_지원전략_보고서.html`, `02_...` 등)으로 덮어씌워 유지합니다.

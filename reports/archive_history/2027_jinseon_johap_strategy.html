@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027학년도 진선여고 박정윤 학생부종합전형 정밀분석 및 수시 6+1 지원전략 보고서</title>
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+            --navy-primary: #1e3a8a;
+            --blue-accent: #2563eb;
+            --teal-badge: #0d9488;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --amber-accent: #d97706;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--navy-primary);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-title {
+            color: var(--navy-primary);
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin: 0 0 20px 0;
+        }
+
+        .meta-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: #f1f5f9;
+            color: var(--navy-primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+        }
+
+        .badge-teal {
+            background-color: #ccfbf1;
+            color: var(--teal-badge);
+            border-color: #99f6e4;
+        }
+
+        .badge-blue {
+            background-color: #dbeafe;
+            color: var(--blue-accent);
+            border-color: #bfdbfe;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: var(--navy-primary);
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .section-title span {
+            background-color: var(--blue-accent);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        .stat-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy-primary);
+            margin-top: 4px;
+        }
+
+        .highlight-blue {
+            color: var(--blue-accent);
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        table.data-table th {
+            background-color: #f1f5f9;
+            color: var(--navy-primary);
+            font-weight: 700;
+            text-align: left;
+            padding: 12px 14px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        table.data-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        table.data-table tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .alert-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--blue-accent);
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: #1e40af;
+        }
+
+        .alert-warning {
+            background-color: #fffbeb;
+            border-left-color: var(--amber-accent);
+            color: #92400e;
+        }
+
+        .university-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            background-color: #ffffff;
+            transition: transform 0.2s ease;
+        }
+
+        .university-card:hover {
+            border-color: var(--blue-accent);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+        }
+
+        .univ-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .univ-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy-primary);
+        }
+
+        .univ-tag {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .tag-recommend { background-color: #dcfce7; color: #15803d; }
+        .tag-challenge { background-color: #fef3c7; color: #b45309; }
+        .tag-bonus { background-color: #f3e8ff; color: #7e22ce; }
+
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media print {
+            body { background-color: #ffffff; padding: 0; }
+            .section-card, .header-card { box-shadow: none; border: 1px solid #cbd5e1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header-card">
+        <h1 class="header-title">2027학년도 학생부종합전형 정밀분석 및 수시 6+1 종합 전략 보고서</h1>
+        <p class="header-subtitle">진선여자고등학교 3학년 박정윤 학생 맞춤형 입시 진단 (종합전형 DB 전수검증 완료)</p>
+        <div class="meta-badges">
+            <span class="badge badge-teal">✓ 3단계 누락/오추출 검증 완료</span>
+            <span class="badge badge-blue">진선여고 8학군 특수성 적용</span>
+            <span class="badge">외대 환산 3.80 / 동국대 4.80</span>
+            <span class="badge">7모 수학 3등급 (83.1%)</span>
+        </div>
+    </div>
+
+    <!-- Section 1: 3-Stage Verification & DB Overview -->
+    <div class="section-card">
+        <h2 class="section-title"><span>1</span>2027 종합전형 참고자료 3단계 전수 검증 및 데이터 무결성 성과</h2>
+        <p style="font-size: 14px; color: var(--text-muted);">
+            제공받은 8개 종합전형 이미지 파일(KakaoTalk_20260809_235154872.jpg ~ 07.jpg)을 3회 이상 원본 대조 검증하여 완성된 수도권 45개 전형 마스터 DB입니다.
+        </p>
+        
+        <div class="grid-2">
+            <div class="stat-box">
+                <div class="stat-label">검증 대상 대학 및 전형 수</div>
+                <div class="stat-value">수도권 22개 대학 / 45개 핵심 전형</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">생성 데이터베이스 및 파일</div>
+                <div class="stat-value">통합 DB 엑셀(.xls) & CSV / 면접달력 DB</div>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <strong>🔍 2027학년도 학생부종합전형 주요 핵심 개정사항:</strong>
+            <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+                <li><strong>성균관대 융합형</strong>: 2027 수능 최저 3개 영역 합 6 이내 신설! (수학/영/사문 조합으로 극복 가능)</li>
+                <li><strong>성균관대 학교장추천</strong>: 졸업생 지원 전면 허용 및 추천 인원 제한 폐지 (교과 100: 공통70+진로20+정성10).</li>
+                <li><strong>홍익대 종합/교과</strong>: 수능 최저 3개 합 8 ➔ <strong>2개 합 5로 파격 완화!</strong></li>
+                <li><strong>숙명여대 교과</strong>: 교과 70 + 서류 30% 신설 및 수능 최저기준 폐지 (약학 제외).</li>
+                <li><strong>면접 50% 역전대학</strong>: 한국외대(면접형), 서울시립대(면접형I), 숭실대(SSU미래인재), 서울여대 ➔ 2단계 면접 50%로 서류 불리함 완전 만회 가능!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 2: Student GPA & Academic Diagnosis -->
+    <div class="section-card">
+        <h2 class="section-title"><span>2</span>박정윤 학생 성적 및 내신 변환 정밀 진단</h2>
+        
+        <div class="grid-2">
+            <div>
+                <h4 style="color: var(--navy-primary); margin-bottom: 8px;">📊 대학별 내신 재환산 결과</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>대학명</th>
+                            <th>환산 등급 / 점수</th>
+                            <th>특이사항 및 평가</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>한국외대</strong></td>
+                            <td><span class="highlight-blue" style="font-weight: 800;">3.80등급대 (82.58점)</span></td>
+                            <td>원점수 반영 Max 적용으로 <strong>내신 대폭 상승!</strong> (최우수 지원군)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>동국대</strong></td>
+                            <td><span class="highlight-blue" style="font-weight: 800;">4.80등급 (9.18점)</span></td>
+                            <td>상위 10과목 반영으로 5.72등급에서 <strong>4.80등급으로 대반등!</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>건국대</strong></td>
+                            <td>93.77점</td>
+                            <td>정량 70 + 정성 30 (진선여고 생기부 우대)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>성균관대</strong></td>
+                            <td>91.04점</td>
+                            <td>정량 70 + 진로 20 + 정성 10</td>
+                        </tr>
+                        <tr>
+                            <td><strong>숙명여대</strong></td>
+                            <td>85.93점</td>
+                            <td>2027 서류 30% 신설로 정성평가 비중 확대</td>
+                        </tr>
+                        <tr>
+                            <td><strong>중앙대</strong></td>
+                            <td>5.10등급 (9.56점)</td>
+                            <td>인문 상위 10과목 반영 / 탐구형 정성평가 100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h4 style="color: var(--navy-primary); margin-bottom: 8px;">📈 수능 모의고사 추이 (7월 모의고사)</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>영역</th>
+                            <th>6모 등급</th>
+                            <th>7모 백분율 / 표점</th>
+                            <th>목표 및 판정</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>국어 (언매)</td>
+                            <td>3등급 (82.00%)</td>
+                            <td>4등급 (64.13%)</td>
+                            <td>2~3등급 안정화 필요</td>
+                        </tr>
+                        <tr>
+                            <td><strong>수학 (확통)</strong></td>
+                            <td>4등급 (66.00%)</td>
+                            <td><strong style="color: var(--teal-badge);">3등급 (83.10% / 74점)</strong></td>
+                            <td><strong>우상향 뚜렷! 2등급(84%+)+도전 가능</strong></td>
+                        </tr>
+                        <tr>
+                            <td>영어</td>
+                            <td>3등급</td>
+                            <td>2등급</td>
+                            <td>1~2등급 유지 (최저 충족의 핵심)</td>
+                        </tr>
+                        <tr>
+                            <td>사회문화</td>
+                            <td>3등급 (83.00%)</td>
+                            <td>3등급 (82.91%)</td>
+                            <td>2등급 타겟팅 (90% 이상)</td>
+                        </tr>
+                        <tr>
+                            <td>세계지리</td>
+                            <td>5등급 (51.00%)</td>
+                            <td>5등급 (55.62%)</td>
+                            <td>개념 재정리 및 3등급 목표</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Strategic 6 + 1 Application Plan -->
+    <div class="section-card">
+        <h2 class="section-title"><span>3</span>2027 수시 학생부종합 6 + 1(UNIST) 최적 복합 지원 전략</h2>
+
+        <div class="university-card">
+            <div class="univ-header">
+                <span class="univ-name">1. 한국외국어대학교 (서울) - 학생부종합전형(면접형)</span>
+                <span class="univ-tag tag-recommend">★ 최우수 적정</span>
+            </div>
+            <p style="font-size: 14px; margin: 4px 0;">
+                • <strong>전형방법</strong>: 1단계 서류 100% (3배수) ➔ 2단계 서류 50% + <strong>면접 50%</strong> (수능 최저 없음)<br/>
+                • <strong>면접일시</strong>: <strong>2026년 11월 21일(토)</strong> (수능 후 2주차)<br/>
+                • <strong>선정이유</strong>: 내신 환산 시 원점수 반영 특성으로 <strong>3.80등급대</strong>로 대폭 상승! 2단계 면접 50% 반영으로 면접을 통한 확실한 합격 굳히기가 가능한 최우수 조합.
+            </p>
+        </div>
+
+        <div class="university-card">
+            <div class="univ-header">
+                <span class="univ-name">2. 동국대학교 - Do Dream 전형 (종합전형)</span>
+                <span class="univ-tag tag-recommend">★ 강력 추천</span>
+            </div>
+            <p style="font-size: 14px; margin: 4px 0;">
+                • <strong>전형방법</strong>: 1단계 서류 100% (2.5~3.5배수) ➔ 2단계 서류 70% + 면접 30% (수능 최저 없음)<br/>
+                • <strong>면접일시</strong>: <strong>2026년 12월 11일(금) ~ 12월 13일(일)</strong> (수능 후 5주차 여유로운 준비)<br/>
+                • <strong>선정이유</strong>: 상위 10과목 반영 시 **4.80등급**으로 반등. 강남 8학군 진선여고의 깊이 있는 탐구활동 생기부를 정성평가에서 높이 인정함.
+            </p>
+        </div>
+
+        <div class="university-card">
+            <div class="univ-header">
+                <span class="univ-name">3. 건국대학교 - KU자기추천 전형 (종합전형)</span>
+                <span class="univ-tag tag-challenge">소신 도전</span>
+            </div>
+            <p style="font-size: 14px; margin: 4px 0;">
+                • <strong>전형방법</strong>: 1단계 서류 100% (3배수) ➔ 2단계 서류 70% + 면접 30% (수능 최저 없음)<br/>
+                • <strong>면접일시</strong>: <strong>2026년 12월 05일(토) ~ 12월 06일(일)</strong> (수능 후 4주차)<br/>
+                • <strong>선정이유</strong>: 환산점수 93.77점. 수능 최저 부담이 없으며, 인문/사회계열 서류 정성평가에서 진선여고 전공적합성을 크게 반영받음.
+            </p>
+        </div>
+
+        <div class="university-card">
+            <div class="univ-header">
+                <span class="univ-name">4. 숙명여자대학교 - 숙명인재전형(면접형)</span>
+                <span class="univ-tag tag-recommend">적정 / 안정</span>
+            </div>
+            <p style="font-size: 14px; margin: 4px 0;">
+                • <strong>전형방법</strong>: 1단계 서류 100% (<strong>4배수 확대!</strong>) ➔ 2단계 서류 70% + 면접 30% (수능 최저 없음)<br/>
+                • <strong>면접일시</strong>: <strong>2026년 11월 28일(토) ~ 11월 29일(일)</strong> (수능 후 3주차)<br/>
+                • <strong>선정이유</strong>: 1단계 4배수 선발로 1단계 통과 확률 대폭 상승. 2027 교과 서류 30% 신설과 더불어 여대 특화 생기부 우대.
+            </p>
+        </div>
+
+        <div class="university-card">
+            <div class="univ-header">
+                <span class="univ-name">5. 성균관대학교 - 탐구형 또는 융합형 (종합전형)</span>
+                <span class="univ-tag tag-challenge">상향 도전</span>
+            </div>
+            <p style="font-size: 14px; margin: 4px 0;">
+                • <strong>전형방법</strong>: 서류 100% (탐구형: 최저 없음 / 융합형: 수능 최저 3합 6 적용)<br/>
+                • <strong>선정이유</strong>: 7모 수학 3등급(83.1%) 상승세를 바탕으로 수능에서 [국어 3 + 수학 3 + 영/사문 1~2] 달성 시 <strong>3합 6 최저 충족</strong>을 통한 상향 합격 가능.
+            </p>
+        </div>
+
+        <div class="university-card">
+            <div class="univ-header">
+                <span class="univ-name">6. 중앙대학교 - CAU탐구형인재 (종합전형)</span>
+                <span class="univ-tag tag-challenge">상향 도전</span>
+            </div>
+            <p style="font-size: 14px; margin: 4px 0;">
+                • <strong>전형방법</strong>: 1단계 서류 100% ➔ 2단계 서류 70% + 면접 30% (수능 최저 없음)<br/>
+                • <strong>면접일시</strong>: <strong>2026년 12월 05일(토) ~ 12월 06일(일)</strong><br/>
+                • <strong>선정이유</strong>: 탐구역량 정성평가 중심 전형으로 강남 8학군 수험생의 심화 교세특 활동 및 탐구력 우대.
+            </p>
+        </div>
+
+        <div class="university-card" style="border: 2px dashed var(--teal-badge); background-color: #f0fdf4;">
+            <div class="univ-header">
+                <span class="univ-name">★ 보너스 카드: UNIST (울산과학기술원) 수시 종합 (경영계열)</span>
+                <span class="univ-tag tag-bonus">군외 7번째 히든카드</span>
+            </div>
+            <p style="font-size: 14px; margin: 4px 0; color: #166534;">
+                • <strong>핵심 특이사항</strong>: <strong>대한민국 4대 과기원 중 유일하게 '경영계열' 별도 신입생 선발!</strong><br/>
+                • <strong>지원 혜택</strong>: 일반 수시 6회 제한에 포함되지 않는 <strong>7번째 무위험 카드</strong>.<br/>
+                • <strong>전형방법</strong>: 서류 100% (수능 최저 없음, 면접 없음). 합격 시 과기원 융합 경영학 전공 이수 및 첨단 산업 기술경영 트랙 확보.
+            </p>
+        </div>
+    </div>
+
+    <!-- Section 4: Calendar Schedule & Overlap Warning -->
+    <div class="section-card">
+        <h2 class="section-title"><span>4</span>2027학년도 면접 일정 및 캘린더 전략 가이드</h2>
+        
+        <div class="alert-box alert-warning">
+            <strong>⚠️ 지원자 필수 주의: 면접 일정 중복 및 겹침 사전 대비</strong>
+            <p style="margin: 4px 0 0 0;">
+                • <strong>12월 05일(토) ~ 12월 06일(일)</strong>: 건국대(KU자기추천), 경희대(네오르네상스), 중앙대(CAU탐구형/성장형) 면접 일정이 정확히 겹칩니다.<br/>
+                • 수시 원서 접수 시, 각 대학별 모집단위의 오전/오후 면접 세부 조별 시간표를 최종 요강 발표 시 꼼꼼히 대조해야 합니다.
+            </p>
+        </div>
+
+        <p style="font-size: 14px; color: var(--text-muted); margin-top: 16px;">
+            📄 상세 날짜별 달력표 및 데이터베이스는 생성된 엑셀 파일 및 참고자료 마크다운 문서를 참조하시기 바랍니다:
+        </p>
+        <ul style="font-size: 14px; color: var(--navy-primary);">
+            <li><a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/2027%20종합전형/2027_학생부종합전형_통합DB.xls" target="_blank">2027_학생부종합전형_통합DB.xls (엑셀 한글판)</a></li>
+            <li><a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/2027%20종합전형/2027_면접고사_날짜별_달력일정.xls" target="_blank">2027_면접고사_날짜별_달력일정.xls (엑셀 달력판)</a></li>
+            <li><a href="file:///C:/Users/그램/Desktop/입시분석%20참고자료/2027%20종합전형/2027_종합전형_날짜별_면접일정_참고자료.md" target="_blank">2027_종합전형_날짜별_면접일정_참고자료.md (마크다운)</a></li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Clean Executive Light Style | 2027 입시 분석 및 가이던스 보고서 | Antigravity AI Admission Guidance System
+    </div>
+</div>
+
+</body>
+</html>

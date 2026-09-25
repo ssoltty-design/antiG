@@ -793,7 +793,7 @@
         <p style="font-size:0.75rem; color:#475569; margin:2px 0 0; font-weight:700;">진선여고 수험생 박정윤 가족 지원단 (엄마·아빠·정윤 3주체 원팀)</p>
       </div>
       <div style="text-align:right;">
-        <span style="background:#dc2626; color:#ffffff; font-size:0.78rem; font-weight:900; padding:4px 10px; border-radius:6px;">D-61 2026.11.19</span>
+        <span style="background:#dc2626; color:#ffffff; font-size:0.78rem; font-weight:900; padding:4px 10px; border-radius:6px;" id="staticDdayBadge">D-57 2026.11.19</span>
         <div style="font-size:0.68rem; color:#64748b; margin-top:2px;">APEX-Design™ High-Visibility</div>
       </div>
     </div>
@@ -806,7 +806,7 @@
         <span>🎨</span>
         <span>수능 D-Day 비주얼 포켓 체크리스트</span>
       </div>
-      <div class="dday-badge" id="ddayBadge">D-61 2026.11.19</div>
+      <div class="dday-badge" id="ddayBadge">D-57 2026.11.19</div>
     </div>
 
     <!-- Live Progress Bar -->
@@ -825,8 +825,8 @@
   <div class="quick-actions">
     <button class="action-pill-btn" onclick="resetAllChecks()">🔄 체크 초기화</button>
     <button class="action-pill-btn" onclick="window.print()">🖨️ 인쇄/PDF 저장</button>
-    <a class="action-pill-btn" href="../../AG_통합_일일브리핑_및_Todo캘린더_mobile.html" target="_blank">📱 일일 브리핑 바로가기</a>
-    <a class="action-pill-btn" href="05_공통_통합체크리스트_및_비상대응/05_가족역학별_실전_사례집_및_트리거방어_실행가이드.md" target="_blank">📖 안티그래비티 원문</a>
+    <a class="action-pill-btn" href="./index.html" target="_blank">📱 일일 브리핑 바로가기</a>
+    <button class="action-pill-btn" onclick="openModal('doc-crisis-manual')">📖 안티그래비티 원문</button>
   </div>
 
   <!-- Navigation Tabs -->
@@ -1379,9 +1379,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 14px;">
-      <a class="action-pill-btn" href="05_공통_통합체크리스트_및_비상대응/05_가족역학별_실전_사례집_및_트리거방어_실행가이드.md" target="_blank">
+      <button class="action-pill-btn" onclick="openModal('doc-crisis-manual')">
         📖 16대 돌발상황 전체 안티그래비티 매뉴얼 열기
-      </a>
+      </button>
     </div>
   <!-- Print Only Footer Banner (Visible Only in Print/PDF) -->
   <div class="print-only-footer" style="display:none;">
@@ -1492,6 +1492,24 @@
 
   /* Detail Modal Contents */
   const MODAL_DATA = {
+    'doc-crisis-manual': {
+      title: '가족역학별 16대 돌발상황 처방전 & 안티그래비티 매뉴얼',
+      file: '05_공통_통합체크리스트_및_비상대응/05_가족역학별_실전_사례집_및_트리거방어_실행가이드.md',
+      content: `
+        <h4>16대 돌발상황 3대 골든 액션 룰</h4>
+        <ul>
+          <li><strong>룰 1 (Zero-Blame &amp; 침묵 원칙)</strong>: 돌발 변수(교통 정체, 물건 분실, 복통) 발생 시 원인 규명 및 질책을 100% 금지하고 즉시 대안 플랜으로 전환합니다.</li>
+          <li><strong>룰 2 (사전 외주화 &amp; 봉인)</strong>: 수험표, 신분증, 필기구, 아날로그 시계는 D-1 21:00 이전에 가방에 넣고 지퍼를 봉인합니다.</li>
+          <li><strong>룰 3 (멘탈 방패)</strong>: "눈 감고 누워만 있어도 뇌는 80% 이상 충전된다", "1교시 국어가 어렵게 느껴지면 모든 수험생에게 불수능이다" 멘트를 준비합니다.</li>
+        </ul>
+        <h4>가족 주체별 핵심 방어 수칙</h4>
+        <ul>
+          <li><strong>엄마</strong>: D-3 저녁 18:00 인쇄기 셧다운, 자극적 보양식 금지, 익숙한 일상식 도시락 준비.</li>
+          <li><strong>아빠</strong>: 고사장 이동 중 침묵 유지(차내 허용 발언: "온도 괜찮니?", "편안하게 쏟아붓고 와라"), 고사장 200m 전 하차.</li>
+          <li><strong>수험생(정윤)</strong>: OMR 10분 전 마킹 완료, 쉬는 시간 정답 맞추기 절대 금지, 다음 교시 요약노트만 응시.</li>
+        </ul>
+      `
+    },
     'doc-mom-print': {
       title: '엄마 지원단: D-3 인쇄 셧다운 가이드',
       file: '02_학부모/01_엄마_준비사항_및_날짜별체크리스트/05_수험생_정서안정_및_자율루틴_비간섭_지원가이드.md',
